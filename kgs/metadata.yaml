@@ -29,7 +29,7 @@ databus:
   group: dnb
   artifact: authorities-gnd
   latest_version: 2025.09.15
-  url: "pending"   # will be filled in by CI after publish
+  url: "pending"   # will be filled in by CI after publishing
 
 metadata:
   created: 2025-09-15
