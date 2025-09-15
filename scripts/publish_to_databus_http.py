@@ -64,11 +64,7 @@ print("Headers:", json.dumps(headers, indent=2))
 print("Payload:", json.dumps(payload, indent=2))
 print("=== End of Request ===")
 
-# Confirm before sending
-confirm = input("Send request to Databus? [y/N]: ").strip().lower()
-if confirm != "y":
-    print("Aborted by user")
-    sys.exit(0)
+print("Sending request to Databus...")
 
 # Send POST request to Databus
 resp = requests.post(API_URL, headers=headers, json=payload)
