@@ -3,10 +3,10 @@ name: Check Dataset URLs
 on:
   push:
     paths:
-      - "datasets/*.yaml"
+      - "kgs/*.yaml"
   pull_request:
     paths:
-      - "datasets/*.yaml"
+      - "kgs/*.yaml"
   schedule:
     - cron: '0 0 * * *'  # daily at midnight UTC
 
@@ -32,7 +32,7 @@ jobs:
       # Run URL check script for all YAMLs
       - name: Run URL check and update YAML
         run: |
-          for f in datasets/*.yaml; do
+          for f in kgs/*.yaml; do
             python scripts/check_url_update_yaml.py "$f"
           done
 
@@ -41,6 +41,6 @@ jobs:
         run: |
           git config user.name "LOD Cloud Bot"
           git config user.email "bot@lod-cloud.org"
-          git add datasets/*.yaml
+          git add kgs/*.yaml
           git diff-index --quiet HEAD || git commit -m "Update dataset status & last_verified"
           git push
