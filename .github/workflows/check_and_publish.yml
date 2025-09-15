@@ -39,17 +39,26 @@ jobs:
             python scripts/check_url_update_yaml.py "$f"
           done
 
-      # 5️⃣ Publish to Databus via HTTP
-      - name: Publish to Databus
-        if: ${{ success() }}  # Only run if previous step succeeded
+      # 5️⃣ Publish only changed YAMLs to Databus
+      - name: Publish updated YAMLs to Databus
+        if: ${{ success() }}
         run: |
-          for f in knowledge-graphs/**/*.yaml; do
-            python scripts/publish_to_databus_http.py "$f"
-          done
+          # Find YAML files that were modified
+          CHANGED_FILES=$(git diff --name-only HEAD | grep 'knowledge-graphs/.*\.yaml' || true)
+
+          if [ -n "$CHANGED_FILES" ]; then
+            echo "Publishing updated YAMLs to Databus:"
+            echo "$CHANGED_FILES"
+            for f in $CHANGED_FILES; do
+              python scripts/publish_to_databus_http.py "$f"
+            done
+          else
+            echo "No YAML changes detected — skipping Databus publish."
+          fi
 
       # 6️⃣ Commit updated YAML back to the repository
       - name: Commit YAML updates
-        if: ${{ success() }}  # Only run if previous steps succeeded
+        if: ${{ success() }}
         run: |
           git config user.name "LOD Cloud Bot"
           git config user.email "bot@lod-cloud.org"
