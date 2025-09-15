@@ -1,7 +1,7 @@
 id: mydataset
 title: DBpedia
-description: 'A small example Knowledge Graph about cities and countries, used for
-  demonstration purposes.'
+description: A small example Knowledge Graph about cities and countries, used for
+  demonstration purposes.
 homepage: https://example.org/mydataset
 license: http://CC-BY-4.0
 keywords:
@@ -20,7 +20,7 @@ distributions:
   size: 123456
   sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
   status: active
-  last_verified: '2025-09-15T15:24:19.356800Z'
+  last_verified: '2025-09-15T15:59:36.708816Z'
 databus:
   group: dnb
   artifact: authorities-gnd
@@ -29,4 +29,4 @@ databus:
 metadata:
   created: 2025-09-15
   last_updated: 2025-09-15
-  last_checked: '2025-09-15T15:24:19.356800Z'
+  last_checked: '2025-09-15T15:59:36.708816Z'
