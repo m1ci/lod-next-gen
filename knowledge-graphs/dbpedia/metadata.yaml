@@ -23,7 +23,7 @@ distributions:
   last_verified: '2025-09-15T16:03:53.652841Z'
 databus:
   group: dbpedia
-  artifact: authorities-gnd
+  artifact: instance-types
   latest_version: 2025.09.15
   url: pending
 metadata:
