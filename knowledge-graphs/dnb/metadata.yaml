@@ -20,7 +20,7 @@ distributions:
   size: 123456
   sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
   status: active
-  last_verified: '2025-09-15T15:02:41.912553Z'
+  last_verified: '2025-09-15T15:24:20.454338Z'
 databus:
   group: dnb
   artifact: authorities-gnd
@@ -29,4 +29,4 @@ databus:
 metadata:
   created: 2025-09-15
   last_updated: 2025-09-15
-  last_checked: '2025-09-15T15:02:41.912553Z'
+  last_checked: '2025-09-15T15:24:20.454338Z'
