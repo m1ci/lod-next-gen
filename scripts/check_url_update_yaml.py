@@ -4,7 +4,7 @@ import sys
 from datetime import datetime
 
 # Path to your YAML file
-yaml_file = sys.argv[1]  # e.g., datasets/mydataset.yaml
+yaml_file = sys.argv[1]  # e.g., knowledge-graphs/dbpedia/metadata.yaml
 
 # Load YAML
 with open(yaml_file, "r") as f:

@@ -3,10 +3,10 @@ name: Check Dataset URLs
 on:
   push:
     paths:
-      - "kgs/*.yaml"
+      - "knowledge-graphs/**/*.yaml"
   pull_request:
     paths:
-      - "kgs/*.yaml"
+      - "knowledge-graphs/**/*.yaml"
   schedule:
     - cron: '0 0 * * *'  # daily at midnight UTC
 
@@ -41,6 +41,6 @@ jobs:
         run: |
           git config user.name "LOD Cloud Bot"
           git config user.email "bot@lod-cloud.org"
-          git add kgs/*.yaml
+          git add knowledge-graphs/**/*.yaml
           git diff-index --quiet HEAD || git commit -m "Update dataset status & last_verified"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
