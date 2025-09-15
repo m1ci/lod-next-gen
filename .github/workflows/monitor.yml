@@ -32,7 +32,7 @@ jobs:
       # Run URL check script for all YAMLs
       - name: Run URL check and update YAML
         run: |
-          for f in kgs/*.yaml; do
+          for f in knowledge-graphs/**/*.yaml; do
             python scripts/check_url_update_yaml.py "$f"
           done
 
