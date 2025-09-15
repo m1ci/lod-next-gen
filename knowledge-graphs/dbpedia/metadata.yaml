@@ -22,7 +22,7 @@ distributions:
   status: active
   last_verified: '2025-09-15T15:59:36.708816Z'
 databus:
-  group: dnb
+  group: dbpedia
   artifact: authorities-gnd
   latest_version: 2025.09.15
   url: pending
