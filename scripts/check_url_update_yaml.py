@@ -2,6 +2,7 @@ import yaml
 import requests
 import sys
 from datetime import datetime
+import os
 
 yaml_file = sys.argv[1]
 
@@ -13,12 +14,16 @@ if not data:
     print(f"No data loaded from {yaml_file}")
     sys.exit(0)
 
-updated = False  # Flag to track if we need to write YAML back
+# Determine if YAML was modified
+# (in CI/GitHub, you may always treat it as "modified" if pushed)
+file_modified = True  # or compare file mtime with metadata.last_checked
+
+updated = False  # Track if YAML needs to be rewritten
 
 for dist in data.get("distributions", []):
-    # Skip distributions whose status is not "pending"
-    if dist.get("status") != "pending":
-        continue
+    # Check if this distribution should be validated
+    if dist.get("status") != "pending" and not file_modified:
+        continue  # skip active distributions if YAML wasn't modified
 
     url = dist.get("file")
     if not url:
@@ -26,10 +31,7 @@ for dist in data.get("distributions", []):
 
     try:
         resp = requests.head(url, allow_redirects=True, timeout=10)
-        if resp.status_code == 200:
-            dist["status"] = "active"
-        else:
-            dist["status"] = "error"
+        dist["status"] = "active" if resp.status_code == 200 else "error"
     except requests.RequestException:
         dist["status"] = "error"
 
@@ -37,7 +39,7 @@ for dist in data.get("distributions", []):
     dist["last_verified"] = datetime.utcnow().isoformat() + "Z"
     updated = True
 
-# Only write YAML if something was updated
+# Update last_checked at the dataset level if any distribution was updated
 if updated:
     data.setdefault("metadata", {})["last_checked"] = datetime.utcnow().isoformat() + "Z"
     with open(yaml_file, "w") as f:
