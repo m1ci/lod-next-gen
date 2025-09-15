@@ -1,0 +1,58 @@
+name: Check URLs & Publish Knowledge Graphs
+
+on:
+  push:
+    paths:
+      - "knowledge-graphs/**/*.yaml"
+  pull_request:
+    paths:
+      - "knowledge-graphs/**/*.yaml"
+  schedule:
+    - cron: '0 0 * * *'  # daily at midnight UTC
+
+jobs:
+  check-and-publish:
+    runs-on: ubuntu-latest
+    env:
+      DATABUS_API_KEY: ${{ secrets.DATABUS_API_KEY }}
+
+    steps:
+      # 1️⃣ Checkout the repository
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      # 2️⃣ Set up Python
+      - name: Set up Python 3
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      # 3️⃣ Install dependencies
+      - name: Install Python dependencies
+        run: pip install --upgrade pip && pip install pyyaml requests
+
+      # 4️⃣ Validate YAML and check URLs
+      - name: Validate YAML & check dataset URLs
+        id: validate
+        run: |
+          for f in knowledge-graphs/**/*.yaml; do
+            python scripts/check_url_update_yaml.py "$f"
+          done
+
+      # 5️⃣ Publish to Databus via HTTP
+      - name: Publish to Databus
+        if: ${{ success() }}  # Only run if previous step succeeded
+        run: |
+          for f in knowledge-graphs/**/*.yaml; do
+            python scripts/publish_to_databus_http.py "$f"
+          done
+
+      # 6️⃣ Commit updated YAML back to the repository
+      - name: Commit YAML updates
+        if: ${{ success() }}  # Only run if previous steps succeeded
+        run: |
+          git config user.name "LOD Cloud Bot"
+          git config user.email "bot@lod-cloud.org"
+          git add knowledge-graphs/**/*.yaml
+          git diff-index --quiet HEAD || git commit -m "Update dataset status & Databus metadata"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
