@@ -1,1 +1,37 @@
-# test
+id: mydataset
+title: My Example KG
+description: >
+  A small example Knowledge Graph about cities and countries,
+  used for demonstration purposes.
+homepage: https://example.org/mydataset
+license: CC-BY-4.0
+keywords:
+  - geography
+  - linked data
+  - example
+
+maintainers:
+  - name: Alice Example
+    contact: alice@example.org
+    github: alicekg
+
+distributions:
+  - type: dump
+    file: https://data.dnb.de/opendata/authorities-gnd-geografikum_lds.ttl.gz
+    format: ttl
+    compression: gz
+    size: 123456
+    sha256: "pending"   # will be filled in by CI
+    status: pending      # updated by monitoring
+    last_verified: "pending"
+
+databus:
+  group: dnb
+  artifact: authorities-gnd
+  latest_version: 2025.09.15
+  url: "pending"   # will be filled in by CI after publish
+
+metadata:
+  created: 2025-09-15
+  last_updated: 2025-09-15
+  last_checked: "pending"
