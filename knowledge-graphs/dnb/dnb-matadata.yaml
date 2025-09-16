@@ -21,17 +21,9 @@ artifacts:
     Geografikum (Geographical entity, Code g, Format RDF (JSON-LD) (Stand: 13.03.2025
     13:00 Uhr UTC)'
   versions:
-<<<<<<< HEAD
   - version: "20250313"
     title: authorities-gnd-geografikum_lds
     description: "2025-04-01 12:06 39M 332073 Datensaetze / 6110749 Tripel / GND, Entitaeten Geografikum (Geographical entity, Code g, Format RDF (JSON-LD) (Stand: 13.03.2025 13:00 Uhr UTC)"
-=======
-  - version: '20250313'
-    title: authorities-gnd version
-    description: '2025-04-01 12:06 39M 332073 Datensaetze / 6110749 Tripel / GND,
-      Entitaeten Geografikum (Geographical entity, Code g, Format RDF (JSON-LD) (Stand:
-      13.03.2025 13:00 Uhr UTC)'
->>>>>>> c02b951d2ee0d5e4db58e7562347b1a64efd4825
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
     - file: https://databus.dbpedia.org/deutsche-natbib/authorities-gnd/authorities-gnd-geografikum_lds/20250313#authorities-gnd-geografikum_lds.ttl.gz
@@ -51,7 +43,6 @@ artifacts:
       compression: gz
       size: 41204006
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-<<<<<<< HEAD
       status: pending
 
 - artifact: authorities-gnd-koerperschaft_lds
@@ -81,8 +72,3 @@ artifacts:
       size: 212479206
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
       status: pending
-
-
-=======
-      status: active
->>>>>>> c02b951d2ee0d5e4db58e7562347b1a64efd4825
