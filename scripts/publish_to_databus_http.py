@@ -26,7 +26,12 @@ if not data:
     print(f"No data loaded from {yaml_file}")
     sys.exit(1)
 
-# --- Helper function to send request ---
+# --- Check databus-publish flag ---
+if not data.get("databus-publish", False):
+    print(f"Skipping {yaml_file}: databus-publish is false")
+    sys.exit(0)
+
+# --- Helper function ---
 def send_publish(payload):
     print("=== Payload to publish ===")
     print(json.dumps(payload, indent=2))
@@ -54,7 +59,7 @@ group_payload = {
 send_publish(group_payload)
 print(f"✅ Published group: {group_id}")
 
-# --- Step 2: Publish each Artifact ---
+# --- Step 2: Publish Artifacts & Versions ---
 for artifact in data.get("artifacts", []):
     artifact_id = f"{group_id}/{artifact['artifact'].replace(' ', '-')}"
     artifact_payload = {
@@ -69,7 +74,6 @@ for artifact in data.get("artifacts", []):
     send_publish(artifact_payload)
     print(f"✅ Published artifact: {artifact_id}")
 
-    # --- Step 3: Publish each Version ---
     for version in artifact.get("versions", []):
         version_id = f"{artifact_id}/{version['version'].replace(' ', '-')}"
         dist_list = []
@@ -96,8 +100,12 @@ for artifact in data.get("artifacts", []):
                 "distribution": dist_list
             }
         }
-
         send_publish(version_payload)
         print(f"✅ Published version: {version_id}")
 
-print("💾 All entities published to Databus successfully.")
+# --- Reset databus-publish flag ---
+data["databus-publish"] = False
+with open(yaml_file, "w") as f:
+    yaml.dump(data, f, sort_keys=False)
+
+print(f"💾 Reset databus-publish to false for {yaml_file}")

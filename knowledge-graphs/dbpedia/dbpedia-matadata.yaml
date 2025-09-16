@@ -2,6 +2,7 @@ id: dbpedia
 title: DBpedia
 description: A small example Knowledge Graph about cities and countries.
 homepage: https://example.org/mydatasets
+databus-publish: false
 license: http://CC-BY-4.1
 
 keywords:

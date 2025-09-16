@@ -7,8 +7,6 @@ on:
   pull_request:
     paths:
       - "knowledge-graphs/**/*.yaml"
-#  schedule:
-#    - cron: '0 0 * * *'  # daily at midnight UTC
 
 jobs:
   check-and-publish:
@@ -45,7 +43,9 @@ jobs:
         run: |
           echo "Publishing YAMLs to Databus..."
           for f in knowledge-graphs/**/*.yaml; do
-            python scripts/publish_to_databus_http.py "$f"
+            if grep -q 'databus-publish: true' "$f"; then
+              python scripts/publish_to_databus_http.py "$f"
+            fi
           done
 
 
