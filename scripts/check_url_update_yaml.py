@@ -12,7 +12,7 @@ if not data:
     print(f"No data loaded from {yaml_file}")
     sys.exit(0)
 
-changed = False  # track if any updates were made
+changed = False  # Track if any updates were made
 
 # Traverse artifacts -> versions -> distributions
 for artifact in data.get("artifacts", []):
@@ -22,7 +22,7 @@ for artifact in data.get("artifacts", []):
             if not url:
                 continue
 
-            # Only check pending distributions
+            # Only check distributions with status: pending
             if dist.get("status") != "pending":
                 continue
 
@@ -33,8 +33,11 @@ for artifact in data.get("artifacts", []):
                 new_status = "error"
 
             if dist.get("status") != new_status:
+                print(f"Updating {url}: {dist.get('status')} -> {new_status}")
                 dist["status"] = new_status
                 changed = True
+            else:
+                print(f"No change for {url} (still {dist.get('status')})")
 
 # Save only if something changed
 if changed:
