@@ -1,7 +1,7 @@
 id: dnb
 title: DNB
 description: A small example Knowledge Graph about cities and countries.
-homepage: https://example.org/mydataset
+homepage: https://example.org/mydatasets
 license: http://CC-BY-4.1
 keywords:
 - geography
