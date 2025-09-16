@@ -2,11 +2,10 @@ import yaml
 import requests
 import os
 import sys
-from datetime import datetime
 import json
 
 # --- Config ---
-API_URL = "https://databus.dbpedia.org/api/publish?fetch-file-properties=false"
+API_PUBLISH = "https://databus.dbpedia.org/api/publish?fetch-file-properties=false"
 API_KEY = os.environ.get("DATABUS_API_KEY")
 if not API_KEY:
     print("Error: DATABUS_API_KEY not set")
@@ -15,73 +14,90 @@ if not API_KEY:
 # YAML file path from argument
 yaml_file = sys.argv[1]
 
-# Load YAML
-with open(yaml_file, "r") as f:
-    data = yaml.safe_load(f)
+# --- Load YAML ---
+try:
+    with open(yaml_file, "r") as f:
+        data = yaml.safe_load(f)
+except yaml.YAMLError as e:
+    print(f"❌ YAML format error: {e}")
+    sys.exit(1)
 
 if not data:
     print(f"No data loaded from {yaml_file}")
     sys.exit(1)
 
-# Prepare JSON-LD payload
-version_id = f"https://databus.dbpedia.org/m1ci/{data['databus']['group']}/{data['databus']['artifact']}/{data['databus']['latest_version']}"
+# --- Helper function to send request ---
+def send_publish(payload):
+    print("=== Payload to publish ===")
+    print(json.dumps(payload, indent=2))
+    print("=========================")
+    headers = {
+        "accept": "application/json",
+        "Content-Type": "application/ld+json",
+        "X-API-KEY": API_KEY
+    }
+    resp = requests.post(API_PUBLISH, headers=headers, json=payload)
+    resp.raise_for_status()
+    return resp.json()
 
-payload = {
+# --- Step 1: Publish Group ---
+group_id = f"https://databus.dbpedia.org/m1ci/{data['id']}"
+group_payload = {
     "@context": "https://databus.dbpedia.org/res/context.jsonld",
     "@graph": {
-        "@type": "Version",
-        "@id": version_id,
+        "@id": group_id,
+        "@type": "Group",
         "title": data["title"],
-        "description": data.get("description", ""),
-        "license": data["license"],
-        "distribution": []
+        "abstract": data.get("description", "")
     }
 }
+send_publish(group_payload)
+print(f"✅ Published group: {group_id}")
 
-for dist in data.get("distributions", []):
-    part_id = version_id + "#e"
-    payload["@graph"]["distribution"].append({
-        "@id": part_id,
-        "@type": "Part",
-        "formatExtension": dist.get("format"),
-        "compression": dist.get("compression"),
-        "sha256sum": dist.get("sha256"),
-        "dcat:byteSize": dist.get("size"),
-        "downloadURL": dist.get("file")
-    })
+# --- Step 2: Publish each Artifact ---
+for artifact in data.get("artifacts", []):
+    artifact_id = f"{group_id}/{artifact['artifact'].replace(' ', '-')}"
+    artifact_payload = {
+        "@context": "https://databus.dbpedia.org/res/context.jsonld",
+        "@graph": {
+            "@id": artifact_id,
+            "@type": "Artifact",
+            "title": artifact["title"],
+            "abstract": artifact.get("description", "")
+        }
+    }
+    send_publish(artifact_payload)
+    print(f"✅ Published artifact: {artifact_id}")
 
-# Prepare headers
-headers = {
-    "accept": "application/json",
-    "Content-Type": "application/ld+json",
-    "X-API-KEY": API_KEY
-}
+    # --- Step 3: Publish each Version ---
+    for version in artifact.get("versions", []):
+        version_id = f"{artifact_id}/{version['version'].replace(' ', '-')}"
+        dist_list = []
+        for i, dist in enumerate(version.get("distributions", []), start=1):
+            part_id = f"{version_id}#e{i}"
+            dist_list.append({
+                "@id": part_id,
+                "@type": "Part",
+                "formatExtension": dist.get("format"),
+                "compression": dist.get("compression"),
+                "sha256sum": dist.get("sha256"),
+                "dcat:byteSize": dist.get("size"),
+                "downloadURL": dist.get("file")
+            })
 
-# --- Debug: print request before sending ---
-print("=== Databus Publish Request ===")
-print("URL:", API_URL)
-print("Headers:", json.dumps(headers, indent=2))
-print("Payload:", json.dumps(payload, indent=2))
-print("=== End of Request ===")
+        version_payload = {
+            "@context": "https://databus.dbpedia.org/res/context.jsonld",
+            "@graph": {
+                "@type": "Version",
+                "@id": version_id,
+                "title": version["title"],
+                "description": version.get("description", ""),
+                "license": version.get("license", "https://creativecommons.org/licenses/by/4.0/"),
+                "distribution": dist_list
+            }
+        }
 
-print("Sending request to Databus...")
+        send_publish(version_payload)
+        print(f"✅ Published version: {version_id}")
 
-# Send POST request to Databus
-resp = requests.post(API_URL, headers=headers, json=payload)
-resp.raise_for_status()
-result = resp.json()
-
-# Update YAML with Databus URL (stable URL returned by API)
-data["databus"]["url"] = version_id
-data["databus"]["latest_version"] = data["databus"]["latest_version"]
-now = datetime.utcnow().isoformat() + "Z"
-for dist in data.get("distributions", []):
-    dist["status"] = "active"
-    dist["last_verified"] = now
-data.setdefault("metadata", {})["last_checked"] = now
-
-# Write back YAML
-with open(yaml_file, "w") as f:
-    yaml.dump(data, f, sort_keys=False)
-
-print(f"Published {yaml_file} to Databus, updated YAML with URL and verification info.")
+print("💾 All entities published to Databus successfully.")

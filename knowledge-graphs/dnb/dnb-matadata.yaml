@@ -3,20 +3,24 @@ title: DNB
 description: A small example Knowledge Graph about cities and countries.
 homepage: https://example.org/mydatasets
 license: http://CC-BY-4.1
+
 keywords:
 - geography
 - linked data
 - example
+
 sparql:
 - name: main
   url: http://dbpedia.org/sparql
+
 maintainers:
 - name: Alice Example
   contact: alice@example.org
   github: alicekg
+
 artifacts:
-- artifact: authorities-gnd artifact
-  title: authorities-gnd
+- artifact: authorities-gnd
+  title: authorities-gnd artifact
   description: A small example Knowledge Graph about cities and countries, used for
     demonstration purposes.
   versions:
@@ -33,7 +37,31 @@ artifacts:
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
       status: active
     - file: https://data.dnb.de/opendata/authorities-gnd-geografikum_lds.ttl.gz
+      format: nt
+      compression: gz
+      size: 123456
+      sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
+      status: active
+
+- artifact: links
+  title: links artifact
+  description: A small example Knowledge Graph about cities and countries, used for
+    demonstration purposes.
+  versions:
+  - version: 2025.09.15
+    title: links version
+    description: A small example Knowledge Graph about cities and countries, used
+      for demonstration purposes.
+    license: http://CC-BY-4.0
+    distributions:
+    - file: https://data.dnb.de/opendata/authorities-gnd-geografikum_lds.ttl.gz
       format: ttl
+      compression: gz
+      size: 123456
+      sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
+      status: active
+    - file: https://data.dnb.de/opendata/authorities-gnd-geografikum_lds.ttl.gz
+      format: nt
       compression: gz
       size: 123456
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
