@@ -4,9 +4,13 @@ import sys
 
 yaml_file = sys.argv[1]
 
-# Load YAML
-with open(yaml_file, "r") as f:
-    data = yaml.safe_load(f)
+# --- Step 1: Validate YAML syntax ---
+try:
+    with open(yaml_file, "r") as f:
+        data = yaml.safe_load(f)
+except yaml.YAMLError as e:
+    print(f"❌ YAML format error in {yaml_file}: {e}")
+    sys.exit(1)
 
 if not data:
     print(f"No data loaded from {yaml_file}")
@@ -14,7 +18,7 @@ if not data:
 
 changed = False  # Track if any updates were made
 
-# Traverse artifacts -> versions -> distributions
+# --- Step 2: Traverse artifacts -> versions -> distributions ---
 for artifact in data.get("artifacts", []):
     for version in artifact.get("versions", []):
         for dist in version.get("distributions", []):
@@ -33,16 +37,16 @@ for artifact in data.get("artifacts", []):
                 new_status = "error"
 
             if dist.get("status") != new_status:
-                print(f"Updating {url}: {dist.get('status')} -> {new_status}")
+                print(f"🔄 Updating {url}: {dist.get('status')} -> {new_status}")
                 dist["status"] = new_status
                 changed = True
             else:
-                print(f"No change for {url} (still {dist.get('status')})")
+                print(f"✅ No change for {url} (still {dist.get('status')})")
 
-# Save only if something changed
+# --- Step 3: Save only if something changed ---
 if changed:
     with open(yaml_file, "w") as f:
         yaml.dump(data, f, sort_keys=False)
-    print(f"Updated {yaml_file}")
+    print(f"💾 Updated {yaml_file}")
 else:
-    print(f"No changes needed for {yaml_file}")
+    print(f"ℹ️ No changes needed for {yaml_file}")
