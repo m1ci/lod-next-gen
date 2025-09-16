@@ -43,9 +43,7 @@ jobs:
         run: |
           echo "Publishing YAMLs to Databus..."
           for f in knowledge-graphs/**/*.yaml; do
-            if grep -q 'databus-publish: true' "$f"; then
-              python scripts/publish_to_databus_http.py "$f"
-            fi
+            python scripts/publish_to_databus_http.py "$f"
           done
 
 
