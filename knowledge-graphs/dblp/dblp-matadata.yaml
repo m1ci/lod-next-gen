@@ -1,0 +1,34 @@
+id: dblp
+title: DBLP
+description: The dblp computer science bibliography is the open indexing service and knowledge graph of the computer science community. dblp provides quality-checked and curated bibliographic metadata on major computer science journals, proceedings, and monographs, as well as metadata and identifiers about their authors and the venues they have been published in.
+homepage: https://kaiko.getalp.org
+databus-publish: true
+license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
+keywords:
+- scholarly 
+
+internal_namespaces:
+- http://kaiko.getalp.org/dbnary/
+
+sparql:
+- name: main
+  url: http://kaiko.getalp.org/sparql
+maintainers:
+- name: n/a
+  contact: n/a
+  github: n/a
+artifacts:
+- artifact: monthly-snapshot
+  title: monthly-snapshot
+  description: Contains all the dblp RDF/N-Triple data in a single file.
+  - version: 20250901
+    title: DBLP RDF Release of September 2025
+    description: This file contains all the dblp RDF/N-Triple data in a single file. The dblp computer science bibliography is the open indexing service and knowledge graph of the computer science community. dblp provides quality-checked and curated bibliographic metadata on major computer science journals, proceedings, and monographs, as well as metadata and identifiers about their authors and the venues they have been published in.
+    license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
+    distributions:
+    - file: https://drops.dagstuhl.de/storage/artifacts/dblp/rdf/2025/dblp-2025-09-01.nt.gz
+      format: nt
+      compression: gz
+      size: 4745938862
+      sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
+      status: pending
