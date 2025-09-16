@@ -3,8 +3,7 @@ title: Deutsche Nationalbibliothek
 description: A small example Knowledge Graph about cities and countries.
 homepage: https://example.org/mydatasets
 license: https://dalicc.net/licenselibrary/Cc010Universal
-# databus-publish: true/false -> true to (re)publish the KG on the databus, false - not to publish.
-databus-publish: true
+databus-publish: false
 keywords:
 - geography
 - linked data
