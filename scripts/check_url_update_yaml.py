@@ -17,6 +17,7 @@ if not data:
     sys.exit(0)
 
 changed = False  # Track if any updates were made
+publish_triggered = False  # Track if Databus publish should be set
 
 # --- Step 2: Traverse artifacts -> versions -> distributions ---
 for artifact in data.get("artifacts", []):
@@ -26,8 +27,11 @@ for artifact in data.get("artifacts", []):
             if not url:
                 continue
 
-            # Only check distributions with status: pending
-            if dist.get("status") != "pending":
+            status = dist.get("status", "pending")
+
+            # Skip already active URLs
+            if status == "active":
+                print(f"✅ Skipping {url}: already active")
                 continue
 
             try:
@@ -36,17 +40,25 @@ for artifact in data.get("artifacts", []):
             except requests.RequestException:
                 new_status = "error"
 
-            if dist.get("status") != new_status:
-                print(f"🔄 Updating {url}: {dist.get('status')} -> {new_status}")
+            if status != new_status:
+                print(f"🔄 Updating {url}: {status} -> {new_status}")
                 dist["status"] = new_status
                 changed = True
+                # Trigger Databus publish if URL became active
+                if new_status == "active":
+                    publish_triggered = True
             else:
-                print(f"✅ No change for {url} (still {dist.get('status')})")
+                print(f"ℹ️ No change for {url} (still {status})")
 
-# --- Step 3: Save only if something changed ---
+# --- Step 3: Set databus-publish if any URL became active ---
+if publish_triggered:
+    data["databus-publish"] = True
+    changed = True  # Mark changed so YAML is saved
+
+# --- Step 4: Save only if something changed ---
 if changed:
     with open(yaml_file, "w") as f:
         yaml.dump(data, f, sort_keys=False)
-    print(f"💾 Updated {yaml_file}")
+    print(f"💾 Updated {yaml_file} (databus-publish={data.get('databus-publish')})")
 else:
     print(f"ℹ️ No changes needed for {yaml_file}")
