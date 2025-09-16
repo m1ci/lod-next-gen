@@ -23,7 +23,7 @@ artifacts:
   description: Entity types as classified with the mapping extractor.
   versions:
   - version: 2022.12.01
-    title: instance types
+    title: instance-types
     description: The dataset contains a file with just the types as classified with
       the mapping extractor.
     license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
