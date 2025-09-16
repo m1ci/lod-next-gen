@@ -8,6 +8,10 @@ keywords:
 - geography
 - linked data
 - example
+
+internal_namespaces:
+- internal_namespaces
+
 sparql:
 - name: main
   url: http://dbpedia.org/sparql
