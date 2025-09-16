@@ -23,7 +23,7 @@ artifacts:
   title: authorities-gnd-geografikum_lds
   description: "2025-04-01 12:06 39M 332073 Datensaetze / 6110749 Tripel / GND, Entitaeten Geografikum (Geographical entity, Code g, Format RDF (JSON-LD) (Stand: 13.03.2025 13:00 Uhr UTC)"
   versions:
-  - version: 20250313
+  - version: "20250313"
     title: authorities-gnd version
     description: "2025-04-01 12:06 39M 332073 Datensaetze / 6110749 Tripel / GND, Entitaeten Geografikum (Geographical entity, Code g, Format RDF (JSON-LD) (Stand: 13.03.2025 13:00 Uhr UTC)"
     license: https://dalicc.net/licenselibrary/Cc010Universal
