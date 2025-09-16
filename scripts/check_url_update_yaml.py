@@ -1,8 +1,6 @@
 import yaml
 import requests
 import sys
-from datetime import datetime
-import os
 
 yaml_file = sys.argv[1]
 
@@ -14,21 +12,37 @@ if not data:
     print(f"No data loaded from {yaml_file}")
     sys.exit(0)
 
-for dist in data.get("distributions", []):
+changed = False  # track if any updates were made
 
-    url = dist.get("file")
-    if not url:
-        continue
+# Traverse artifacts -> versions -> distributions
+for artifact in data.get("artifacts", []):
+    for version in artifact.values():
+        if not isinstance(version, list):
+            continue
+        for v in version:
+            for dist in v.get("distributions", []):
+                url = dist.get("file")
+                if not url:
+                    continue
 
-    try:
-        resp = requests.head(url, allow_redirects=True, timeout=10)
-        dist["status"] = "active" if resp.status_code == 200 else "error"
-    except requests.RequestException:
-        dist["status"] = "error"
+                # Only check pending distributions
+                if dist.get("status") != "pending":
+                    continue
 
-    # Update verification timestamp
-    dist["last_verified"] = datetime.utcnow().isoformat() + "Z"
+                try:
+                    resp = requests.head(url, allow_redirects=True, timeout=10)
+                    new_status = "active" if resp.status_code == 200 else "error"
+                except requests.RequestException:
+                    new_status = "error"
 
+                if dist.get("status") != new_status:
+                    dist["status"] = new_status
+                    changed = True
+
+# Save only if something changed
+if changed:
     with open(yaml_file, "w") as f:
         yaml.dump(data, f, sort_keys=False)
-    print(f"Checked {yaml_file}")
+    print(f"Updated {yaml_file}")
+else:
+    print(f"No changes needed for {yaml_file}")
