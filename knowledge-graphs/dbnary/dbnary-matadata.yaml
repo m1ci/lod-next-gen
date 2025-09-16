@@ -23,7 +23,7 @@ artifacts:
   description: The core data as it has been extracted from Wiktionary.
   versions:
   - version: 20250901
-    title: instance types
+    title: en_dbnary_ontolex
     description: The core data as it has been extracted from Wiktionary.
     license: https://creativecommons.org/licenses/by-sa/3.0/rdf
     distributions:
