@@ -75,7 +75,8 @@ for artifact in data.get("artifacts", []):
     print(f"✅ Published artifact: {artifact_id}")
 
     for version in artifact.get("versions", []):
-        version_id = f"{artifact_id}/{version['version'].replace(' ', '-')}"
+        version_str = str(version['version'])
+        version_id = f"{artifact_id}/{version_str.replace(' ', '-')}"
         dist_list = []
         for i, dist in enumerate(version.get("distributions", []), start=1):
             part_id = f"{version_id}#e{i}"
