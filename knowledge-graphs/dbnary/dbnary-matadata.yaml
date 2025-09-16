@@ -4,7 +4,7 @@ description: Dbnary is an effort to provide multilingual lexical data extracted 
   wiktionary. The extracted data is made available as LLOD (Linguistic Linked Open
   Data). This data set has won the Monnet challenge in 2012.
 homepage: https://kaiko.getalp.org
-databus-publish: true
+databus-publish: false
 license: https://creativecommons.org/licenses/by-sa/3.0/rdf
 keywords:
 - geography
