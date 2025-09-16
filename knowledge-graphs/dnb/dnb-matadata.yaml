@@ -1,8 +1,8 @@
 id: dnb
-title: DNB
+title: Deutsche Nationalbibliothek
 description: A small example Knowledge Graph about cities and countries.
 homepage: https://example.org/mydatasets
-license: http://CC-BY-4.1
+license: https://dalicc.net/licenselibrary/Cc010Universal
 
 keywords:
 - geography
@@ -19,50 +19,33 @@ maintainers:
   github: alicekg
 
 artifacts:
-- artifact: authorities-gnd
-  title: authorities-gnd artifact
-  description: A small example Knowledge Graph about cities and countries, used for
-    demonstration purposes.
+- artifact: authorities-gnd-geografikum_lds
+  title: authorities-gnd-geografikum_lds
+  description: "2025-04-01 12:06 39M 332073 Datensaetze / 6110749 Tripel / GND, Entitaeten Geografikum (Geographical entity, Code g, Format RDF (JSON-LD) (Stand: 13.03.2025 13:00 Uhr UTC)"
   versions:
-  - version: 2025.09.15
+  - version: 20250313
     title: authorities-gnd version
-    description: A small example Knowledge Graph about cities and countries, used
-      for demonstration purposes.
-    license: http://CC-BY-4.0
+    description: "2025-04-01 12:06 39M 332073 Datensaetze / 6110749 Tripel / GND, Entitaeten Geografikum (Geographical entity, Code g, Format RDF (JSON-LD) (Stand: 13.03.2025 13:00 Uhr UTC)"
+    license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
-    - file: https://data.dnb.de/opendata/authorities-gnd-geografikum_lds.ttl.gz
+    - file: https://databus.dbpedia.org/deutsche-natbib/authorities-gnd/authorities-gnd-geografikum_lds/20250313#authorities-gnd-geografikum_lds.ttl.gz
       format: ttl
       compression: gz
       size: 123456
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: active
-    - file: https://data.dnb.de/opendata/authorities-gnd-geografikum_lds.ttl.gz
-      format: nt
+      status: pending
+    - file: https://databus.dbpedia.org/deutsche-natbib/authorities-gnd/authorities-gnd-geografikum_lds/20250313#authorities-gnd-geografikum_lds.rdf.gz
+      format: rdf
       compression: gz
       size: 123456
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: active
+      status: pending
+    - file: https://databus.dbpedia.org/deutsche-natbib/authorities-gnd/authorities-gnd-geografikum_lds/20250313#authorities-gnd-geografikum_lds.jsonld.gz
+      format: jsonld
+      compression: gz
+      size: 123456
+      sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
+      status: pending
 
-- artifact: links
-  title: links artifact
-  description: A small example Knowledge Graph about cities and countries, used for
-    demonstration purposes.
-  versions:
-  - version: 2025.09.15
-    title: links version
-    description: A small example Knowledge Graph about cities and countries, used
-      for demonstration purposes.
-    license: http://CC-BY-4.0
-    distributions:
-    - file: https://data.dnb.de/opendata/authorities-gnd-geografikum_lds.ttl.gz
-      format: ttl
-      compression: gz
-      size: 123456
-      sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: active
-    - file: https://data.dnb.de/opendata/authorities-gnd-geografikum_lds.ttl.gz
-      format: nt
-      compression: gz
-      size: 123456
-      sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: active
+
+
