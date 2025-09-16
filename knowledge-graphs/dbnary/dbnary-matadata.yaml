@@ -8,13 +8,10 @@ databus-publish: false
 license: https://creativecommons.org/licenses/by-sa/3.0/rdf
 keywords:
 - linguistics
-<<<<<<< HEAD
 
 internal_namespaces:
 - http://kaiko.getalp.org/dbnary/
 
-=======
->>>>>>> 06818b0d1c837e87d0db20a12883b9e76f1ee268
 sparql:
 - name: main
   url: http://kaiko.getalp.org/sparql
