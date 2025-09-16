@@ -1,67 +1,48 @@
-name: Check URLs & Publish Knowledge Graphs
+import yaml
+import requests
+import sys
 
-on:
-  push:
-    paths:
-      - "knowledge-graphs/**/*.yaml"
-  pull_request:
-    paths:
-      - "knowledge-graphs/**/*.yaml"
-  schedule:
-    - cron: '0 0 * * *'  # daily at midnight UTC
+yaml_file = sys.argv[1]
 
-jobs:
-  check-and-publish:
-    runs-on: ubuntu-latest
-    env:
-      DATABUS_API_KEY: ${{ secrets.DATABUS_API_KEY }}
+# Load YAML
+with open(yaml_file, "r") as f:
+    data = yaml.safe_load(f)
 
-    steps:
-      # 1️⃣ Checkout the repository
-      - name: Checkout repo
-        uses: actions/checkout@v3
+if not data:
+    print(f"No data loaded from {yaml_file}")
+    sys.exit(0)
 
-      # 2️⃣ Set up Python
-      - name: Set up Python 3
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
+changed = False  # track if any updates were made
 
-      # 3️⃣ Install dependencies
-      - name: Install Python dependencies
-        run: pip install --upgrade pip && pip install pyyaml requests
+# Traverse artifacts -> versions -> distributions
+for artifact in data.get("artifacts", []):
+    for version in artifact.values():
+        if not isinstance(version, list):
+            continue
+        for v in version:
+            for dist in v.get("distributions", []):
+                url = dist.get("file")
+                if not url:
+                    continue
 
-      # 4️⃣ Validate YAML and check URLs
-      - name: Validate YAML & check dataset URLs
-        id: validate
-        run: |
-          for f in knowledge-graphs/**/*.yaml; do
-            python scripts/check_url_update_yaml.py "$f"
-          done
+                # Only check pending distributions
+                if dist.get("status") != "pending":
+                    continue
 
-      # 5️⃣ Publish only changed YAMLs to Databus
-      - name: Publish updated YAMLs to Databus
-        if: ${{ success() }}
-        run: |
-          # Find YAML files that were modified
-          CHANGED_FILES=$(git diff --name-only HEAD | grep 'knowledge-graphs/.*\.yaml' || true)
+                try:
+                    resp = requests.head(url, allow_redirects=True, timeout=10)
+                    new_status = "active" if resp.status_code == 200 else "error"
+                except requests.RequestException:
+                    new_status = "error"
 
-          if [ -n "$CHANGED_FILES" ]; then
-            echo "Publishing updated YAMLs to Databus:"
-            echo "$CHANGED_FILES"
-            for f in $CHANGED_FILES; do
-              python scripts/publish_to_databus_http.py "$f"
-            done
-          else
-            echo "No YAML changes detected — skipping Databus publish."
-          fi
+                if dist.get("status") != new_status:
+                    dist["status"] = new_status
+                    changed = True
 
-      # 6️⃣ Commit updated YAML back to the repository
-      - name: Commit YAML updates
-        if: ${{ success() }}
-        run: |
-          git config user.name "LOD Cloud Bot"
-          git config user.email "bot@lod-cloud.org"
-          git add knowledge-graphs/**/*.yaml
-          git diff-index --quiet HEAD || git commit -m "Update dataset status & Databus metadata"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
+# Save only if something changed
+if changed:
+    with open(yaml_file, "w") as f:
+        yaml.dump(data, f, sort_keys=False)
+    print(f"Updated {yaml_file}")
+else:
+    print(f"No changes needed for {yaml_file}")
