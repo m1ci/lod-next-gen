@@ -16,28 +16,25 @@ changed = False  # track if any updates were made
 
 # Traverse artifacts -> versions -> distributions
 for artifact in data.get("artifacts", []):
-    for version in artifact.values():
-        if not isinstance(version, list):
-            continue
-        for v in version:
-            for dist in v.get("distributions", []):
-                url = dist.get("file")
-                if not url:
-                    continue
+    for version in artifact.get("versions", []):
+        for dist in version.get("distributions", []):
+            url = dist.get("file")
+            if not url:
+                continue
 
-                # Only check pending distributions
-                if dist.get("status") != "pending":
-                    continue
+            # Only check pending distributions
+            if dist.get("status") != "pending":
+                continue
 
-                try:
-                    resp = requests.head(url, allow_redirects=True, timeout=10)
-                    new_status = "active" if resp.status_code == 200 else "error"
-                except requests.RequestException:
-                    new_status = "error"
+            try:
+                resp = requests.head(url, allow_redirects=True, timeout=10)
+                new_status = "active" if resp.status_code == 200 else "error"
+            except requests.RequestException:
+                new_status = "error"
 
-                if dist.get("status") != new_status:
-                    dist["status"] = new_status
-                    changed = True
+            if dist.get("status") != new_status:
+                dist["status"] = new_status
+                changed = True
 
 # Save only if something changed
 if changed:
