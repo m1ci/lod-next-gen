@@ -13,10 +13,12 @@ internal_namespaces:
 sparql:
 - name: main
   url: http://dbpedia.org/sparql
+
 maintainers:
 - name: Milan Dojchinovski
   contact: dojcinovski.milan@gmail.com
   github: m1ci
+
 artifacts:
 - artifact: instance-types
   title: instance-types

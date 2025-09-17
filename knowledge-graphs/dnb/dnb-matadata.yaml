@@ -8,13 +8,16 @@ keywords:
 - geography
 - linked data
 - example
+
 sparql:
 - name: main
   url: http://dbpedia.org/sparql
+
 maintainers:
 - name: Alice Example
   contact: alice@example.org
   github: alicekg
+
 artifacts:
 - artifact: authorities-gnd-geografikum_lds
   title: authorities-gnd-geografikum_lds

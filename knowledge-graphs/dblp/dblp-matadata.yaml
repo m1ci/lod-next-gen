@@ -11,13 +11,16 @@ keywords:
 - scholarly
 internal_namespaces:
 - https://dblp.org/
+
 sparql:
 - name: main
   url: http://kaiko.getalp.org/sparql
+
 maintainers:
 - name: n/a
   contact: n/a
   github: n/a
+
 artifacts:
 - artifact: monthly-snapshot
   title: monthly-snapshot
