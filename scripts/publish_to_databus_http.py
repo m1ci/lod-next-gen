@@ -46,7 +46,7 @@ def send_publish(payload):
     return resp.json()
 
 # --- Step 1: Publish Group ---
-group_id = f"https://databus.dbpedia.org/m1ci/{data['id']}"
+group_id = f"https://databus.dbpedia.org/knowledge-graph-catalog/{data['id']}"
 group_payload = {
     "@context": "https://databus.dbpedia.org/res/context.jsonld",
     "@graph": {
