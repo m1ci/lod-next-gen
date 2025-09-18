@@ -4,20 +4,17 @@ description: Dbnary is an effort to provide multilingual lexical data extracted 
   wiktionary. The extracted data is made available as LLOD (Linguistic Linked Open
   Data). This data set has won the Monnet challenge in 2012.
 homepage: https://kaiko.getalp.org
-databus-publish: true
+databus-publish: false
 license: https://creativecommons.org/licenses/by-sa/3.0/rdf
 keywords:
 - linguistics
-
 sparql:
 - name: main
   url: https://kaiko.getalp.org/sparql
-
 maintainers:
 - name: "Gilles S\xE9rasset"
   contact: Gilles.Serasset@imag.fr
   github: serasset
-
 artifacts:
 - artifact: en_dbnary_ontolex
   title: en_dbnary_ontolex
@@ -33,4 +30,4 @@ artifacts:
       compression: bz2
       size: 201326592
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: pending
+      status: active
