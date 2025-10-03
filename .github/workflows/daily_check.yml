@@ -2,6 +2,7 @@ name: Daily KG Release Check
 
 permissions:
   contents: write
+  actions: write
 
 # Trigger the workflow daily at 01:00 UTC
 on:
