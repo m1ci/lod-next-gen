@@ -7,6 +7,7 @@ description: The dblp computer science bibliography is the open indexing service
 homepage: https://drops.dagstuhl.de/entities/collection/dblp
 databus-publish: false
 license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
+check-new-release: update_dblp_yaml.py
 keywords:
 - scholarly
 internal_namespaces:
