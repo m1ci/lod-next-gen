@@ -6,7 +6,8 @@ import hashlib
 import os
 
 # Path to your YAML file
-YAML_FILE = "metadata.yaml"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+YAML_FILE = os.path.join(SCRIPT_DIR, "metadata.yaml")
 
 # Base URL to check DBLP RDF releases
 BASE_URL = "https://drops.dagstuhl.de/storage/artifacts/dblp/rdf"
