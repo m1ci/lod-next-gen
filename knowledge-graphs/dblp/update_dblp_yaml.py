@@ -75,8 +75,8 @@ def update_yaml(new_date, url, data):
                 "file": url,
                 "format": "nt",
                 "compression": "gz",
-                "size": None,  # optional: can fetch Content-Length
-                "sha256": None,  # optional: calculate hash
+                "size": 4745938862,  # optional: can fetch Content-Length
+                "sha256": 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f,  # optional: calculate hash
                 "status": "pending"
             }
         ]
