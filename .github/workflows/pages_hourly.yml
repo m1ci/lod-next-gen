@@ -1,0 +1,37 @@
+name: GitHub Pages Hourly Build
+
+# Trigger every hour
+on:
+  schedule:
+    - cron: '0 * * * *'  # every hour at minute 0
+  workflow_dispatch:      # allows manual trigger
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Set up Node.js (if using Jekyll, Hugo, or other builder, adjust accordingly)
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Install dependencies (adjust if using Jekyll, Hugo, etc.)
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Build the site
+      - name: Build site
+        run: npm run build
+
+      # 5. Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public   # adjust to your build output folder
+          destination_branch: gh-pages
