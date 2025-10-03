@@ -1,27 +1,32 @@
 name: Daily KG Release Check
 
+# Trigger the workflow daily at 01:00 UTC
 on:
   schedule:
-    - cron: "0 0 * * *"  # Runs every day at midnight UTC
-  workflow_dispatch:      # Allows manual trigger
+    - cron: '0 1 * * *'  # every day at 01:00 UTC
+  workflow_dispatch:  # also allows manual trigger
 
 jobs:
-  check-releases:
+  daily-check:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 2. Set up Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: '3.10'  # or any version you need
 
+      # 3. Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pyyaml requests
 
-      - name: Run daily check script
-        run: python3 daily_check.py
+      # 4. Run the daily_check.py script
+      - name: Run daily check
+        run: python scripts/daily_check.py
