@@ -1,0 +1,50 @@
+id: yago
+title: YAGO
+description: YAGO is a large knowledge base with general knowledge about people, cities, countries, movies, and organizations.
+homepage: https://kaiko.getalp.org
+databus-publish: false
+license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+keywords:
+- people
+- cities
+- countries
+- movies
+- organizations
+sparql:
+- name: main
+  url: https://yago-knowledge.org/sparql
+maintainers:
+- name: "Fabian Suchanek"
+  contact: fabian@suchanek.name
+  github: n/a
+artifacts:
+- artifact: yago-full
+  title: yago-full
+  description: Yago full knowledge graph.
+  versions:
+  - version: 4.5.0.2
+    title: yago-full
+    description: Yago full knowledge graph.
+    license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+    distributions:
+    - file: https://yago-knowledge.org/data/yago4.5/yago-4.5.0.2.zip
+      format: ttl
+      compression: zip
+      size: 12362922810
+      sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
+      status: pending
+- artifact: yago-tiny
+  title: yago-tiny
+  description: Yago knowledge graph tiny.
+  versions:
+  - version: 4.5.0.2
+    title: yago-tiny
+    description: Yago knowledge graph tiny.
+    license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+    distributions:
+    - file: https://yago-knowledge.org/data/yago4.5/yago-4.5.0.2-tiny.zip
+      format: ttl
+      compression: zip
+      size: 200800361
+      sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
+      status: pending
