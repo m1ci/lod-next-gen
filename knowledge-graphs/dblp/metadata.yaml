@@ -37,16 +37,3 @@ artifacts:
       size: 4745938862
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
       status: active
-  - version: '2025-10-01'
-    title: DBLP RDF Release of October 2025
-    description: This file contains all the dblp RDF/N-Triple data in a single file.
-      The dblp computer science bibliography is the open indexing service and knowledge
-      graph of the computer science community.
-    license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
-    distributions:
-    - file: https://drops.dagstuhl.de/storage/artifacts/dblp/rdf/2025/dblp-2025-10-01.nt.gz
-      format: nt
-      compression: gz
-      size: 4745938862
-      sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: pending
