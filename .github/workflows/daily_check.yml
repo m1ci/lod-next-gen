@@ -2,7 +2,6 @@ name: Daily KG Release Check
 
 permissions:
   contents: write
-  actions: write
 
 # Trigger the workflow daily at 01:00 UTC
 on:
@@ -48,5 +47,15 @@ jobs:
             echo "No changes to commit"
           fi
 
-
+      # 6. Trigger Check URLs & Publish Knowledge Graphs workflow
+      - name: Trigger Check URLs workflow
+        uses: actions/github-script@v6
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'check_and_publish.yml',
+              ref: context.ref
+            })
 
