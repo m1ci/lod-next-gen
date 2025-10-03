@@ -1,6 +1,7 @@
 id: yago
 title: YAGO
-description: YAGO is a large knowledge base with general knowledge about people, cities, countries, movies, and organizations.
+description: YAGO is a large knowledge base with general knowledge about people, cities,
+  countries, movies, and organizations.
 homepage: https://kaiko.getalp.org
 databus-publish: false
 license: https://creativecommons.org/licenses/by-sa/3.0/rdf
@@ -14,7 +15,7 @@ sparql:
 - name: main
   url: https://yago-knowledge.org/sparql
 maintainers:
-- name: "Fabian Suchanek"
+- name: Fabian Suchanek
   contact: fabian@suchanek.name
   github: n/a
 artifacts:
@@ -32,7 +33,7 @@ artifacts:
       compression: zip
       size: 12362922810
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: pending
+      status: active
 - artifact: yago-tiny
   title: yago-tiny
   description: Yago knowledge graph tiny.
@@ -47,4 +48,4 @@ artifacts:
       compression: zip
       size: 200800361
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: pending
+      status: active
