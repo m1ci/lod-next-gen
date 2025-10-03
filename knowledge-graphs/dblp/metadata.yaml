@@ -1,0 +1,52 @@
+id: dblp
+title: DBLP
+description: The dblp computer science bibliography is the open indexing service and
+  knowledge graph of the computer science community. dblp provides quality-checked
+  and curated bibliographic metadata on major computer science journals, proceedings,
+  and monographs.
+homepage: https://drops.dagstuhl.de/entities/collection/dblp
+databus-publish: false
+license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
+check-new-release: update_dblp_yaml.py
+keywords:
+- scholarly
+internal_namespaces:
+- https://dblp.org/
+sparql:
+- name: main
+  url: https://sparql.dblp.org
+maintainers:
+- name: n/a
+  contact: n/a
+  github: n/a
+artifacts:
+- artifact: monthly-snapshot
+  title: monthly-snapshot
+  description: Contains all the dblp RDF/N-Triple data in a single file.
+  versions:
+  - version: 2025-09-01
+    title: DBLP RDF Release of September 2025
+    description: This file contains all the dblp RDF/N-Triple data in a single file.
+      The dblp computer science bibliography is the open indexing service and knowledge
+      graph of the computer science community.
+    license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
+    distributions:
+    - file: https://drops.dagstuhl.de/storage/artifacts/dblp/rdf/2025/dblp-2025-09-01.nt.gz
+      format: nt
+      compression: gz
+      size: 4745938862
+      sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
+      status: active
+  - version: '2025-10-01'
+    title: DBLP RDF Release of October 2025
+    description: This file contains all the dblp RDF/N-Triple data in a single file.
+      The dblp computer science bibliography is the open indexing service and knowledge
+      graph of the computer science community.
+    license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
+    distributions:
+    - file: https://drops.dagstuhl.de/storage/artifacts/dblp/rdf/2025/dblp-2025-10-01.nt.gz
+      format: nt
+      compression: gz
+      size: 4745938862
+      sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
+      status: active
