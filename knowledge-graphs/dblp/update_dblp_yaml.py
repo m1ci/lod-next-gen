@@ -68,7 +68,7 @@ def update_yaml(new_date, url, data):
     new_version_entry = {
         "version": new_version_str,
         "title": f"DBLP RDF Release of {new_date.strftime('%B %Y')}",
-        "description": "This file contains all the dblp RDF/N-Triple data in a single file. The dblp computer science bibliography is the open indexing service and knowledge graph of the computer science community.",
+        "description": "This file contains all the dblp RDF/N-Triple data in a single file. The dblp computer science bibliography is the open indexing service and knowledge graph of the computer science community. This version has been **auto-generated**.",
         "license": data['license'],
         "distributions": [
             {
