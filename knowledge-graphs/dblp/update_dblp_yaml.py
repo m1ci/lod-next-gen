@@ -32,7 +32,7 @@ def get_current_yaml_version():
 
     latest_version_entry = data['artifacts'][0]['versions'][-1]
     latest_version_str = latest_version_entry['version']  # e.g., "2025-10-01"
-    latest_version_date = datetime.strptime(latest_version_str, "%Y-%m-%d").date()
+    latest_version_date = latest_version_str  # already a date object
 
     return latest_version_date, data
 
