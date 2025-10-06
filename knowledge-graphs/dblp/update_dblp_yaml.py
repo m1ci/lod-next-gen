@@ -5,6 +5,13 @@ from datetime import datetime, date
 import hashlib
 import os
 
+# Custom representer to avoid quotes for dates
+def str_presenter(dumper, data):
+    return dumper.represent_scalar('tag:yaml.org,2002:str', data, style=None)
+
+yaml.add_representer(str, str_presenter)
+
+
 # Path to your YAML file
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 YAML_FILE = os.path.join(SCRIPT_DIR, "metadata.yaml")
@@ -24,7 +31,8 @@ def get_current_yaml_version():
         data = yaml.safe_load(f)
 
     latest_version_entry = data['artifacts'][0]['versions'][-1]
-    latest_version_date = latest_version_entry['version']  # already a datetime.date
+    latest_version_str = latest_version_entry['version']  # e.g., "2025-10-01"
+    latest_version_date = datetime.strptime(latest_version_str, "%Y-%m-%d").date()
 
     return latest_version_date, data
 
@@ -64,9 +72,9 @@ def calculate_sha256(url):
 
 def update_yaml(new_date, url, data):
     """Adds a new version entry to the YAML."""
-    new_version_str = new_date.strftime("%Y-%m-%d")
+    new_version_str = new_date.strftime("%Y-%m-%d")  # "2025-10-01"
     new_version_entry = {
-        "version": new_version_str,
+        "version": new_version_str,  # will be unquoted in YAML
         "title": f"DBLP RDF Release of {new_date.strftime('%B %Y')}",
         "description": "This file contains all the dblp RDF/N-Triple data in a single file. The dblp computer science bibliography is the open indexing service and knowledge graph of the computer science community. This version has been **auto-generated**.",
         "license": data['license'],
@@ -75,8 +83,8 @@ def update_yaml(new_date, url, data):
                 "file": url,
                 "format": "nt",
                 "compression": "gz",
-                "size": 4745938862,  # optional: can fetch Content-Length
-                "sha256": "6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f",  # optional: calculate hash
+                "size": 4745938862,
+                "sha256": "6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f",
                 "status": "pending"
             }
         ]
