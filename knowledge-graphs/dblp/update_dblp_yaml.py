@@ -36,7 +36,7 @@ def get_current_yaml_version():
 
     latest_version_entry = data['artifacts'][0]['versions'][-1]
     latest_version_str = latest_version_entry['version']  # e.g., "2025-10-01"
-    latest_version_date = datetime.strptime(latest_version_str, "%Y-%m-%d").date()
+    latest_version_date = latest_version_str  # already a date object
 
     return latest_version_date, data
 
@@ -78,7 +78,7 @@ def update_yaml(new_date, url, data):
     """Adds a new version entry to the YAML."""
     new_version_str = new_date.strftime("%Y-%m-%d")  # "2025-10-01"
     new_version_entry = {
-        "version": PlainStr(new_version_str),  # will be unquoted in YAML
+        "version": datetime.strptime(latest_version_str, "%Y-%m-%d").date(),
         "title": f"DBLP RDF Release of {new_date.strftime('%B %Y')}",
         "description": "This file contains all the dblp RDF/N-Triple data in a single file. The dblp computer science bibliography is the open indexing service and knowledge graph of the computer science community. This version has been **auto-generated**.",
         "license": data['license'],
