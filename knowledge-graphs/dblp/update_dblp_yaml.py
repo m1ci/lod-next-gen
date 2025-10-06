@@ -5,9 +5,9 @@ from datetime import datetime, date
 import hashlib
 import os
 
-# Custom representer to avoid quotes for dates
+# Custom representer to always treat strings literally
 def str_presenter(dumper, data):
-    return dumper.represent_scalar('tag:yaml.org,2002:str', data, style=None)
+    return dumper.represent_scalar('tag:yaml.org,2002:str', data, style='')  # style='' forces no quotes
 
 yaml.add_representer(str, str_presenter)
 
