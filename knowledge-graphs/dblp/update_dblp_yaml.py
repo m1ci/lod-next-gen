@@ -6,16 +6,6 @@ import hashlib
 import os
 
 
-# --- Custom YAML representer to avoid quotes ---
-class PlainStr(str):
-    pass
-
-def plain_str_representer(dumper, data):
-    return dumper.represent_scalar('tag:yaml.org,2002:str', data, style='')  # style='' => no quotes
-
-yaml.add_representer(PlainStr, plain_str_representer)
-
-
 # Path to your YAML file
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 YAML_FILE = os.path.join(SCRIPT_DIR, "metadata.yaml")
