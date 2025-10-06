@@ -78,7 +78,7 @@ def update_yaml(new_date, url, data):
     """Adds a new version entry to the YAML."""
     new_version_str = new_date.strftime("%Y-%m-%d")  # "2025-10-01"
     new_version_entry = {
-        "version": datetime.strptime(latest_version_str, "%Y-%m-%d").date(),
+        "version": datetime.strptime(new_version_str, "%Y-%m-%d").date(),
         "title": f"DBLP RDF Release of {new_date.strftime('%B %Y')}",
         "description": "This file contains all the dblp RDF/N-Triple data in a single file. The dblp computer science bibliography is the open indexing service and knowledge graph of the computer science community. This version has been **auto-generated**.",
         "license": data['license'],
