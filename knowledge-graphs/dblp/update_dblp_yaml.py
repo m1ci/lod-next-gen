@@ -5,11 +5,15 @@ from datetime import datetime, date
 import hashlib
 import os
 
-# Custom representer to always treat strings literally
-def str_presenter(dumper, data):
-    return dumper.represent_scalar('tag:yaml.org,2002:str', data, style='')  # style='' forces no quotes
 
-yaml.add_representer(str, str_presenter)
+# --- Custom YAML representer to avoid quotes ---
+class PlainStr(str):
+    pass
+
+def plain_str_representer(dumper, data):
+    return dumper.represent_scalar('tag:yaml.org,2002:str', data, style='')  # style='' => no quotes
+
+yaml.add_representer(PlainStr, plain_str_representer)
 
 
 # Path to your YAML file
@@ -74,7 +78,7 @@ def update_yaml(new_date, url, data):
     """Adds a new version entry to the YAML."""
     new_version_str = new_date.strftime("%Y-%m-%d")  # "2025-10-01"
     new_version_entry = {
-        "version": new_version_str,  # will be unquoted in YAML
+        "version": PlainStr(new_version_str),  # will be unquoted in YAML
         "title": f"DBLP RDF Release of {new_date.strftime('%B %Y')}",
         "description": "This file contains all the dblp RDF/N-Triple data in a single file. The dblp computer science bibliography is the open indexing service and knowledge graph of the computer science community. This version has been **auto-generated**.",
         "license": data['license'],
