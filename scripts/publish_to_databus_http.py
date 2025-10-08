@@ -53,7 +53,7 @@ group_payload = {
         "@id": group_id,
         "@type": "Group",
         "title": data["title"],
-        "abstract": data.get("description", "")
+        "description": data.get("description", "")
     }
 }
 send_publish(group_payload)
@@ -68,7 +68,7 @@ for artifact in data.get("artifacts", []):
             "@id": artifact_id,
             "@type": "Artifact",
             "title": artifact["title"],
-            "abstract": artifact.get("description", "")
+            "description": artifact.get("description", "")
         }
     }
     send_publish(artifact_payload)
