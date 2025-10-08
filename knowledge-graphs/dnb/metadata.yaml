@@ -36,19 +36,19 @@ artifacts:
       compression: gz
       size: 43984924
       sha256: 926239dc82b3894916ad4e377d113752666b4b68aaaa517d04c0300ca4ba9844
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-geografikum_lds_20250916.rdf.gz
       format: rdf
       compression: gz
       size: 43476315
       sha256: f329bd6cd74d2851072bf62701ee3ce4023e027615002da2954fb5b751b922a3
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-geografikum_lds_20250916.ttl.gz
       format: ttl
       compression: gz
       size: 43930152
       sha256: 3137a337d7f3e8434e79d45483c70c3686ad7b7af1bf6989de01d15d088f2996
-      status: active
+      status: pending
 - artifact: authorities-gnd-koerperschaft_lds
   title: authorities-gnd-koerperschaft_lds
   description: 2025-09-29 14:49 204M Stabiler Link auf den aktuellen Gesamtabzug der
@@ -67,19 +67,19 @@ artifacts:
       compression: gz
       size: 213742065
       sha256: 964baf0d680318f438041988b8172399cc4d25c7b676abdf77b3c11cc4e82686
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-koerperschaft_lds_20250916.rdf.gz
       format: rdf
       compression: gz
       size: 214824390
       sha256: 85572b3ba6c0a48876a4c38eaeed93e341ab4f779221aa8e0ea0b7a6bfd3b1a7
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-koerperschaft_lds_20250916.ttl.gz
       format: ttl
       compression: gz
       size: 212815728
       sha256: 8ee2191bfe2575dd5cbe6a1d533be2af217a4ed1c06f827d3f666f74e1d25264
-      status: active
+      status: pending
 - artifact: authorities-gnd-kongress_lds
   title: authorities-gnd-kongress_lds
   description: 2025-09-29 14:49 102M Stabiler Link auf den aktuellen Gesamtabzug der
@@ -96,19 +96,19 @@ artifacts:
       compression: gz
       size: 106747923
       sha256: ae74496799b6e87a859540fbfa99278834c0314b157f75075bc64d0078153e98
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-kongress_lds_20250916.rdf.gz
       format: rdf
       compression: gz
       size: 106017460
       sha256: 66876719cef0cdcc3f69169a1211f92c4d465913980c04b4b9f6979cbd612e2c
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-kongress_lds_20250916.ttl.gz
       format: ttl
       compression: gz
       size: 108402635
       sha256: 9c0fe26b8366d1386c4078fe5961ddf646033d267f6fdf850f6d4951309c1242
-      status: active
+      status: pending
 - artifact: authorities-gnd-person_lds
   title: authorities-gnd-person_lds
   description: 2025-09-29 14:49 1.3G Stabiler Link auf den aktuellen Gesamtabzug der
@@ -126,19 +126,19 @@ artifacts:
       compression: gz
       size: 1382787828
       sha256: 9f9d6dc0134fd5802e053de696cbd79fa8ce5b12c848c18b19862fd0e092f28d
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-person_lds_20250916.rdf.gz
       format: rdf
       compression: gz
       size: 1304344793
       sha256: 05752da4e98d8b949b4412f9989f96ca700d15dc349140909c2df77a652795d8
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-person_lds_20250916.ttl.gz
       format: ttl
       compression: gz
       size: 1346510968
       sha256: ce95ff30b5a89889c404854374eac4ca5f440623a80c6501ce9c9b6c08359966
-      status: active
+      status: pending
 - artifact: authorities-gnd-sachbegriff_lds
   title: authorities-gnd-sachbegriff_lds
   description: 2025-09-29 14:49 24M Stabiler Link auf den aktuellen Gesamtabzug der
@@ -156,19 +156,19 @@ artifacts:
       compression: gz
       size: 24946248
       sha256: d69f538a9a00d866abe03c3109943de4317615ec1db0044d49a900060c48304c
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-sachbegriff_lds_20250916.rdf.gz
       format: rdf
       compression: gz
       size: 24311464
       sha256: 50c74d113c6091df8d23e9035d81a004b3eee4548bced76b58d6ac41538750de
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-sachbegriff_lds_20250916.ttl.gz
       format: ttl
       compression: gz
       size: 23994703
       sha256: 6230cb82e58a2d5eb625efd53daa1d685e54637f3459f45c5aa1cf25c5f58298
-      status: active
+      status: pending
 - artifact: authorities-gnd-werk_lds
   title: authorities-gnd-werk_lds
   description: 2025-09-29 14:49 83M Stabiler Link auf den aktuellen Gesamtabzug der
@@ -185,19 +185,19 @@ artifacts:
       compression: gz
       size: 87456660
       sha256: 84816e84ff494353cd40ef88f6a471ef40cc6681718c6b5b138f488b44ef0186
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-werk_lds_20250916.rdf.gz
       format: rdf
       compression: gz
       size: 83221513
       sha256: e66039c9113436ef7a9f0ab6289534db8ef53f8fdfec7c7b0d6483d6f6d97853
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-werk_lds_20250916.ttl.gz
       format: ttl
       compression: gz
       size: 84409595
       sha256: a3cecbaa405966b3d21301504c50c5888ecbaa3cc411cb36671f43b0d8897410
-      status: active
+      status: pending
 - artifact: authorities-gnd_entityfacts
   title: authorities-gnd_entityfacts
   description: 2025-08-18 13:20 1.2G Stabiler Link auf den aktuellen Gesamtabzug von
@@ -214,7 +214,7 @@ artifacts:
       compression: gz
       size: 1259740499
       sha256: 03b251a2c72c6de2f126695c2abfd9045e6f352219317adc6feed13be194714e
-      status: active
+      status: pending
 - artifact: authorities-gnd_lds
   title: authorities-gnd_lds
   description: 2025-09-29 14:54 1.0G Stabiler Link auf den aktuellen Gesamtabzug der
@@ -231,13 +231,13 @@ artifacts:
       compression: gz
       size: 1107328418
       sha256: a10003e0a52948d141db07bf88d5d6db84b6729dd217fb2410f739050140c6f7
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd_lds_20250916.rdf.gz
       format: rdf
       compression: gz
       size: 1870099405
       sha256: 6fb97ec43c5356a61dfbacc6ec05124759ffc73a0347498107ee53de4b82a565
-      status: active
+      status: pending
 - artifact: authorities-gnd_umlenk_loesch
   title: authorities-gnd_umlenk_loesch
   description: 2025-09-25 16:26 7.8M Stabiler Link auf GND, Umlenk- und Loeschsaetze.
@@ -254,4 +254,4 @@ artifacts:
       compression: gz
       size: 8131776
       sha256: af49b53ec63171ebc8745a080aa023a24a0bb149c824fddf558c84cc0f561006
-      status: active
+      status: pending
