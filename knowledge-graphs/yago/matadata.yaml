@@ -35,11 +35,11 @@ artifacts:
       \ identifiers are human-readable.\n 2. The top-level classes come from schema.org\
       \ \u2014 a standard repertoire of classes and properties maintained by Google\
       \ and others. The lower level classes are a careful selection of the Wikidata\
-      \ taxonomy.\n 3. The properties come from schema.org.\n4. YAGO 4.5 contains semantic\
-      \ constraints in the form of SHACL. These constraints keep the data clean, and\
-      \ allow for logical reasoning on YAGO. YAGO is thus a simplified, cleaned, and\
-      \ \u201Creasonable\u201D version of Wikidata. It contains 49 million entities\
-      \ and 109 million facts. See above for getting started!"
+      \ taxonomy.\n 3. The properties come from schema.org.\n4. YAGO 4.5 contains\
+      \ semantic constraints in the form of SHACL. These constraints keep the data\
+      \ clean, and allow for logical reasoning on YAGO. YAGO is thus a simplified,\
+      \ cleaned, and \u201Creasonable\u201D version of Wikidata. It contains 49 million\
+      \ entities and 109 million facts. See above for getting started!"
     license: https://creativecommons.org/licenses/by-sa/3.0/rdf
     distributions:
     - file: https://yago-knowledge.org/data/yago4.5/yago-4.5.0.2.zip
@@ -47,7 +47,7 @@ artifacts:
       compression: zip
       size: 12362922810
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: pending
+      status: active
 - artifact: yago-tiny
   title: YAGO Tiny
   description: A lightweight version of the YAGO Knowledge Graph, offering a small,
@@ -62,11 +62,11 @@ artifacts:
       \ identifiers are human-readable.\n 2. The top-level classes come from schema.org\
       \ \u2014 a standard repertoire of classes and properties maintained by Google\
       \ and others. The lower level classes are a careful selection of the Wikidata\
-      \ taxonomy.\n 3. The properties come from schema.org.\n4. YAGO 4.5 contains semantic\
-      \ constraints in the form of SHACL. These constraints keep the data clean, and\
-      \ allow for logical reasoning on YAGO. YAGO is thus a simplified, cleaned, and\
-      \ \u201Creasonable\u201D version of Wikidata. It contains 49 million entities\
-      \ and 109 million facts. See above for getting started!"
+      \ taxonomy.\n 3. The properties come from schema.org.\n4. YAGO 4.5 contains\
+      \ semantic constraints in the form of SHACL. These constraints keep the data\
+      \ clean, and allow for logical reasoning on YAGO. YAGO is thus a simplified,\
+      \ cleaned, and \u201Creasonable\u201D version of Wikidata. It contains 49 million\
+      \ entities and 109 million facts. See above for getting started!"
     license: https://creativecommons.org/licenses/by-sa/3.0/rdf
     distributions:
     - file: https://yago-knowledge.org/data/yago4.5/yago-4.5.0.2-tiny.zip
@@ -74,4 +74,4 @@ artifacts:
       compression: zip
       size: 200800361
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: pending
+      status: active
