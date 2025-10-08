@@ -22,9 +22,7 @@ maintainers:
 artifacts:
 - artifact: yago-full
   title: YAGO Full
-  description: The complete YAGO Knowledge Graph, containing millions of entities,
-    facts, and semantic relationships, suitable for large-scale reasoning and knowledge-driven
-    applications.
+  description: "The complete YAGO Knowledge Graph, containing millions of entities, facts, and semantic relationships, suitable for large-scale reasoning and knowledge-driven applications. \n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
   versions:
   - version: 4.5.0.2
     title: YAGO Full
@@ -38,7 +36,7 @@ artifacts:
       \ semantic constraints in the form of SHACL. These constraints keep the data\
       \ clean, and allow for logical reasoning on YAGO. YAGO is thus a simplified,\
       \ cleaned, and \u201Creasonable\u201D version of Wikidata. It contains 49 million\
-      \ entities and 109 million facts. See above for getting started!\n Found an\
+      \ entities and 109 million facts. See above for getting started!\n\n Found an\
       \ issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
     license: https://creativecommons.org/licenses/by-sa/3.0/rdf
     distributions:
@@ -50,9 +48,7 @@ artifacts:
       status: active
 - artifact: yago-tiny
   title: YAGO Tiny
-  description: A lightweight version of the YAGO Knowledge Graph, offering a small,
-    manageable dataset of key entities and relationships for quick experiments and
-    testing.
+  description: "A lightweight version of the YAGO Knowledge Graph, offering a small, manageable dataset of key entities and relationships for quick experiments and testing.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
   versions:
   - version: 4.5.0.2
     title: YAGO Tiny
@@ -66,7 +62,7 @@ artifacts:
       \ semantic constraints in the form of SHACL. These constraints keep the data\
       \ clean, and allow for logical reasoning on YAGO. YAGO is thus a simplified,\
       \ cleaned, and \u201Creasonable\u201D version of Wikidata. It contains 49 million\
-      \ entities and 109 million facts. See above for getting started!\n Found an\
+      \ entities and 109 million facts. See above for getting started!\n\n Found an\
       \ issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
     license: https://creativecommons.org/licenses/by-sa/3.0/rdf
     distributions:
