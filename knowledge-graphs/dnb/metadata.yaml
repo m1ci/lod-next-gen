@@ -1,7 +1,6 @@
 id: dnb
 title: Deutsche Nationalbibliothek
-description: A knowledge graph provided by the National Library (Deutsche Nationalbibliothek,
-  DNB).
+description: "The GND (Gemeinsame Normdatei), or Integrated Authority File, is a knowledge graph managed by the German National Library (DNB), providing structured metadata about persons, organizations, events, works, subjects, and locations. It unifies multiple legacy authority files into a single graph, enabling semantic connections between entities. Represented using RDF and the GND ontology, this knowledge graph supports interoperability across libraries, archives, museums, and research infrastructures in German-speaking countries."
 homepage: https://www.dnb.de/EN/Professionell/Metadatendienste/Datenbezug/LDS/lds_node.html
 license: https://dalicc.net/licenselibrary/Cc010Universal
 databus-publish: false
@@ -10,7 +9,7 @@ keywords:
 - publications
 sparql:
 - name: main
-  url: n/a
+  url: https://sparql.dnb.de
 maintainers:
 - name: Tracy Arndt
   contact: T.Arndt@dnb.de
