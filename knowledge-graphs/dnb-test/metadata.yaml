@@ -1,4 +1,4 @@
-id: dnb-test
+id: dnb
 title: Deutsche Nationalbibliothek
 description: A knowledge graph provided by the National Library (Deutsche Nationalbibliothek,
   DNB).
@@ -19,12 +19,12 @@ artifacts:
 - artifact: authorities-gnd-geografikum_lds
   title: authorities-gnd-geografikum_lds
   description: 2025-09-29 14:49 42M 332858 Datensaetze / 6131907 Tripel / GND, Entitaeten
-    Geografikum (Geographical entity, Code g, This metadata has been **auto-generated**.
+    Geografikum (Geographical entity, Code g, This version has been **auto-generated**.
   versions:
   - version: 2025-09-16
     title: authorities-gnd-geografikum_lds
     description: 2025-09-29 14:49 42M 332858 Datensaetze / 6131907 Tripel / GND, Entitaeten
-      Geografikum (Geographical entity, Code g, This metadata has been **auto-generated**.
+      Geografikum (Geographical entity, Code g, This version has been **auto-generated**.
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
     - file: https://data.dnb.de/opendata/authorities-gnd-geografikum_lds_20250916.jsonld.gz
@@ -32,28 +32,28 @@ artifacts:
       compression: gz
       size: 43984924
       sha256: 926239dc82b3894916ad4e377d113752666b4b68aaaa517d04c0300ca4ba9844
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-geografikum_lds_20250916.rdf.gz
       format: rdf
       compression: gz
       size: 43476315
       sha256: f329bd6cd74d2851072bf62701ee3ce4023e027615002da2954fb5b751b922a3
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-geografikum_lds_20250916.ttl.gz
       format: ttl
       compression: gz
       size: 43930152
       sha256: 3137a337d7f3e8434e79d45483c70c3686ad7b7af1bf6989de01d15d088f2996
-      status: active
+      status: pending
 - artifact: authorities-gnd-koerperschaft_lds
   title: authorities-gnd-koerperschaft_lds
   description: 2025-09-29 14:49 204M 1566885 Datensaetze / 27978710 Tripel / GND,
-    Entitaeten Koerperschaft (Corporate body, Code b), This metadata has been **auto-generated**.
+    Entitaeten Koerperschaft (Corporate body, Code b), This version has been **auto-generated**.
   versions:
   - version: 2025-09-16
     title: authorities-gnd-koerperschaft_lds
     description: 2025-09-29 14:49 204M 1566885 Datensaetze / 27978710 Tripel / GND,
-      Entitaeten Koerperschaft (Corporate body, Code b), This metadata has been **auto-generated**.
+      Entitaeten Koerperschaft (Corporate body, Code b), This version has been **auto-generated**.
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
     - file: https://data.dnb.de/opendata/authorities-gnd-koerperschaft_lds_20250916.jsonld.gz
@@ -61,28 +61,28 @@ artifacts:
       compression: gz
       size: 213742065
       sha256: 964baf0d680318f438041988b8172399cc4d25c7b676abdf77b3c11cc4e82686
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-koerperschaft_lds_20250916.rdf.gz
       format: rdf
       compression: gz
       size: 214824390
       sha256: 85572b3ba6c0a48876a4c38eaeed93e341ab4f779221aa8e0ea0b7a6bfd3b1a7
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-koerperschaft_lds_20250916.ttl.gz
       format: ttl
       compression: gz
       size: 212815728
       sha256: 8ee2191bfe2575dd5cbe6a1d533be2af217a4ed1c06f827d3f666f74e1d25264
-      status: active
+      status: pending
 - artifact: authorities-gnd-kongress_lds
   title: authorities-gnd-kongress_lds
   description: 2025-09-29 14:49 102M 911106 Datensaetze / 14419612 Tripel / GND, Entitaeten
-    Kongress (Congress, Code f), This metadata has been **auto-generated**.
+    Kongress (Congress, Code f), This version has been **auto-generated**.
   versions:
   - version: 2025-09-16
     title: authorities-gnd-kongress_lds
     description: 2025-09-29 14:49 102M 911106 Datensaetze / 14419612 Tripel / GND,
-      Entitaeten Kongress (Congress, Code f), This metadata has been **auto-generated**.
+      Entitaeten Kongress (Congress, Code f), This version has been **auto-generated**.
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
     - file: https://data.dnb.de/opendata/authorities-gnd-kongress_lds_20250916.jsonld.gz
@@ -90,28 +90,28 @@ artifacts:
       compression: gz
       size: 106747923
       sha256: ae74496799b6e87a859540fbfa99278834c0314b157f75075bc64d0078153e98
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-kongress_lds_20250916.rdf.gz
       format: rdf
       compression: gz
       size: 106017460
       sha256: 66876719cef0cdcc3f69169a1211f92c4d465913980c04b4b9f6979cbd612e2c
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-kongress_lds_20250916.ttl.gz
       format: ttl
       compression: gz
       size: 108402635
       sha256: 9c0fe26b8366d1386c4078fe5961ddf646033d267f6fdf850f6d4951309c1242
-      status: active
+      status: pending
 - artifact: authorities-gnd-person_lds
   title: authorities-gnd-person_lds
   description: 2025-09-29 14:49 1.3G 6515993 Datensaetze / 182132807 Tripel / GND,
-    Entitaeten Person (indiv.) (Person, Code p), This metadata has been **auto-generated**.
+    Entitaeten Person (indiv.) (Person, Code p), This version has been **auto-generated**.
   versions:
   - version: 2025-09-16
     title: authorities-gnd-person_lds
     description: 2025-09-29 14:49 1.3G 6515993 Datensaetze / 182132807 Tripel / GND,
-      Entitaeten Person (indiv.) (Person, Code p), This metadata has been **auto-generated**.
+      Entitaeten Person (indiv.) (Person, Code p), This version has been **auto-generated**.
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
     - file: https://data.dnb.de/opendata/authorities-gnd-person_lds_20250916.jsonld.gz
@@ -119,28 +119,28 @@ artifacts:
       compression: gz
       size: 1382787828
       sha256: 9f9d6dc0134fd5802e053de696cbd79fa8ce5b12c848c18b19862fd0e092f28d
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-person_lds_20250916.rdf.gz
       format: rdf
       compression: gz
       size: 1304344793
       sha256: 05752da4e98d8b949b4412f9989f96ca700d15dc349140909c2df77a652795d8
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-person_lds_20250916.ttl.gz
       format: ttl
       compression: gz
       size: 1346510968
       sha256: ce95ff30b5a89889c404854374eac4ca5f440623a80c6501ce9c9b6c08359966
-      status: active
+      status: pending
 - artifact: authorities-gnd-sachbegriff_lds
   title: authorities-gnd-sachbegriff_lds
   description: 2025-09-29 14:49 24M 207001 Datensaetze / 3548666 Tripel / GND, Entitaeten
-    Sachbegriff (Subject term, Code s), This metadata has been **auto-generated**.
+    Sachbegriff (Subject term, Code s), This version has been **auto-generated**.
   versions:
   - version: 2025-09-16
     title: authorities-gnd-sachbegriff_lds
     description: 2025-09-29 14:49 24M 207001 Datensaetze / 3548666 Tripel / GND, Entitaeten
-      Sachbegriff (Subject term, Code s), This metadata has been **auto-generated**.
+      Sachbegriff (Subject term, Code s), This version has been **auto-generated**.
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
     - file: https://data.dnb.de/opendata/authorities-gnd-sachbegriff_lds_20250916.jsonld.gz
@@ -148,28 +148,28 @@ artifacts:
       compression: gz
       size: 24946248
       sha256: d69f538a9a00d866abe03c3109943de4317615ec1db0044d49a900060c48304c
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-sachbegriff_lds_20250916.rdf.gz
       format: rdf
       compression: gz
       size: 24311464
       sha256: 50c74d113c6091df8d23e9035d81a004b3eee4548bced76b58d6ac41538750de
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-sachbegriff_lds_20250916.ttl.gz
       format: ttl
       compression: gz
       size: 23994703
       sha256: 6230cb82e58a2d5eb625efd53daa1d685e54637f3459f45c5aa1cf25c5f58298
-      status: active
+      status: pending
 - artifact: authorities-gnd-werk_lds
   title: authorities-gnd-werk_lds
   description: 2025-09-29 14:49 83M 588594 Datensaetze / 12394697 Tripel / GND, Entitaeten
-    Werk (Werk, Code u), This metadata has been **auto-generated**.
+    Werk (Werk, Code u), This version has been **auto-generated**.
   versions:
   - version: 2025-09-16
     title: authorities-gnd-werk_lds
     description: 2025-09-29 14:49 83M 588594 Datensaetze / 12394697 Tripel / GND,
-      Entitaeten Werk (Werk, Code u), This metadata has been **auto-generated**.
+      Entitaeten Werk (Werk, Code u), This version has been **auto-generated**.
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
     - file: https://data.dnb.de/opendata/authorities-gnd-werk_lds_20250916.jsonld.gz
@@ -177,29 +177,29 @@ artifacts:
       compression: gz
       size: 87456660
       sha256: 84816e84ff494353cd40ef88f6a471ef40cc6681718c6b5b138f488b44ef0186
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-werk_lds_20250916.rdf.gz
       format: rdf
       compression: gz
       size: 83221513
       sha256: e66039c9113436ef7a9f0ab6289534db8ef53f8fdfec7c7b0d6483d6f6d97853
-      status: active
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd-werk_lds_20250916.ttl.gz
       format: ttl
       compression: gz
       size: 84409595
       sha256: a3cecbaa405966b3d21301504c50c5888ecbaa3cc411cb36671f43b0d8897410
-      status: active
+      status: pending
 - artifact: authorities-gnd_entityfacts
   title: authorities-gnd_entityfacts
   description: 2025-08-18 13:20 1.2G 9310343 Datensaetze / GND-Entity-Facts, Entitaeten
-    Person (indiv.) + Familie + Koerperschaft + Konferenz + Geografikum, This metadata
+    Person (indiv.) + Familie + Koerperschaft + Konferenz + Geografikum, This version
     has been **auto-generated**.
   versions:
   - version: 2025-08-13
     title: authorities-gnd_entityfacts
     description: 2025-08-18 13:20 1.2G 9310343 Datensaetze / GND-Entity-Facts, Entitaeten
-      Person (indiv.) + Familie + Koerperschaft + Konferenz + Geografikum, This metadata
+      Person (indiv.) + Familie + Koerperschaft + Konferenz + Geografikum, This version
       has been **auto-generated**.
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
@@ -208,33 +208,39 @@ artifacts:
       compression: gz
       size: 1259740499
       sha256: 03b251a2c72c6de2f126695c2abfd9045e6f352219317adc6feed13be194714e
-      status: active
+      status: pending
 - artifact: authorities-gnd_lds
   title: authorities-gnd_lds
-  description: 2025-09-29 14:59 1.7G 10122437 Datensaetze / 246607224 Tripel / GND,
-    Gesamtbestand im This metadata has been **auto-generated**.
+  description: 2025-09-29 14:54 1.0G 10122437 Datensaetze / 246607224 Tripel / GND-Daten
+    Gesamtbestand im This version has been **auto-generated**.
   versions:
   - version: 2025-09-16
     title: authorities-gnd_lds
-    description: 2025-09-29 14:59 1.7G 10122437 Datensaetze / 246607224 Tripel / GND,
-      Gesamtbestand im This metadata has been **auto-generated**.
+    description: 2025-09-29 14:54 1.0G 10122437 Datensaetze / 246607224 Tripel / GND-Daten
+      Gesamtbestand im This version has been **auto-generated**.
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
+    - file: https://data.dnb.de/opendata/authorities-gnd_lds_20250916.hdt.gz
+      format: hdt
+      compression: gz
+      size: 1107328418
+      sha256: a10003e0a52948d141db07bf88d5d6db84b6729dd217fb2410f739050140c6f7
+      status: pending
     - file: https://data.dnb.de/opendata/authorities-gnd_lds_20250916.rdf.gz
       format: rdf
       compression: gz
       size: 1870099405
       sha256: 6fb97ec43c5356a61dfbacc6ec05124759ffc73a0347498107ee53de4b82a565
-      status: active
+      status: pending
 - artifact: authorities-gnd_umlenk_loesch
   title: authorities-gnd_umlenk_loesch
   description: 2025-09-25 16:26 7.8M 616827 Datensaetze / GND, Umlenk- und Loeschsaetze,
-    This metadata has been **auto-generated**.
+    This version has been **auto-generated**.
   versions:
   - version: 2025-09-13
     title: authorities-gnd_umlenk_loesch
     description: 2025-09-25 16:26 7.8M 616827 Datensaetze / GND, Umlenk- und Loeschsaetze,
-      This metadata has been **auto-generated**.
+      This version has been **auto-generated**.
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
     - file: https://data.dnb.de/opendata/authorities-gnd_umlenk_loesch_20250913.jsonld.gz
@@ -242,323 +248,4 @@ artifacts:
       compression: gz
       size: 8131776
       sha256: af49b53ec63171ebc8745a080aa023a24a0bb149c824fddf558c84cc0f561006
-      status: active
-- artifact: bib_lds
-  title: bib_lds
-  description: 2025-03-24 17:08 3.2M 21607 Datensaetze / 536589 Tripel / Adressdatei
-    (Deutsche ISIL-Agentur) im This metadata has been **auto-generated**.
-  versions:
-  - version: 2025-03-18
-    title: bib_lds
-    description: 2025-03-24 17:08 3.2M 21607 Datensaetze / 536589 Tripel / Adressdatei
-      (Deutsche ISIL-Agentur) im This metadata has been **auto-generated**.
-    license: https://dalicc.net/licenselibrary/Cc010Universal
-    distributions:
-    - file: https://data.dnb.de/opendata/bib_lds_20250318.jsonld.gz
-      format: jsonld
-      compression: gz
-      size: 3328714
-      sha256: 3e0dc4ba8fdbac703e9d353d2a501cadc5abf3ee9ea8bd6acbf905aec53c6be4
-      status: active
-    - file: https://data.dnb.de/opendata/bib_lds_20250318.rdf.gz
-      format: rdf
-      compression: gz
-      size: 3126525
-      sha256: a09ddd6d7176f44a96f75f96b91a641f3602fbd193c4292a9a6d63282b18b631
-      status: active
-    - file: https://data.dnb.de/opendata/bib_lds_20250318.ttl.gz
-      format: ttl
-      compression: gz
-      size: 3538624
-      sha256: 72f1719276c1ba81ecf65317ef0795cab97af9f6594ffcf6e82ee2f991e13851
-      status: active
-- artifact: dnb-all_lds
-  title: dnb-all_lds
-  description: 2025-04-04 18:20 6.2G 33268528 Datensaetze / 920684275 Tripel / DNB-Titeldaten
-    Gesamtbestand im This metadata has been **auto-generated**.
-  versions:
-  - version: 2025-03-13
-    title: dnb-all_lds
-    description: 2025-04-04 18:20 6.2G 33268528 Datensaetze / 920684275 Tripel / DNB-Titeldaten
-      Gesamtbestand im This metadata has been **auto-generated**.
-    license: https://dalicc.net/licenselibrary/Cc010Universal
-    distributions:
-    - file: https://data.dnb.de/opendata/dnb-all_lds_20250313.jsonld.gz
-      format: jsonld
-      compression: gz
-      size: 6681233558
-      sha256: a0f739fb796c0345160513225e0732c862cc5ac91e940318ff1572f3f85c98ca
-      status: active
-    - file: https://data.dnb.de/opendata/dnb-all_lds_20250313.rdf.gz
-      format: rdf
-      compression: gz
-      size: 6078192110
-      sha256: 0819f6e7d6996e0170f39fc639bf28caeab98db0ed9a05cde5680b1ef530ab9f
-      status: active
-    - file: https://data.dnb.de/opendata/dnb-all_lds_20250313.ttl.gz
-      format: ttl
-      compression: gz
-      size: 6079363677
-      sha256: 9b5c3a2e32fbb01db44e14878bf7dabbcfda2d40fdeb1893b2be4b1d33a7766d
-      status: active
-- artifact: dnb-all_ldsprov
-  title: dnb-all_ldsprov
-  description: 2025-04-04 18:22 955M 32640389 Datensaetze / 315720350 Tripel / Metadatenprovenienz
-    DNB-Titeldaten im This metadata has been **auto-generated**.
-  versions:
-  - version: 2025-03-13
-    title: dnb-all_ldsprov
-    description: 2025-04-04 18:22 955M 32640389 Datensaetze / 315720350 Tripel / Metadatenprovenienz
-      DNB-Titeldaten im This metadata has been **auto-generated**.
-    license: https://dalicc.net/licenselibrary/Cc010Universal
-    distributions:
-    - file: https://data.dnb.de/opendata/dnb-all_ldsprov_20250313.jsonld.gz
-      format: jsonld
-      compression: gz
-      size: 1001011981
-      sha256: 4e9e3311b8f2399085b4f2d769f1715f60d175a510b31b3232c2c8c07782bffb
-      status: active
-    - file: https://data.dnb.de/opendata/dnb-all_ldsprov_20250313.rdf.gz
-      format: rdf
-      compression: gz
-      size: 763539567
-      sha256: f7cbf9935658a02bbff00263c496ef27def2339fea0f3c79c622b07b1c46b171
-      status: active
-    - file: https://data.dnb.de/opendata/dnb-all_ldsprov_20250313.ttl.gz
-      format: ttl
-      compression: gz
-      size: 939939680
-      sha256: 345507af7c16fa7573cc651b1085ee5d81bc30101e25b682816a43ae90f1179c
-      status: active
-- artifact: mapping-authorities-gnd-agrovoc_lds
-  title: mapping-authorities-gnd-agrovoc_lds
-  description: '2025-09-29 14:37 388K 9960 Datensaetze / 94108 Triple / GNDMappingAgrovoc
-    (Stand: 15.09.2025 22:00 Uhr UTC) This metadata has been **auto-generated**.'
-  versions:
-  - version: 2025-09-16
-    title: mapping-authorities-gnd-agrovoc_lds
-    description: '2025-09-29 14:37 388K 9960 Datensaetze / 94108 Triple / GNDMappingAgrovoc
-      (Stand: 15.09.2025 22:00 Uhr UTC) This metadata has been **auto-generated**.'
-    license: https://dalicc.net/licenselibrary/Cc010Universal
-    distributions:
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-agrovoc_lds_20250916.jsonld.gz
-      format: jsonld
-      compression: gz
-      size: 397416
-      sha256: aff2b10398fca3e08b03041550ae6573c461d4092dab1944efdfc5ca27a85ac1
-      status: active
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-agrovoc_lds_20250916.rdf.gz
-      format: rdf
-      compression: gz
-      size: 415342
-      sha256: 6b88abb612fdd847242e12142ff18cbeb66aa5be0d8d0b79229ddc3527812928
-      status: active
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-agrovoc_lds_20250916.ttl.gz
-      format: ttl
-      compression: gz
-      size: 423949
-      sha256: e344e3248c851699a915298651a225acd1ce2d6068a60658d7e78e950f022424
-      status: active
-- artifact: mapping-authorities-gnd-embne_lds
-  title: mapping-authorities-gnd-embne_lds
-  description: '2025-09-29 14:37 572K 13703 Datensaetze / 109550 Triple / GNDMappingEMBNE
-    (Stand: 15.09.2025 22:00 Uhr UTC) This metadata has been **auto-generated**.'
-  versions:
-  - version: 2025-09-16
-    title: mapping-authorities-gnd-embne_lds
-    description: '2025-09-29 14:37 572K 13703 Datensaetze / 109550 Triple / GNDMappingEMBNE
-      (Stand: 15.09.2025 22:00 Uhr UTC) This metadata has been **auto-generated**.'
-    license: https://dalicc.net/licenselibrary/Cc010Universal
-    distributions:
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-embne_lds_20250916.jsonld.gz
-      format: jsonld
-      compression: gz
-      size: 585797
-      sha256: 1fd074c1ed51b915e6316c669566330032e3a61673f0cef72b0332b14e88a0b4
-      status: active
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-embne_lds_20250916.rdf.gz
-      format: rdf
-      compression: gz
-      size: 553199
-      sha256: ee00a9ff9300ba28f0f6cdf6f41d43b846c2fc3da2dfe577a045b6d3f2d2cf7d
-      status: active
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-embne_lds_20250916.ttl.gz
-      format: ttl
-      compression: gz
-      size: 583580
-      sha256: e7302856569f1d7775eb439221f5252e315dfa28f1aada4de691dfba94403886
-      status: active
-- artifact: mapping-authorities-gnd-lcsh-ram_lds
-  title: mapping-authorities-gnd-lcsh-ram_lds
-  description: '2025-09-29 14:37 3.7M 79857 Datensaetze / 641603 Triple / GNDMappingLCSH-Rameau
-    (Stand: 15.09.2025 22:00 Uhr UTC) This metadata has been **auto-generated**.'
-  versions:
-  - version: 2025-09-16
-    title: mapping-authorities-gnd-lcsh-ram_lds
-    description: '2025-09-29 14:37 3.7M 79857 Datensaetze / 641603 Triple / GNDMappingLCSH-Rameau
-      (Stand: 15.09.2025 22:00 Uhr UTC) This metadata has been **auto-generated**.'
-    license: https://dalicc.net/licenselibrary/Cc010Universal
-    distributions:
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-lcsh-ram_lds_20250916.jsonld.gz
-      format: jsonld
-      compression: gz
-      size: 3889021
-      sha256: b1ad70b45d73382b378e1593c6b9dc9a1cd8ec7dea310a8abf67956df6d45cf6
-      status: active
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-lcsh-ram_lds_20250916.rdf.gz
-      format: rdf
-      compression: gz
-      size: 3546974
-      sha256: 2db5d29cdda53b456aaad491f202dd2b80c3b501d419e7de2bb3c48e7bbe6b8a
-      status: active
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-lcsh-ram_lds_20250916.ttl.gz
-      format: ttl
-      compression: gz
-      size: 3746781
-      sha256: 218027a131cb0e2762e9cddde7e335153a847c91f9b9f6c20c1e410572715df7
-      status: active
-- artifact: mapping-authorities-gnd-mesh_lds
-  title: mapping-authorities-gnd-mesh_lds
-  description: '2025-09-29 14:37 299K 7200 Datensaetze / 58260 Triple / GNDMappingMeSH
-    (Stand: 15.09.2025 22:00 Uhr UTC) This metadata has been **auto-generated**.'
-  versions:
-  - version: 2025-09-16
-    title: mapping-authorities-gnd-mesh_lds
-    description: '2025-09-29 14:37 299K 7200 Datensaetze / 58260 Triple / GNDMappingMeSH
-      (Stand: 15.09.2025 22:00 Uhr UTC) This metadata has been **auto-generated**.'
-    license: https://dalicc.net/licenselibrary/Cc010Universal
-    distributions:
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-mesh_lds_20250916.jsonld.gz
-      format: jsonld
-      compression: gz
-      size: 305810
-      sha256: 93397c46c4683dbccebee327615ee9913ad80136fcff33248150bb19a86c11e2
-      status: active
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-mesh_lds_20250916.rdf.gz
-      format: rdf
-      compression: gz
-      size: 266159
-      sha256: f95303f8c88a59608adc8f531a3eedbc88b84fe8c24d1ec49f43defead8302cf
-      status: active
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-mesh_lds_20250916.ttl.gz
-      format: ttl
-      compression: gz
-      size: 271574
-      sha256: c8e885a733b58f7655306d3bd8fdac33907f88638c4aa7eae3970af7f4403dde
-      status: active
-- artifact: mapping-authorities-gnd-nsogg_lds
-  title: mapping-authorities-gnd-nsogg_lds
-  description: '2025-09-29 14:37 354K 9100 Datensaetze / 72653 Triple / GNDMappingNSogg
-    (Stand: 15.09.2025 22:00 Uhr UTC) This metadata has been **auto-generated**.'
-  versions:
-  - version: 2025-09-16
-    title: mapping-authorities-gnd-nsogg_lds
-    description: '2025-09-29 14:37 354K 9100 Datensaetze / 72653 Triple / GNDMappingNSogg
-      (Stand: 15.09.2025 22:00 Uhr UTC) This metadata has been **auto-generated**.'
-    license: https://dalicc.net/licenselibrary/Cc010Universal
-    distributions:
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-nsogg_lds_20250916.jsonld.gz
-      format: jsonld
-      compression: gz
-      size: 362383
-      sha256: bc118a86c61de12a754bb1a23029baca4cf1d66d6b462e59b66d1bd858bb2dc1
-      status: active
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-nsogg_lds_20250916.rdf.gz
-      format: rdf
-      compression: gz
-      size: 351795
-      sha256: 8bd25c642de6c8af74f5e1e90f3d1877fee2340207deb9d1f2fbecd74872ac1b
-      status: active
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-nsogg_lds_20250916.ttl.gz
-      format: ttl
-      compression: gz
-      size: 403817
-      sha256: a9842123e073d5224fdd20eef4297d1c102a3bdcc7ed5ed29f0b24e8b78e729f
-      status: active
-- artifact: mapping-authorities-gnd-stw_lds
-  title: mapping-authorities-gnd-stw_lds
-  description: '2025-09-29 14:37 678K 18344 Datensaetze / 127625 Triple / GNDMappingSTW
-    (Stand: 15.09.2025 22:00 Uhr UTC) This metadata has been **auto-generated**.'
-  versions:
-  - version: 2025-09-16
-    title: mapping-authorities-gnd-stw_lds
-    description: '2025-09-29 14:37 678K 18344 Datensaetze / 127625 Triple / GNDMappingSTW
-      (Stand: 15.09.2025 22:00 Uhr UTC) This metadata has been **auto-generated**.'
-    license: https://dalicc.net/licenselibrary/Cc010Universal
-    distributions:
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-stw_lds_20250916.jsonld.gz
-      format: jsonld
-      compression: gz
-      size: 694000
-      sha256: 630f847e080fdb25048d3c35ee8603e1ce5cdb4663f777307dd896cba3ccb2ab
-      status: active
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-stw_lds_20250916.rdf.gz
-      format: rdf
-      compression: gz
-      size: 599533
-      sha256: a28a55c5972ec393749c8bc5f7c928e8cf816cba99096844afe32d16d2542c53
-      status: active
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-stw_lds_20250916.ttl.gz
-      format: ttl
-      compression: gz
-      size: 571113
-      sha256: 2bbf30a5d55ebcd891f937e8ef03ce65df43558e839b753347fe22cddf0c6317
-      status: active
-- artifact: mapping-authorities-gnd-thesoz_lds
-  title: mapping-authorities-gnd-thesoz_lds
-  description: '2025-09-29 14:37 529K 13508 Datensaetze / 116044 Triple / GNDMappingTheSoz
-    (Stand: 15.09.2025 22:00 Uhr UTC) This metadata has been **auto-generated**.'
-  versions:
-  - version: 2025-09-16
-    title: mapping-authorities-gnd-thesoz_lds
-    description: '2025-09-29 14:37 529K 13508 Datensaetze / 116044 Triple / GNDMappingTheSoz
-      (Stand: 15.09.2025 22:00 Uhr UTC) This metadata has been **auto-generated**.'
-    license: https://dalicc.net/licenselibrary/Cc010Universal
-    distributions:
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-thesoz_lds_20250916.jsonld.gz
-      format: jsonld
-      compression: gz
-      size: 542110
-      sha256: 592517b6244eb4c394106559c163212404fb4162ceffee5b520b29fd9d3415e9
-      status: active
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-thesoz_lds_20250916.rdf.gz
-      format: rdf
-      compression: gz
-      size: 533907
-      sha256: 4bfe179b27626c69c3deb87ca2e1f13f4a146dc8e6df534a9347eec71fb3dc7f
-      status: active
-    - file: https://data.dnb.de/opendata/mapping-authorities-gnd-thesoz_lds_20250916.ttl.gz
-      format: ttl
-      compression: gz
-      size: 488117
-      sha256: de7735114e9157795316c9436afb2e28c98ed3e2f2cf4ecb5bf64d3d87cf0f14
-      status: active
-- artifact: zdb_lds
-  title: zdb_lds
-  description: 2025-03-24 17:07 387M 2140775 Datensaetze / 57142606 Tripel / ZDB-Titel
-    Gesamtbestand im This metadata has been **auto-generated**.
-  versions:
-  - version: 2025-03-18
-    title: zdb_lds
-    description: 2025-03-24 17:07 387M 2140775 Datensaetze / 57142606 Tripel / ZDB-Titel
-      Gesamtbestand im This metadata has been **auto-generated**.
-    license: https://dalicc.net/licenselibrary/Cc010Universal
-    distributions:
-    - file: https://data.dnb.de/opendata/zdb_lds_20250318.jsonld.gz
-      format: jsonld
-      compression: gz
-      size: 405544213
-      sha256: ec5c773a3a9dce29641c7a9cdc52207e81194b4d0395cb1673cc0c0dce783683
-      status: active
-    - file: https://data.dnb.de/opendata/zdb_lds_20250318.rdf.gz
-      format: rdf
-      compression: gz
-      size: 396917719
-      sha256: 949636200b55b012385c0389c175b49b26cd20732e5b503b59e247c2cb3291cf
-      status: active
-    - file: https://data.dnb.de/opendata/zdb_lds_20250318.ttl.gz
-      format: ttl
-      compression: gz
-      size: 369268631
-      sha256: 770d36068b2cec3000d82483cf7c13568939fbce5fdfeb89d9187ee8db470c54
-      status: active
+      status: pending
