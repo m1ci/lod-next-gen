@@ -31,11 +31,11 @@ artifacts:
     title: YAGO Full
     description: "YAGO 4.5 is the latest version of the YAGO knowledge base. It is\
       \ based on Wikidata \u2014 the largest public general-purpose knowledge base.\
-      \ YAGO refines the data as follows:\n1. All entity identifiers and property\
-      \ identifiers are human-readable. 2. The top-level classes come from schema.org\
+      \ YAGO refines the data as follows:\n 1. All entity identifiers and property\
+      \ identifiers are human-readable.\n 2. The top-level classes come from schema.org\
       \ \u2014 a standard repertoire of classes and properties maintained by Google\
       \ and others. The lower level classes are a careful selection of the Wikidata\
-      \ taxonomy. 3. The properties come from schema.org. 4. YAGO 4.5 contains semantic\
+      \ taxonomy.\n 3. The properties come from schema.org.\n4. YAGO 4.5 contains semantic\
       \ constraints in the form of SHACL. These constraints keep the data clean, and\
       \ allow for logical reasoning on YAGO. YAGO is thus a simplified, cleaned, and\
       \ \u201Creasonable\u201D version of Wikidata. It contains 49 million entities\
@@ -47,7 +47,7 @@ artifacts:
       compression: zip
       size: 12362922810
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: active
+      status: pending
 - artifact: yago-tiny
   title: YAGO Tiny
   description: A lightweight version of the YAGO Knowledge Graph, offering a small,
@@ -58,11 +58,11 @@ artifacts:
     title: YAGO Tiny
     description: "YAGO 4.5 is the latest version of the YAGO knowledge base. It is\
       \ based on Wikidata \u2014 the largest public general-purpose knowledge base.\
-      \ YAGO refines the data as follows:\n1. All entity identifiers and property\
-      \ identifiers are human-readable. 2. The top-level classes come from schema.org\
+      \ YAGO refines the data as follows:\n 1. All entity identifiers and property\
+      \ identifiers are human-readable.\n 2. The top-level classes come from schema.org\
       \ \u2014 a standard repertoire of classes and properties maintained by Google\
       \ and others. The lower level classes are a careful selection of the Wikidata\
-      \ taxonomy. 3. The properties come from schema.org. 4. YAGO 4.5 contains semantic\
+      \ taxonomy.\n 3. The properties come from schema.org.\n4. YAGO 4.5 contains semantic\
       \ constraints in the form of SHACL. These constraints keep the data clean, and\
       \ allow for logical reasoning on YAGO. YAGO is thus a simplified, cleaned, and\
       \ \u201Creasonable\u201D version of Wikidata. It contains 49 million entities\
@@ -74,4 +74,4 @@ artifacts:
       compression: zip
       size: 200800361
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: active
+      status: pending
