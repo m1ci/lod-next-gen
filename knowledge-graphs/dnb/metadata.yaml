@@ -1,6 +1,9 @@
 id: dnb
 title: Deutsche Nationalbibliothek
-description: "The GND (Gemeinsame Normdatei) is a knowledge graph by the German National Library, providing structured metadata on persons, organizations, works, subjects, and locations. It unifies legacy authority files using RDF, enabling semantic links across libraries and research institutions."
+description: The GND (Gemeinsame Normdatei) is a knowledge graph by the German National
+  Library, providing structured metadata on persons, organizations, works, subjects,
+  and locations. It unifies legacy authority files using RDF, enabling semantic links
+  across libraries and research institutions.
 homepage: https://www.dnb.de/EN/Professionell/Metadatendienste/Datenbezug/LDS/lds_node.html
 license: https://dalicc.net/licenselibrary/Cc010Universal
 databus-publish: false
@@ -17,13 +20,15 @@ maintainers:
 artifacts:
 - artifact: authorities-gnd-geografikum_lds
   title: authorities-gnd-geografikum_lds
-  description: 2025-09-29 14:49 42M 332858 Datensaetze / 6131907 Tripel / GND, Entitaeten
-    Geografikum (Geographical entity, Code g, This version has been **auto-generated**.
+  description: 2025-09-29 14:49 42M Stabiler Link auf den aktuellen Gesamtabzug der
+    GND, Entitaeten Geografikum (Geographical entity, Code g). This version has been
+    **auto-generated**.
   versions:
   - version: 2025-09-16
     title: authorities-gnd-geografikum_lds
-    description: 2025-09-29 14:49 42M 332858 Datensaetze / 6131907 Tripel / GND, Entitaeten
-      Geografikum (Geographical entity, Code g, This version has been **auto-generated**.
+    description: 2025-09-29 14:49 42M Stabiler Link auf den aktuellen Gesamtabzug
+      der GND, Entitaeten Geografikum (Geographical entity, Code g). This version
+      has been **auto-generated**.
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
     - file: https://data.dnb.de/opendata/authorities-gnd-geografikum_lds_20250916.jsonld.gz
@@ -46,13 +51,15 @@ artifacts:
       status: pending
 - artifact: authorities-gnd-koerperschaft_lds
   title: authorities-gnd-koerperschaft_lds
-  description: 2025-09-29 14:49 204M 1566885 Datensaetze / 27978710 Tripel / GND,
-    Entitaeten Koerperschaft (Corporate body, Code b), This version has been **auto-generated**.
+  description: 2025-09-29 14:49 204M Stabiler Link auf den aktuellen Gesamtabzug der
+    GND, Entitaeten Koerperschaft (Corporate body, Code b). This version has been
+    **auto-generated**.
   versions:
   - version: 2025-09-16
     title: authorities-gnd-koerperschaft_lds
-    description: 2025-09-29 14:49 204M 1566885 Datensaetze / 27978710 Tripel / GND,
-      Entitaeten Koerperschaft (Corporate body, Code b), This version has been **auto-generated**.
+    description: 2025-09-29 14:49 204M Stabiler Link auf den aktuellen Gesamtabzug
+      der GND, Entitaeten Koerperschaft (Corporate body, Code b). This version has
+      been **auto-generated**.
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
     - file: https://data.dnb.de/opendata/authorities-gnd-koerperschaft_lds_20250916.jsonld.gz
@@ -75,13 +82,13 @@ artifacts:
       status: pending
 - artifact: authorities-gnd-kongress_lds
   title: authorities-gnd-kongress_lds
-  description: 2025-09-29 14:49 102M 911106 Datensaetze / 14419612 Tripel / GND, Entitaeten
-    Kongress (Congress, Code f), This version has been **auto-generated**.
+  description: 2025-09-29 14:49 102M Stabiler Link auf den aktuellen Gesamtabzug der
+    GND, Entitaeten Kongress (Congress, Code f). This version has been **auto-generated**.
   versions:
   - version: 2025-09-16
     title: authorities-gnd-kongress_lds
-    description: 2025-09-29 14:49 102M 911106 Datensaetze / 14419612 Tripel / GND,
-      Entitaeten Kongress (Congress, Code f), This version has been **auto-generated**.
+    description: 2025-09-29 14:49 102M Stabiler Link auf den aktuellen Gesamtabzug
+      der GND, Entitaeten Kongress (Congress, Code f). This version has been **auto-generated**.
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
     - file: https://data.dnb.de/opendata/authorities-gnd-kongress_lds_20250916.jsonld.gz
@@ -104,13 +111,14 @@ artifacts:
       status: pending
 - artifact: authorities-gnd-person_lds
   title: authorities-gnd-person_lds
-  description: 2025-09-29 14:49 1.3G 6515993 Datensaetze / 182132807 Tripel / GND,
-    Entitaeten Person (indiv.) (Person, Code p), This version has been **auto-generated**.
+  description: 2025-09-29 14:49 1.3G Stabiler Link auf den aktuellen Gesamtabzug der
+    GND, Entitaeten Person (indiv.) (Person, Code p). This version has been **auto-generated**.
   versions:
   - version: 2025-09-16
     title: authorities-gnd-person_lds
-    description: 2025-09-29 14:49 1.3G 6515993 Datensaetze / 182132807 Tripel / GND,
-      Entitaeten Person (indiv.) (Person, Code p), This version has been **auto-generated**.
+    description: 2025-09-29 14:49 1.3G Stabiler Link auf den aktuellen Gesamtabzug
+      der GND, Entitaeten Person (indiv.) (Person, Code p). This version has been
+      **auto-generated**.
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
     - file: https://data.dnb.de/opendata/authorities-gnd-person_lds_20250916.jsonld.gz
@@ -133,13 +141,14 @@ artifacts:
       status: pending
 - artifact: authorities-gnd-sachbegriff_lds
   title: authorities-gnd-sachbegriff_lds
-  description: 2025-09-29 14:49 24M 207001 Datensaetze / 3548666 Tripel / GND, Entitaeten
-    Sachbegriff (Subject term, Code s), This version has been **auto-generated**.
+  description: 2025-09-29 14:49 24M Stabiler Link auf den aktuellen Gesamtabzug der
+    GND, Entitaeten Sachbegriff (Subject term, Code s). This version has been **auto-generated**.
   versions:
   - version: 2025-09-16
     title: authorities-gnd-sachbegriff_lds
-    description: 2025-09-29 14:49 24M 207001 Datensaetze / 3548666 Tripel / GND, Entitaeten
-      Sachbegriff (Subject term, Code s), This version has been **auto-generated**.
+    description: 2025-09-29 14:49 24M Stabiler Link auf den aktuellen Gesamtabzug
+      der GND, Entitaeten Sachbegriff (Subject term, Code s). This version has been
+      **auto-generated**.
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
     - file: https://data.dnb.de/opendata/authorities-gnd-sachbegriff_lds_20250916.jsonld.gz
@@ -162,13 +171,13 @@ artifacts:
       status: pending
 - artifact: authorities-gnd-werk_lds
   title: authorities-gnd-werk_lds
-  description: 2025-09-29 14:49 83M 588594 Datensaetze / 12394697 Tripel / GND, Entitaeten
-    Werk (Werk, Code u), This version has been **auto-generated**.
+  description: 2025-09-29 14:49 83M Stabiler Link auf den aktuellen Gesamtabzug der
+    GND, Entitaeten Werk (Work, Code u). This version has been **auto-generated**.
   versions:
   - version: 2025-09-16
     title: authorities-gnd-werk_lds
-    description: 2025-09-29 14:49 83M 588594 Datensaetze / 12394697 Tripel / GND,
-      Entitaeten Werk (Werk, Code u), This version has been **auto-generated**.
+    description: 2025-09-29 14:49 83M Stabiler Link auf den aktuellen Gesamtabzug
+      der GND, Entitaeten Werk (Work, Code u). This version has been **auto-generated**.
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
     - file: https://data.dnb.de/opendata/authorities-gnd-werk_lds_20250916.jsonld.gz
@@ -191,15 +200,13 @@ artifacts:
       status: pending
 - artifact: authorities-gnd_entityfacts
   title: authorities-gnd_entityfacts
-  description: 2025-08-18 13:20 1.2G 9310343 Datensaetze / GND-Entity-Facts, Entitaeten
-    Person (indiv.) + Familie + Koerperschaft + Konferenz + Geografikum, This version
-    has been **auto-generated**.
+  description: 2025-08-18 13:20 1.2G Stabiler Link auf den aktuellen Gesamtabzug von
+    Entity Facts i. This version has been **auto-generated**.
   versions:
   - version: 2025-08-13
     title: authorities-gnd_entityfacts
-    description: 2025-08-18 13:20 1.2G 9310343 Datensaetze / GND-Entity-Facts, Entitaeten
-      Person (indiv.) + Familie + Koerperschaft + Konferenz + Geografikum, This version
-      has been **auto-generated**.
+    description: 2025-08-18 13:20 1.2G Stabiler Link auf den aktuellen Gesamtabzug
+      von Entity Facts i. This version has been **auto-generated**.
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
     - file: https://data.dnb.de/opendata/authorities-gnd_entityfacts_20250813.jsonld.gz
@@ -210,13 +217,13 @@ artifacts:
       status: pending
 - artifact: authorities-gnd_lds
   title: authorities-gnd_lds
-  description: 2025-09-29 14:54 1.0G 10122437 Datensaetze / 246607224 Tripel / GND-Daten
-    Gesamtbestand im This version has been **auto-generated**.
+  description: 2025-09-29 14:54 1.0G Stabiler Link auf den aktuellen Gesamtabzug der
+    GND i. This version has been **auto-generated**.
   versions:
   - version: 2025-09-16
     title: authorities-gnd_lds
-    description: 2025-09-29 14:54 1.0G 10122437 Datensaetze / 246607224 Tripel / GND-Daten
-      Gesamtbestand im This version has been **auto-generated**.
+    description: 2025-09-29 14:54 1.0G Stabiler Link auf den aktuellen Gesamtabzug
+      der GND i. This version has been **auto-generated**.
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
     - file: https://data.dnb.de/opendata/authorities-gnd_lds_20250916.hdt.gz
@@ -233,12 +240,12 @@ artifacts:
       status: pending
 - artifact: authorities-gnd_umlenk_loesch
   title: authorities-gnd_umlenk_loesch
-  description: 2025-09-25 16:26 7.8M 616827 Datensaetze / GND, Umlenk- und Loeschsaetze,
+  description: 2025-09-25 16:26 7.8M Stabiler Link auf GND, Umlenk- und Loeschsaetze.
     This version has been **auto-generated**.
   versions:
   - version: 2025-09-13
     title: authorities-gnd_umlenk_loesch
-    description: 2025-09-25 16:26 7.8M 616827 Datensaetze / GND, Umlenk- und Loeschsaetze,
+    description: 2025-09-25 16:26 7.8M Stabiler Link auf GND, Umlenk- und Loeschsaetze.
       This version has been **auto-generated**.
     license: https://dalicc.net/licenselibrary/Cc010Universal
     distributions:
