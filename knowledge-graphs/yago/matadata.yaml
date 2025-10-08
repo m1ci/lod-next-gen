@@ -1,6 +1,9 @@
 id: yago
 title: YAGO
-description: YAGO is a large, high-quality Knowledge Graph that integrates structured data from Wikipedia, WordNet, and other sources. It contains millions of entities, facts, and semantic relationships, supporting reasoning, NLP tasks, and knowledge-driven applications.
+description: YAGO is a large, high-quality Knowledge Graph that integrates structured
+  data from Wikipedia, WordNet, and other sources. It contains millions of entities,
+  facts, and semantic relationships, supporting reasoning, NLP tasks, and knowledge-driven
+  applications.
 homepage: https://kaiko.getalp.org
 databus-publish: false
 license: https://creativecommons.org/licenses/by-sa/3.0/rdf
@@ -20,17 +23,23 @@ maintainers:
 artifacts:
 - artifact: yago-full
   title: YAGO Full
-  description: The complete YAGO Knowledge Graph, containing millions of entities, facts, and semantic relationships, suitable for large-scale reasoning and knowledge-driven applications.
+  description: The complete YAGO Knowledge Graph, containing millions of entities,
+    facts, and semantic relationships, suitable for large-scale reasoning and knowledge-driven
+    applications.
   versions:
   - version: 4.5.0.2
     title: YAGO Full
-    description: "YAGO 4.5 is the latest version of the YAGO knowledge base. It is based on Wikidata — the largest public general-purpose knowledge base. YAGO refines the data as follows:
-
-1. All entity identifiers and property identifiers are human-readable.
-2. The top-level classes come from schema.org — a standard repertoire of classes and properties maintained by Google and others. The lower level classes are a careful selection of the Wikidata taxonomy.
-3. The properties come from schema.org.
-4. YAGO 4.5 contains semantic constraints in the form of SHACL. These constraints keep the data clean, and allow for logical reasoning on YAGO.
-YAGO is thus a simplified, cleaned, and “reasonable” version of Wikidata. It contains 49 million entities and 109 million facts. See above for getting started!"
+    description: "YAGO 4.5 is the latest version of the YAGO knowledge base. It is\
+      \ based on Wikidata \u2014 the largest public general-purpose knowledge base.\
+      \ YAGO refines the data as follows:\n1. All entity identifiers and property\
+      \ identifiers are human-readable. 2. The top-level classes come from schema.org\
+      \ \u2014 a standard repertoire of classes and properties maintained by Google\
+      \ and others. The lower level classes are a careful selection of the Wikidata\
+      \ taxonomy. 3. The properties come from schema.org. 4. YAGO 4.5 contains semantic\
+      \ constraints in the form of SHACL. These constraints keep the data clean, and\
+      \ allow for logical reasoning on YAGO. YAGO is thus a simplified, cleaned, and\
+      \ \u201Creasonable\u201D version of Wikidata. It contains 49 million entities\
+      \ and 109 million facts. See above for getting started!"
     license: https://creativecommons.org/licenses/by-sa/3.0/rdf
     distributions:
     - file: https://yago-knowledge.org/data/yago4.5/yago-4.5.0.2.zip
@@ -38,20 +47,26 @@ YAGO is thus a simplified, cleaned, and “reasonable” version of Wikidata. It
       compression: zip
       size: 12362922810
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: pending
+      status: active
 - artifact: yago-tiny
   title: YAGO Tiny
-  description: A lightweight version of the YAGO Knowledge Graph, offering a small, manageable dataset of key entities and relationships for quick experiments and testing.
+  description: A lightweight version of the YAGO Knowledge Graph, offering a small,
+    manageable dataset of key entities and relationships for quick experiments and
+    testing.
   versions:
   - version: 4.5.0.2
     title: YAGO Tiny
-    description: "YAGO 4.5 is the latest version of the YAGO knowledge base. It is based on Wikidata — the largest public general-purpose knowledge base. YAGO refines the data as follows:
-
-1. All entity identifiers and property identifiers are human-readable.
-2. The top-level classes come from schema.org — a standard repertoire of classes and properties maintained by Google and others. The lower level classes are a careful selection of the Wikidata taxonomy.
-3. The properties come from schema.org.
-4. YAGO 4.5 contains semantic constraints in the form of SHACL. These constraints keep the data clean, and allow for logical reasoning on YAGO.
-YAGO is thus a simplified, cleaned, and “reasonable” version of Wikidata. It contains 49 million entities and 109 million facts. See above for getting started!"
+    description: "YAGO 4.5 is the latest version of the YAGO knowledge base. It is\
+      \ based on Wikidata \u2014 the largest public general-purpose knowledge base.\
+      \ YAGO refines the data as follows:\n1. All entity identifiers and property\
+      \ identifiers are human-readable. 2. The top-level classes come from schema.org\
+      \ \u2014 a standard repertoire of classes and properties maintained by Google\
+      \ and others. The lower level classes are a careful selection of the Wikidata\
+      \ taxonomy. 3. The properties come from schema.org. 4. YAGO 4.5 contains semantic\
+      \ constraints in the form of SHACL. These constraints keep the data clean, and\
+      \ allow for logical reasoning on YAGO. YAGO is thus a simplified, cleaned, and\
+      \ \u201Creasonable\u201D version of Wikidata. It contains 49 million entities\
+      \ and 109 million facts. See above for getting started!"
     license: https://creativecommons.org/licenses/by-sa/3.0/rdf
     distributions:
     - file: https://yago-knowledge.org/data/yago4.5/yago-4.5.0.2-tiny.zip
@@ -59,4 +74,4 @@ YAGO is thus a simplified, cleaned, and “reasonable” version of Wikidata. It
       compression: zip
       size: 200800361
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: pending
+      status: active
