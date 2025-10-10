@@ -12,7 +12,6 @@ metadata_file = os.path.join(SCRIPT_DIR, "metadata.yaml")
 
 
 def main():
-    metadata_file = "metadata.yaml"
 
     try:
         with open(metadata_file, "r", encoding="utf-8") as f:
