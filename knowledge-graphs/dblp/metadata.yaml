@@ -23,7 +23,7 @@ artifacts:
   versions:
   - version: 2025-09-01
     title: DBLP RDF Release of September 2025
-    description: This file contains all the dblp data in a single file. The dblp computer
+    description: This file contains all the DBLP data in a single file. The dblp computer
       science bibliography is the open indexing service and knowledge graph of the
       computer science community.
     license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
