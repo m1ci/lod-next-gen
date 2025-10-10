@@ -24,9 +24,7 @@ maintainers:
 artifacts:
 - artifact: monthly-snapshot
   title: Monthly Snapshot
-  description: "This artifact is a monthly snapshot of the DBLP KG, providing quality-checked\
-    \ bibliographic metadata on major journals, conference proceedings, including\
-    \ authors and publication venues.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
+  description: "This artifact is a monthly snapshot of the DBLP KG, providing bibliographic metadata on major journals, conference proceedings, including authors and publication venues.\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
   versions:
   - version: 2025-09-01
     title: DBLP RDF Release of September 2025
