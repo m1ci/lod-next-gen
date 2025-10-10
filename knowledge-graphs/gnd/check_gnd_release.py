@@ -18,10 +18,10 @@ def main():
         with open(metadata_file, "r", encoding="utf-8") as f:
             data = yaml.safe_load(f)
     except FileNotFoundError:
-        print(f"❌ Error: {metadata_file} not found.")
+        print(f"❌ Error: GND {metadata_file} not found.")
         sys.exit(1)
     except yaml.YAMLError as e:
-        print(f"❌ Error parsing {metadata_file}: {e}")
+        print(f"❌ Error parsing GND {metadata_file}: {e}")
         sys.exit(1)
 
     # Extract required metadata fields
