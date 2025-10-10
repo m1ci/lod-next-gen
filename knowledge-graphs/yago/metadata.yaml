@@ -1,3 +1,4 @@
+databus-account: knowledge-graph-catalog
 id: yago
 title: YAGO
 description: "YAGO is a high-quality knowledge graph based on Wikidata. It uses human-readable\
