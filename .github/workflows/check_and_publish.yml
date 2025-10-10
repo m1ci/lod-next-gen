@@ -13,7 +13,8 @@ jobs:
   check-and-publish:
     runs-on: ubuntu-latest
     env:
-      DATABUS_API_KEY: ${{ secrets.DATABUS_API_KEY }}
+      KNOWLEDGE_GRAPH_CATALOG: ${{ secrets.KNOWLEDGE_GRAPH_CATALOG }}
+      DEUTSCHE_NATBIB: ${{ secrets.DEUTSCHE_NATBIB }}
 
     steps:
       # 1️⃣ Checkout the repository
