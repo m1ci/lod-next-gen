@@ -9,7 +9,12 @@ databus-publish: false
 license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
 check-new-release: update_dblp_yaml.py
 keywords:
-- scholarly
+- dblp
+- computer
+- science
+- bibliography
+- knowledge graph
+- open data
 internal_namespaces:
 - https://dblp.org/
 sparql:
