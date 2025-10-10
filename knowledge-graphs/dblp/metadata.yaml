@@ -6,7 +6,7 @@ description: "The DBLP computer science bibliography KG is an open, curated KG o
 homepage: https://drops.dagstuhl.de/entities/collection/dblp
 databus-publish: false
 license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
-check-new-release: update_dblp_yaml.py
+check-new-release: dblp_release_auto_update.py
 keywords:
 - dblp
 - computer
