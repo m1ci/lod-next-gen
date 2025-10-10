@@ -78,7 +78,7 @@ def main():
     print("🧹 Running remove_group.py to remove group...")
     try:
         result = subprocess.run(
-            ["python3", "remove_group.py", databus_account, group_id, api_key],
+            ["python3", "scripts/remove_group.py", databus_account, group_id, api_key],
             capture_output=True,
             text=True,
             check=True
