@@ -6,13 +6,11 @@ import json
 
 # --- Config ---
 API_PUBLISH = "https://databus.dbpedia.org/api/publish?fetch-file-properties=false"
-API_KEY = os.environ.get("DATABUS_API_KEY")
-if not API_KEY:
-    print("Error: DATABUS_API_KEY not set")
-    sys.exit(1)
 
 # YAML file path from argument
 yaml_file = sys.argv[1]
+
+
 
 # --- Load YAML ---
 try:
@@ -25,6 +23,21 @@ except yaml.YAMLError as e:
 if not data:
     print(f"No data loaded from {yaml_file}")
     sys.exit(1)
+
+
+# Determine account and API key
+databus_account = data.get("databus-account")
+if not databus_account:
+    raise ValueError("databus-account is not specified in metadata.yaml")
+
+
+# API key environment variable convention
+api_key_env = databus_account.upper().replace("-", "_")
+API_KEY = os.environ.get(api_key_env)
+if not API_KEY:
+    print("Error: DATABUS_API_KEY not set")
+    sys.exit(1)
+
 
 # --- Check databus-publish flag ---
 if not data.get("databus-publish", False):
@@ -46,7 +59,7 @@ def send_publish(payload):
     return resp.json()
 
 # --- Step 1: Publish Group ---
-group_id = f"https://databus.dbpedia.org/knowledge-graph-catalog/{data['id']}"
+group_id = f"https://databus.dbpedia.org/{data['databus-account']}/{data['id']}"
 group_payload = {
     "@context": "https://databus.dbpedia.org/res/context.jsonld",
     "@graph": {
