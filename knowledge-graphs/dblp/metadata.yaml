@@ -1,9 +1,6 @@
 id: dblp
 title: DBLP
-description: The DBLP computer science bibliography knowledge graph is an open knowledge
-  graph of DBLP data, providing quality-checked and curated bibliographic metadata
-  on major computer science journals, conference proceedings, and monographs, including
-  information about authors and publication venues.
+description: "The DBLP computer science bibliography KG is an open, curated KG of DBLP data, offering quality-checked metadata on authors, publications, and venues in journals, conferences, etc.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/dblp/matadata.yaml"
 homepage: https://drops.dagstuhl.de/entities/collection/dblp
 databus-publish: false
 license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
