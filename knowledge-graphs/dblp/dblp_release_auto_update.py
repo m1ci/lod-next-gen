@@ -109,7 +109,7 @@ def main():
         print(f"New DBLP release found: {latest_release_date}")
         update_yaml(latest_release_date, url, size, data)
     else:
-        print("YAML is already up to date.")
+        print("DBLP YAML is already up to date. No new version found.")
 
 if __name__ == "__main__":
     main()
