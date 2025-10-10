@@ -21,9 +21,9 @@ def main():
     # Extract required metadata fields
     databus_account = data.get("databus-account")
     group_id = data.get("id")
-    api_key = "bla bla"
-#    api_key = os.environ.get(databus_account)
-
+#    api_key = "bla bla"
+    api_key = os.environ.get(databus_account)
+    
     if not databus_account or not group_id:
         print("❌ Missing required fields (databus-account or id) in metadata.yaml")
         sys.exit(1)
@@ -72,19 +72,19 @@ def main():
 
     # Run remove-group.py if file unavailable
     print("🧹 Running remove-group.py to remove group...")
-    try:
-        result = subprocess.run(
-            ["python3", "remove-group.py", databus_account, group_id, api_key],
-            capture_output=True,
-            text=True,
-            check=True
-        )
-        print("✅ remove-group.py executed successfully.")
-        print(result.stdout)
-    except subprocess.CalledProcessError as e:
-        print("❌ Error running remove-group.py:")
-        print(e.stderr)
-        sys.exit(1)
+#    try:
+#        result = subprocess.run(
+#            ["python3", "remove-group.py", databus_account, group_id, api_key],
+#            capture_output=True,
+#            text=True,
+#            check=True
+#        )
+#        print("✅ remove-group.py executed successfully.")
+#        print(result.stdout)
+#    except subprocess.CalledProcessError as e:
+#        print("❌ Error running remove-group.py:")
+#        print(e.stderr)
+#        sys.exit(1)
 
 if __name__ == "__main__":
     main()
