@@ -27,7 +27,7 @@ def main():
     databus_account = data.get("databus-account")
     group_id = data.get("id")
 #    api_key = "bla bla"
-    api_key = os.environ.get(databus_account)
+    api_key = os.environ.get(databus_account.upper().replace("-", "_"))
     
     if not databus_account or not group_id:
         print("❌ Missing required fields (databus-account or id) in metadata.yaml")
