@@ -13,6 +13,9 @@ on:
 jobs:
   daily-check:
     runs-on: ubuntu-latest
+    env:
+      KNOWLEDGE_GRAPH_CATALOG: ${{ secrets.KNOWLEDGE_GRAPH_CATALOG }}
+      DEUTSCHE_NATBIB: ${{ secrets.DEUTSCHE_NATBIB }}
 
     steps:
       # 1. Checkout the repository
