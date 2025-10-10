@@ -1,6 +1,8 @@
 id: dblp
 title: DBLP
-description: "The DBLP computer science bibliography KG is an open, curated KG of DBLP data, offering quality-checked metadata on authors, publications, and venues in journals, conferences, etc.\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
+description: "The DBLP computer science bibliography KG is an open, curated KG of\
+  \ DBLP data, offering quality-checked metadata on authors, publications, and venues\
+  \ in journals, conferences, etc.\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
 homepage: https://drops.dagstuhl.de/entities/collection/dblp
 databus-publish: false
 license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
@@ -24,7 +26,9 @@ maintainers:
 artifacts:
 - artifact: monthly-snapshot
   title: Monthly Snapshot
-  description: "This artifact is a monthly snapshot of the DBLP KG, providing bibliographic metadata on major journals, conference proceedings, including authors and publication venues.\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
+  description: "This artifact is a monthly snapshot of the DBLP KG, providing bibliographic\
+    \ metadata on major journals, conference proceedings, including authors and publication\
+    \ venues.\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
   versions:
   - version: 2025-09-01
     title: DBLP RDF Release of September 2025
@@ -38,4 +42,4 @@ artifacts:
       compression: gz
       size: 4745938862
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: pending
+      status: active
