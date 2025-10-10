@@ -34,7 +34,7 @@ def main():
         sys.exit(1)
 
     if not api_key:
-        print(f"⚠️ Warning: API key not provided via environment variable "{databus_account})
+        print(f"⚠️ Warning: API key not provided via environment variable for account {databus_account}")
         sys.exit(1)
 
     try:
