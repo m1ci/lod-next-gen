@@ -2,7 +2,7 @@ id: dblp
 title: DBLP
 description: "The DBLP computer science bibliography KG is an open, curated KG of\
   \ DBLP data, offering quality-checked metadata on authors, publications, and venues\
-  \ in journals, conferences, etc.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/dblp/matadata.yaml"
+  \ in journals, conferences, etc.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
 homepage: https://drops.dagstuhl.de/entities/collection/dblp
 databus-publish: false
 license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
@@ -28,13 +28,13 @@ artifacts:
   title: Monthly Snapshot
   description: "This artifact is a monthly snapshot of the DBLP KG, providing quality-checked\
     \ bibliographic metadata on major journals, conference proceedings, including\
-    \ authors and publication venues.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
+    \ authors and publication venues.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
   versions:
   - version: 2025-09-01
     title: DBLP RDF Release of September 2025
     description: "This file contains all the DBLP data in a single file. The dblp\
       \ computer science bibliography is the open indexing service and knowledge graph\
-      \ of the computer science community.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
+      \ of the computer science community.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
     license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
     distributions:
     - file: https://drops.dagstuhl.de/storage/artifacts/dblp/rdf/2025/dblp-2025-09-01.nt.gz
