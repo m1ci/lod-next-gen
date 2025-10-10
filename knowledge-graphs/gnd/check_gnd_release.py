@@ -74,21 +74,21 @@ def main():
     except requests.RequestException as e:
         print(f"⚠️ The current GND release is no longer available. (Error accessing file: {e})")
 
-    # Run remove-group.py if file unavailable
-    print("🧹 Running remove-group.py to remove group...")
-#    try:
-#        result = subprocess.run(
-#            ["python3", "remove-group.py", databus_account, group_id, api_key],
-#            capture_output=True,
-#            text=True,
-#            check=True
-#        )
-#        print("✅ remove-group.py executed successfully.")
-#        print(result.stdout)
-#    except subprocess.CalledProcessError as e:
-#        print("❌ Error running remove-group.py:")
-#        print(e.stderr)
-#        sys.exit(1)
+    # Run remove_group.py if file unavailable
+    print("🧹 Running remove_group.py to remove group...")
+    try:
+        result = subprocess.run(
+            ["python3", "remove_group.py", databus_account, group_id, api_key],
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        print("✅ remove_group.py executed successfully.")
+        print(result.stdout)
+    except subprocess.CalledProcessError as e:
+        print("❌ Error running remove-group.py:")
+        print(e.stderr)
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
