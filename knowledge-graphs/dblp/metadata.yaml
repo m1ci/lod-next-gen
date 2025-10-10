@@ -24,15 +24,13 @@ maintainers:
 artifacts:
 - artifact: monthly-snapshot
   title: Monthly Snapshot
-  description: This artifact is a monthly snapshot of the DBLP computer science bibliography
-    knowledge graph, providing quality-checked bibliographic metadata on major journals,
-    conference proceedings, and monographs, including authors and publication venues.
+  description: "This artifact is a monthly snapshot of the DBLP KG, providing quality-checked bibliographic metadata on major journals, conference proceedings, including authors and publication venues.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
   versions:
   - version: 2025-09-01
     title: DBLP RDF Release of September 2025
-    description: This file contains all the DBLP data in a single file. The dblp computer
+    description: "This file contains all the DBLP data in a single file. The dblp computer
       science bibliography is the open indexing service and knowledge graph of the
-      computer science community.
+      computer science community.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
     license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
     distributions:
     - file: https://drops.dagstuhl.de/storage/artifacts/dblp/rdf/2025/dblp-2025-09-01.nt.gz
@@ -40,18 +38,4 @@ artifacts:
       compression: gz
       size: 4745938862
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: active
-  - version: 2025-10-01
-    title: DBLP RDF Release of October 2025
-    description: This file contains all the dblp data in a single file. The dblp computer
-      science bibliography is the open indexing service and knowledge graph of the
-      computer science community. This version and its metadata have been **automatically
-      retrieved and published** by an automated update process.
-    license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
-    distributions:
-    - file: https://drops.dagstuhl.de/storage/artifacts/dblp/rdf/2025/dblp-2025-10-01.nt.gz
-      format: nt
-      compression: gz
-      size: 4745938862
-      sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: active
+      status: pending
