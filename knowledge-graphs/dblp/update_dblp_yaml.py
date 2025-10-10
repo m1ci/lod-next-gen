@@ -69,7 +69,7 @@ def update_yaml(new_date, url, data):
     new_version_str = new_date.strftime("%Y-%m-%d")  # "2025-10-01"
     new_version_entry = {
         "version": datetime.strptime(new_version_str, "%Y-%m-%d").date(),
-        "title": f"DBLP RDF Release of {new_date.strftime('%B %Y')}",
+        "title": "Monthly Snapshot",
         "description": "This file contains all the dblp data in a single file. The dblp computer science bibliography is the open indexing service and knowledge graph of the computer science community. This version and its metadata have been **automatically retrieved and published** by an automated update process.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml",
         "license": data['license'],
         "distributions": [
