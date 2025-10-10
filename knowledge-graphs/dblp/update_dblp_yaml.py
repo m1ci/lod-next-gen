@@ -21,11 +21,12 @@ def get_current_yaml_version():
         data = yaml.safe_load(f)
 
     latest_version_entry = data['artifacts'][0]['versions'][-1]
-    latest_version_str = latest_version_entry['version']  # e.g., "2025-10-01"
+    latest_version_str = str(latest_version_entry['version'])  # e.g., "2025-10-01"
+    latest_version_date = datetime.strptime(latest_version_str, "%Y-%m-%d").date()
 
-    return latest_version_str, data
+    return latest_version_date, data
 
-def fetch_latest_release_info():
+def fetch_latest_release_date():
     """Checks the latest available release by querying the URL pattern."""
     today = date.today()
     year, month = today.year, today.month
@@ -36,21 +37,23 @@ def fetch_latest_release_info():
 
     response = requests.head(url)
     if response.status_code == 200:
-        size = int(response.headers.get('Content-Length', 0))
+        size = int(response.headers.get("Content-Length", 0))
         return candidate_date, url, size
     else:
-        # Fallback: previous month
+        # fallback: check previous month
         if month == 1:
             prev_year, prev_month = year - 1, 12
         else:
             prev_year, prev_month = year, month - 1
+
         candidate_date = date(prev_year, prev_month, 1)
         url = f"{BASE_URL}/{prev_year}/dblp-{prev_year}-{prev_month:02d}-01.nt.gz"
         response = requests.head(url)
         if response.status_code == 200:
-            size = int(response.headers.get('Content-Length', 0))
+            size = int(response.headers.get("Content-Length", 0))
             return candidate_date, url, size
-    return None, None, None
+
+    return None, None, 0
 
 def calculate_sha256(url):
     """Downloads file in chunks to calculate sha256."""
@@ -62,15 +65,15 @@ def calculate_sha256(url):
     return h.hexdigest()
 
 def update_yaml(new_date, url, size, data):
-    """Adds a new version entry to the YAML with the file size."""
-    new_version_str = new_date.strftime("%Y-%m-%d")  # "2025-10-01"
+    """Adds a new version entry to the YAML."""
+    new_version_str = new_date.strftime("%Y-%m-%d")
     new_version_entry = {
-        "version": datetime.strptime(new_version_str, "%Y-%m-%d").date(),
+        "version": new_date,
         "title": "Monthly Snapshot",
         "description": (
             "This file contains all the dblp data in a single file. "
-            "The dblp computer science bibliography is the open indexing service and "
-            "knowledge graph of the computer science community. "
+            "The dblp computer science bibliography is the open indexing service "
+            "and knowledge graph of the computer science community. "
             "This version and its metadata have been **automatically retrieved and published** by an automated update process.\n\n"
             "Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
         ),
@@ -81,7 +84,7 @@ def update_yaml(new_date, url, size, data):
                 "format": "nt",
                 "compression": "gz",
                 "size": size,
-                "sha256": "6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f",
+                "sha256": 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f,
                 "status": "pending"
             }
         ]
@@ -95,14 +98,14 @@ def update_yaml(new_date, url, size, data):
     print(f"YAML updated with new version {new_version_str}, size: {size} bytes")
 
 def main():
-    current_version_str, data = get_current_yaml_version()
-    latest_release_date, url, size = fetch_latest_release_info()
+    current_version_date, data = get_current_yaml_version()
+    latest_release_date, url, size = fetch_latest_release_date()
 
     if latest_release_date is None:
         print("No new DBLP release found.")
         return
 
-    if latest_release_date.strftime("%Y-%m-%d") > current_version_str:
+    if latest_release_date > current_version_date:
         print(f"New DBLP release found: {latest_release_date}")
         update_yaml(latest_release_date, url, size, data)
     else:
