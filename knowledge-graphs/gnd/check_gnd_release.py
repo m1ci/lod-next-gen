@@ -5,6 +5,12 @@ import sys
 import subprocess
 import os
 
+
+# Path to your YAML file
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+metadata_file = os.path.join(SCRIPT_DIR, "metadata.yaml")
+
+
 def main():
     metadata_file = "metadata.yaml"
 
