@@ -70,7 +70,7 @@ def update_yaml(new_date, url, data):
     new_version_entry = {
         "version": datetime.strptime(new_version_str, "%Y-%m-%d").date(),
         "title": f"DBLP RDF Release of {new_date.strftime('%B %Y')}",
-        "description": "This file contains all the dblp RDF/N-Triple data in a single file. The dblp computer science bibliography is the open indexing service and knowledge graph of the computer science community. This version and its associated metadata have been **automatically retrieved and published** by an automated update process.",
+        "description": "This file contains all the dblp data in a single file. The dblp computer science bibliography is the open indexing service and knowledge graph of the computer science community. This version and its metadata have been **automatically retrieved and published*** by an automated update process.",
         "license": data['license'],
         "distributions": [
             {
