@@ -1,8 +1,6 @@
 id: dblp
 title: DBLP
-description: "The DBLP computer science bibliography KG is an open, curated KG of\
-  \ DBLP data, offering quality-checked metadata on authors, publications, and venues\
-  \ in journals, conferences, etc.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
+description: "The DBLP computer science bibliography KG is an open, curated KG of DBLP data, offering quality-checked metadata on authors, publications, and venues in journals, conferences, etc.\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
 homepage: https://drops.dagstuhl.de/entities/collection/dblp
 databus-publish: false
 license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
