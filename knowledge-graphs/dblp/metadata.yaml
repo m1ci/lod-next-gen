@@ -21,7 +21,7 @@ maintainers:
   github: n/a
 artifacts:
 - artifact: monthly-snapshot
-  title: monthly-snapshot
+  title: Monthly Snapshot
   description: This artifact is a monthly snapshot of the DBLP computer science bibliography
     knowledge graph, providing quality-checked bibliographic metadata on major journals,
     conference proceedings, and monographs, including authors and publication venues.
