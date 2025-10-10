@@ -7,7 +7,7 @@ description: The GND (Gemeinsame Normdatei) is a knowledge graph by the German N
   across libraries and research institutions.
 homepage: https://www.dnb.de/EN/Professionell/Metadatendienste/Datenbezug/LDS/lds_node.html
 license: https://dalicc.net/licenselibrary/Cc010Universal
-databus-publish: false
+databus-publish: true
 keywords:
 - bibliographic
 - publications
