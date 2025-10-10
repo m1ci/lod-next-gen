@@ -76,4 +76,4 @@ artifacts:
       compression: zip
       size: 200800361
       sha256: c9e52cf0338c9dd6586f4d601b02398fef55253a2be94dcace8ae9115f0d889d
-      status: pending
+      status: active
