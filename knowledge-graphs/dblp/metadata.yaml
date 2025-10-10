@@ -1,3 +1,4 @@
+databus-account: knowledge-graph-catalog
 id: dblp
 title: DBLP
 description: "The DBLP computer science bibliography KG is an open, curated KG of\
