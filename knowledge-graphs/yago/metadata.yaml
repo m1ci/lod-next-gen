@@ -1,7 +1,7 @@
 databus-account: knowledge-graph-catalog
 id: yago
 title: YAGO
-description: "YAGO is a high-quality knowledge graph based on Wikidata. It uses human-readable\
+description: "The YAGO KG is a high-quality knowledge graph based on Wikidata. It uses human-readable\
   \ IDs, schema.org classes & properties, a curated Wikidata taxonomy, and SHACL constraints\
   \ for clean data.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
 homepage: https://kaiko.getalp.org
