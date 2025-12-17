@@ -1,7 +1,7 @@
 databus-account: knowledge-graph-catalog
 id: yago
 title: YAGO
-description: "The YAGO KG is a high-quality knowledge graph based on Wikidata. It uses human-readable\
+description: "YAGO is a high-quality knowledge graph based on Wikidata. It uses human-readable\
   \ IDs, schema.org classes & properties, a curated Wikidata taxonomy, and SHACL constraints\
   \ for clean data.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
 homepage: https://kaiko.getalp.org
@@ -57,7 +57,7 @@ artifacts:
   versions:
   - version: 4.5.0.2
     title: YAGO Tiny
-    description: "YAGO 4.5 is the latest version of the YAGO knowledge base. It is\
+    description: "YAGO 4.5 is the latest version of the YAGO KG. It is\
       \ based on Wikidata \u2014 the largest public general-purpose knowledge base.\
       \ YAGO refines the data as follows:\n 1. All entity identifiers and property\
       \ identifiers are human-readable.\n 2. The top-level classes come from schema.org\
@@ -76,4 +76,4 @@ artifacts:
       compression: zip
       size: 200800361
       sha256: c9e52cf0338c9dd6586f4d601b02398fef55253a2be94dcace8ae9115f0d889d
-      status: active
+      status: pending
