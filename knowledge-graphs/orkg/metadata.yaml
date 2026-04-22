@@ -21,15 +21,15 @@ maintainers:
 artifacts:
 - artifact: orkg-daily-dump
   title: ORKG Daily dump
-  description: "The Open Research Knowledge Graph (ORKG) models scholarly knowledge as a structured graph of research entities and relationships, enabling querying, comparison, and reuse of scientific information beyond traditional publications.\n\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+  description: "The Open Research Knowledge Graph provides scholarly knowledge as a KG enabling querying, comparison, and reuse of scientific information.\n\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
   versions:
   - version: 2026.04.22
     title: ORKG Daily Dump
-    description: "The Open Research Knowledge Graph (ORKG) models scholarly knowledge as a structured graph of research entities and relationships, enabling querying, comparison, and reuse of scientific information beyond traditional publications.\n\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+    description: "The Open Research Knowledge Graph provides scholarly knowledge as a KG enabling querying, comparison, and reuse of scientific information.\n\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
   versions:
   - version: 2026.04.22
     title: ORKG Daily Dump
-    description: "The Open Research Knowledge Graph (ORKG) models scholarly knowledge as a structured graph of research entities and relationships, enabling querying, comparison, and reuse of scientific information beyond traditional publications.\n\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+    description: "The Open Research Knowledge Graph provides scholarly knowledge as a KG enabling querying, comparison, and reuse of scientific information.\n\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
     license: https://creativecommons.org/licenses/by-sa/4.0/rdf
     distributions:
     - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260422.gz
