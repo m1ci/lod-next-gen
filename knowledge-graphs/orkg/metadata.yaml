@@ -1,7 +1,7 @@
 databus-account: knowledge-graph-catalog
 id: orkg
 title: ORKG
-description: "The **Open Research Knowledge Graph (ORKG)** provides scholarly knowledge as a KG enabling querying, comparison, and reuse of scientific information.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+description: "The Open Research Knowledge Graph (ORKG) provides scholarly knowledge as a KG enabling querying, comparison, and reuse of scientific information.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
 homepage: https://orkg.org
 databus-publish: false
 license: https://creativecommons.org/licenses/by-sa/4.0/rdf
