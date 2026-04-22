@@ -1,7 +1,7 @@
 databus-account: knowledge-graph-catalog
 id: orkg
 title: ORKG
-description: "The Open Research Knowledge Graph (ORKG) models scholarly knowledge as a structured graph of interconnected research entities and relationships, enabling efficient querying, comparison, and reuse of scientific information beyond traditional text-based publications.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+description: "The Open Research Knowledge Graph models scholarly knowledge as a structured graph."
 homepage: https://orkg.org
 databus-publish: false
 license: https://creativecommons.org/licenses/by-sa/4.0/rdf
@@ -21,12 +21,11 @@ maintainers:
 artifacts:
 - artifact: orkg-full
   title: ORKG Full
-  description: "The Open Research Knowledge Graph (ORKG) models scholarly knowledge as a structured graph of interconnected research entities and relationships, enabling efficient querying, comparison, and reuse of scientific information beyond traditional text-based publications.\n\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+  description: "The Open Research Knowledge Graph models scholarly knowledge as a structured graph"
   versions:
   - version: 2026.04.22
     title: ORKG Full
-    description: "The Open Research Knowledge Graph (ORKG) represents scholarly knowledge as a structured, machine-readable graph of entities—such as papers, methods, and results—linked by semantic relationships. By breaking down research articles into interconnected components rather than treating them as plain text, ORKG enables efficient comparison, querying, and reuse of scientific knowledge, supporting a shift toward more transparent and knowledge-centric research communication.\n\n Found an\
-      \ issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+    description: "The Open Research Knowledge Graph represents scholarly knowledge as a structured."
     license: https://creativecommons.org/licenses/by-sa/4.0/rdf
     distributions:
     - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260422.gz
