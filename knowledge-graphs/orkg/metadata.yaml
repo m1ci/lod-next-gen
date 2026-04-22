@@ -25,7 +25,12 @@ artifacts:
   versions:
   - version: 2026.04.22
     title: ORKG Full
-    description: "The Open Research Knowledge Graph (ORKG) models scholarly knowledge as a structured graph of research entities and relationships, enabling querying, comparison, and reuse of scientific information beyond traditional publications.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+    description: "The Open Research Knowledge Graph (ORKG) models scholarly knowledge as a structured graph of research entities and relationships, enabling querying, comparison, and reuse of scientific information beyond traditional publications.\n\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+    graph
+  versions:
+  - version: 2026.04.22
+    title: ORKG Full
+    description: "The Open Research Knowledge Graph (ORKG) models scholarly knowledge as a structured graph of research entities and relationships, enabling querying, comparison, and reuse of scientific information beyond traditional publications.\n\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
     license: https://creativecommons.org/licenses/by-sa/4.0/rdf
     distributions:
     - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260422.gz
@@ -33,5 +38,4 @@ artifacts:
       compression: gz
       size: 41141134
       sha256: c2eab9d24ba9755384fd06e6e81b7a1bd62c5c01676ef6359db53be67e549a5c
-      status: pending
-
+      status: active
