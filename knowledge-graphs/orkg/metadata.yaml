@@ -6,7 +6,7 @@ description: "The Open Research Knowledge Graph provides scholarly knowledge as 
   \ an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
 homepage: https://orkg.org
 databus-publish: false
-license: https://creativecommons.org/licenses/by-sa/4.0/rdf
+license: https://creativecommons.org/publicdomain/zero/1.0/rdf
 keywords:
 - rdf
 - knowledge graph
@@ -39,4 +39,4 @@ artifacts:
       compression: gz
       size: 41141134
       sha256: c2eab9d24ba9755384fd06e6e81b7a1bd62c5c01676ef6359db53be67e549a5c
-      status: active
+      status: pending
