@@ -39,7 +39,7 @@ artifacts:
       compression: gz
       size: 40085446
       sha256: 49662ccf40582ba5bd4cafbb770697a9b2857ee173742e0caa2be8b1f310e28b
-      status: pending
+      status: active
   - version: 2026.04.18
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -52,7 +52,7 @@ artifacts:
       compression: gz
       size: 40091652
       sha256: cf629becdff555e3e87ed21c452b2d9b13f75940c25a2e1613a8bfcf13a8ad65
-      status: pending
+      status: active
   - version: 2026.04.19
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -65,7 +65,7 @@ artifacts:
       compression: gz
       size: 40094627
       sha256: aa6d464e302327c9fe2cd059e5e2a7f830b24c700fcddc03605d2fa87c08e558
-      status: pending
+      status: active
   - version: 2026.04.20
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -78,7 +78,7 @@ artifacts:
       compression: gz
       size: 40098248
       sha256: 29595383bf712002ad18c3df24b9890d74df9bffcbc4e4ce388ce9e583973860
-      status: pending
+      status: active
   - version: 2026.04.21
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -91,7 +91,7 @@ artifacts:
       compression: gz
       size: 40125246
       sha256: 8fd984841b8a362179b3c1222f22f7bbaac569285ee4c6b5f7adb343e3829994
-      status: pending
+      status: active
   - version: 2026.04.22
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -104,7 +104,7 @@ artifacts:
       compression: gz
       size: 41141134
       sha256: c2eab9d24ba9755384fd06e6e81b7a1bd62c5c01676ef6359db53be67e549a5c
-      status: pending
+      status: active
   - version: 2026.04.23
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -117,7 +117,7 @@ artifacts:
       compression: gz
       size: 41394640
       sha256: 4f8c667399411dfc060bc177f5b9402d42a5c5ceeccc802c26b32d6d2b795b4a
-      status: pending
+      status: active
   - version: 2026.04.24
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -130,7 +130,7 @@ artifacts:
       compression: gz
       size: 41396699
       sha256: 6a6c782b970d8187288e72cb707667b810dafb12f7f88cff9d404ed89e45b998
-      status: pending
+      status: active
   - version: 2026.04.25
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -143,7 +143,7 @@ artifacts:
       compression: gz
       size: 41405127
       sha256: db8c0e5635f118cadb48574fc5fdec683590feb77c4d72e1210aa83670a0f410
-      status: pending
+      status: active
   - version: 2026.04.26
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -156,7 +156,7 @@ artifacts:
       compression: gz
       size: 41415628
       sha256: 79ff60623d4b9f9d1ac4bbfac8ccbd3d3c0bf4c9a179a7d28056a42928c97db7
-      status: pending
+      status: active
   - version: 2026.04.27
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -169,7 +169,7 @@ artifacts:
       compression: gz
       size: 41421156
       sha256: 62c749332882e1b2e16cf8074d00e13b39f96ab07c83de63eef8dbfc2f420099
-      status: pending
+      status: active
   - version: 2026.04.28
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -182,7 +182,7 @@ artifacts:
       compression: gz
       size: 41421259
       sha256: 63a527a1a32329cc122f102e3c96972e5ab496cef3944bb2a183a4217738dd79
-      status: pending
+      status: active
   - version: 2026.04.29
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -195,7 +195,7 @@ artifacts:
       compression: gz
       size: 41428447
       sha256: b8781d96fa0c41bd2e78fab03ccd93a6117b88c4bd315312833e78c6961f09b4
-      status: pending
+      status: active
   - version: 2026.04.30
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -208,4 +208,4 @@ artifacts:
       compression: gz
       size: 41427651
       sha256: c2278c32677431343a8f6cd5e11ba9d125224719668a0e70f804c6c26efa9718
-      status: pending
+      status: active
