@@ -29,6 +29,6 @@ artifacts:
     - file: https://downloads.dbpedia.org/repo/dbpedia/mappings/instance-types/2020.06.01/instance-types_lang%3Dar_specific.ttl.bz2
       format: ttl
       compression: bz2
-      size: 3686365
-      sha256: 6f761964c4d3ba2ab52c36fa0ac8c7950d68c03cd2ebc6109285ebf05abf5c43
-      status: active
+      size: 
+      sha256: 
+      status: pending
