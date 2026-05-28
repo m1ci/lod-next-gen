@@ -84,7 +84,7 @@ def update_yaml(new_date, url, size, data):
                 "format": "nt",
                 "compression": "gz",
                 "size": size,
-                "sha256": null,
+                "sha256": None,
                 "status": "pending"
             }
         ]
