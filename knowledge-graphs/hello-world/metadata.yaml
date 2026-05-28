@@ -26,9 +26,9 @@ artifacts:
     description: Secrete files about Chuck Norris.
     license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
     distributions:
-    - file: https://drops.dagstuhl.de/storage/artifacts/dblp/rdf/2026/dblp-2026-05-01.nt.gz
+    - file: https://downloads.dbpedia.org/repo/dbpedia/mappings/instance-types/2020.06.01/instance-types_lang%3Dar_transitive.ttl.bz2
       format: ttl
       compression: bz2
-      size: 5048198037
-      sha256: 4bbd3f32196273b46c9c1556f1c0d799213919f216aa0ead0c570193d6433668
-      status: active
+      size: null
+      sha256: null
+      status: pending
