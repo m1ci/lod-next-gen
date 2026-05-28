@@ -54,4 +54,4 @@ artifacts:
       compression: gz
       size: 43476315
       sha256: f329bd6cd74d2851072bf62701ee3ce4023e027615002da2954fb5b751b922a3
-      status: active
+      status: pending
