@@ -127,8 +127,8 @@ artifacts:
       format: nt
       compression: gz
       size: 4920571453
-      sha256:
-      status: pending
+      sha256: 282382e1bf788c6958302bffe437bbdbed794bc3fce82cb7d684b53908e205f5
+      status: active
   - version: 2026-03-01
     title: Monthly Snapshot
     description: 'This file contains all the dblp data in a single file. The dblp
@@ -144,8 +144,8 @@ artifacts:
       format: nt
       compression: gz
       size: 4959822954
-      sha256:
-      status: pending
+      sha256: a6c72af4a3580f7c53b0b0e28197213da5126d50361695417caa92172861ddc4
+      status: active
   - version: 2026-04-01
     title: Monthly Snapshot
     description: 'This file contains all the dblp data in a single file. The dblp
@@ -161,8 +161,8 @@ artifacts:
       format: nt
       compression: gz
       size: 5007932714
-      sha256:
-      status: pending
+      sha256: 8fbe9558bf71f785f03f81507c1f5ae9ac36f06e90c693a82fb7e088849b1b8d
+      status: active
   - version: 2026-05-01
     title: Monthly Snapshot
     description: 'This file contains all the dblp data in a single file. The dblp
