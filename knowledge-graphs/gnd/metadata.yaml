@@ -26,18 +26,17 @@ maintainers:
 artifacts:
 - artifact: authorities-gnd-geografikum_lds
   title: authorities-gnd-geografikum_lds
-  abstract: 2025-09-29 14:49 42M Stabiler Link auf den aktuellen Gesamtabzug der
-    GND, Entitaeten Geografikum (Geographical entity, Code g). This version has been
-    **auto-generated**.
+  abstract: 2025-09-29 14:49 42M Stabiler Link auf den aktuellen Gesamtabzug der GND,
+    Entitaeten Geografikum (Geographical entity, Code g). This version has been **auto-generated**.
   description: 2025-09-29 14:49 42M Stabiler Link auf den aktuellen Gesamtabzug der
     GND, Entitaeten Geografikum (Geographical entity, Code g). This version has been
     **auto-generated**.
   versions:
   - version: 2025-09-16
     title: authorities-gnd-geografikum_lds
-    abstract: 2025-09-29 14:49 42M Stabiler Link auf den aktuellen Gesamtabzug
-      der GND, Entitaeten Geografikum (Geographical entity, Code g). This version
-      has been **auto-generated**.
+    abstract: 2025-09-29 14:49 42M Stabiler Link auf den aktuellen Gesamtabzug der
+      GND, Entitaeten Geografikum (Geographical entity, Code g). This version has
+      been **auto-generated**.
     description: 2025-09-29 14:49 42M Stabiler Link auf den aktuellen Gesamtabzug
       der GND, Entitaeten Geografikum (Geographical entity, Code g). This version
       has been **auto-generated**.
@@ -54,4 +53,4 @@ artifacts:
       compression: gz
       size: 43476315
       sha256: f329bd6cd74d2851072bf62701ee3ce4023e027615002da2954fb5b751b922a3
-      status: pending
+      status: error
