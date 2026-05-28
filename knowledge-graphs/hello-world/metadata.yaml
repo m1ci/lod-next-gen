@@ -29,6 +29,6 @@ artifacts:
     - file: https://downloads.dbpedia.org/repo/dbpedia/mappings/instance-types/2020.06.01/instance-types_lang%3Dar_transitive.ttl.bz2
       format: ttl
       compression: bz2
-      size:
-      sha256:
-      status: pending
+      size: null
+      sha256: null
+      status: active
