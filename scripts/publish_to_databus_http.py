@@ -36,7 +36,6 @@ def fetch_size(url):
         if size is not None:
             return int(size)
 
-        # fallback: GET if HEAD is unreliable
         r = requests.get(url, stream=True, timeout=30)
         r.raise_for_status()
 
@@ -102,7 +101,7 @@ def send_publish(payload):
 # --- Step 1: Group ---
 group_id = f"https://databus.dbpedia.org/{databus_account}/{data['id']}"
 
-group_payload = {
+send_publish({
     "@context": "https://databus.dbpedia.org/res/context.jsonld",
     "@graph": {
         "@id": group_id,
@@ -110,9 +109,8 @@ group_payload = {
         "title": data["title"],
         "abstract": data.get("description", "")
     }
-}
+})
 
-send_publish(group_payload)
 print(f"✅ Published group: {group_id}")
 
 
@@ -120,7 +118,7 @@ print(f"✅ Published group: {group_id}")
 for artifact in data.get("artifacts", []):
     artifact_id = f"{group_id}/{artifact['artifact'].replace(' ', '-')}"
 
-    artifact_payload = {
+    send_publish({
         "@context": "https://databus.dbpedia.org/res/context.jsonld",
         "@graph": {
             "@id": artifact_id,
@@ -128,9 +126,8 @@ for artifact in data.get("artifacts", []):
             "title": artifact["title"],
             "abstract": artifact.get("description", "")
         }
-    }
+    })
 
-    send_publish(artifact_payload)
     print(f"✅ Published artifact: {artifact_id}")
 
     for version in artifact.get("versions", []):
@@ -151,6 +148,7 @@ for artifact in data.get("artifacts", []):
             if not sha256:
                 print(f"⚠️ Missing sha256 for {file_url}, computing...")
                 sha256 = calculate_sha256(file_url)
+                dist["sha256"] = sha256  # ✅ UPDATE YAML IN MEMORY
 
             # --- SIZE ---
             size = dist.get("size")
@@ -158,10 +156,11 @@ for artifact in data.get("artifacts", []):
                 print(f"⚠️ Missing size for {file_url}, fetching via HEAD...")
                 size = fetch_size(file_url)
 
-            # FINAL fallback
             if not size:
                 print(f"⚠️ Size still unavailable for {file_url}, defaulting to 1")
                 size = 1
+
+            dist["size"] = size  # ✅ UPDATE YAML IN MEMORY
 
             dist_list.append({
                 "@id": part_id,
@@ -192,9 +191,10 @@ for artifact in data.get("artifacts", []):
         print(f"✅ Published version: {version_id}")
 
 
-# --- Reset flag ---
+# --- Reset publish flag ---
 data["databus-publish"] = False
+
 with open(yaml_file, "w") as f:
     yaml.dump(data, f, sort_keys=False)
 
-print(f"💾 Reset databus-publish to false for {yaml_file}")
+print(f"💾 Updated YAML + reset databus-publish to false for {yaml_file}")
