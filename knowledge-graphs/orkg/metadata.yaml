@@ -430,3 +430,133 @@ artifacts:
       size: 41550724
       sha256: 031e4557f9f13c9bfd55096711d468a030d829f4976a1e18a2abd6aa819a0c65
       status: active
+  - version: 2026.05.19
+    title: ORKG Daily Dump
+    description: "The Open Research Knowledge Graph provides scholarly knowledge as\
+      \ a KG enabling querying, comparison, and reuse of scientific information.\n\
+      \n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+    license: https://creativecommons.org/publicdomain/zero/1.0/rdf
+    distributions:
+    - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260519.gz
+      format: nt
+      compression: gz
+      size:
+      sha256:
+      status: pending
+  - version: 2026.05.20
+    title: ORKG Daily Dump
+    description: "The Open Research Knowledge Graph provides scholarly knowledge as\
+      \ a KG enabling querying, comparison, and reuse of scientific information.\n\
+      \n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+    license: https://creativecommons.org/publicdomain/zero/1.0/rdf
+    distributions:
+    - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260520.gz
+      format: nt
+      compression: gz
+      size:
+      sha256:
+      status: pending
+  - version: 2026.05.21
+    title: ORKG Daily Dump
+    description: "The Open Research Knowledge Graph provides scholarly knowledge as\
+      \ a KG enabling querying, comparison, and reuse of scientific information.\n\
+      \n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+    license: https://creativecommons.org/publicdomain/zero/1.0/rdf
+    distributions:
+    - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260521.gz
+      format: nt
+      compression: gz
+      size:
+      sha256:
+      status: pending
+  - version: 2026.05.22
+    title: ORKG Daily Dump
+    description: "The Open Research Knowledge Graph provides scholarly knowledge as\
+      \ a KG enabling querying, comparison, and reuse of scientific information.\n\
+      \n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+    license: https://creativecommons.org/publicdomain/zero/1.0/rdf
+    distributions:
+    - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260522.gz
+      format: nt
+      compression: gz
+      size:
+      sha256:
+      status: pending
+  - version: 2026.05.23
+    title: ORKG Daily Dump
+    description: "The Open Research Knowledge Graph provides scholarly knowledge as\
+      \ a KG enabling querying, comparison, and reuse of scientific information.\n\
+      \n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+    license: https://creativecommons.org/publicdomain/zero/1.0/rdf
+    distributions:
+    - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260523.gz
+      format: nt
+      compression: gz
+      size:
+      sha256:
+      status: pending
+  - version: 2026.05.24
+    title: ORKG Daily Dump
+    description: "The Open Research Knowledge Graph provides scholarly knowledge as\
+      \ a KG enabling querying, comparison, and reuse of scientific information.\n\
+      \n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+    license: https://creativecommons.org/publicdomain/zero/1.0/rdf
+    distributions:
+    - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260524.gz
+      format: nt
+      compression: gz
+      size:
+      sha256:
+      status: pending
+  - version: 2026.05.25
+    title: ORKG Daily Dump
+    description: "The Open Research Knowledge Graph provides scholarly knowledge as\
+      \ a KG enabling querying, comparison, and reuse of scientific information.\n\
+      \n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+    license: https://creativecommons.org/publicdomain/zero/1.0/rdf
+    distributions:
+    - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260525.gz
+      format: nt
+      compression: gz
+      size:
+      sha256:
+      status: pending
+  - version: 2026.05.26
+    title: ORKG Daily Dump
+    description: "The Open Research Knowledge Graph provides scholarly knowledge as\
+      \ a KG enabling querying, comparison, and reuse of scientific information.\n\
+      \n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+    license: https://creativecommons.org/publicdomain/zero/1.0/rdf
+    distributions:
+    - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260526.gz
+      format: nt
+      compression: gz
+      size:
+      sha256:
+      status: pending
+  - version: 2026.05.27
+    title: ORKG Daily Dump
+    description: "The Open Research Knowledge Graph provides scholarly knowledge as\
+      \ a KG enabling querying, comparison, and reuse of scientific information.\n\
+      \n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+    license: https://creativecommons.org/publicdomain/zero/1.0/rdf
+    distributions:
+    - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260527.gz
+      format: nt
+      compression: gz
+      size:
+      sha256:
+      status: pending
+  - version: 2026.05.28
+    title: ORKG Daily Dump
+    description: "The Open Research Knowledge Graph provides scholarly knowledge as\
+      \ a KG enabling querying, comparison, and reuse of scientific information.\n\
+      \n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
+    license: https://creativecommons.org/publicdomain/zero/1.0/rdf
+    distributions:
+    - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260528.gz
+      format: nt
+      compression: gz
+      size:
+      sha256:
+      status: pending
