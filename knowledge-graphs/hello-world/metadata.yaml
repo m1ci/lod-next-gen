@@ -2,24 +2,38 @@ databus-account: knowledge-graph-catalog
 id: hello-world
 title: Hello World
 abstract: Hello World KG short description
-description: |
-  **Hello World Knowledge Graph** is a minimal example of graph-based data modeling. It shows how **entities (nodes)** and **relationships (edges)** represent structured information.
+description: '**Hello World Knowledge Graph** is a minimal example of graph-based
+  data modeling. It shows how **entities (nodes)** and **relationships (edges)** represent
+  structured information.
+
 
   **Overview**
+
   A small graph of people, places, and greetings.
 
+
   **Entities**
+
   - **Alice** (Person)
+
   - **Bob** (Person)
+
   - **Hello World** (Message)
+
   - **Prague** (City)
 
+
   **Relationships**
+
   - Alice **greets** Bob
+
   - Bob responds with "Hello World"
+
   - Alice **lives in** Prague
+
   - Bob **lives in** Prague
 
+  '
 homepage: https://example.org/
 databus-publish: false
 license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
@@ -48,6 +62,6 @@ artifacts:
     - file: https://downloads.dbpedia.org/repo/dbpedia/mappings/instance-types/2020.06.01/instance-types_lang%3Dar_specific.ttl.bz2
       format: ttl
       compression: bz2
-      size: 
-      sha256: 
-      status: pending
+      size: 3686365
+      sha256: 6f761964c4d3ba2ab52c36fa0ac8c7950d68c03cd2ebc6109285ebf05abf5c43
+      status: active
