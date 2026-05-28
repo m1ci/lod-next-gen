@@ -1,6 +1,9 @@
 databus-account: knowledge-graph-catalog
 id: dblp
 title: DBLP
+abstract: "The DBLP computer science bibliography KG is an open, curated KG of\
+  \ DBLP data, offering quality-checked metadata on authors, publications, and venues\
+  \ in journals, conferences, etc.\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
 description: "The DBLP computer science bibliography KG is an open, curated KG of\
   \ DBLP data, offering quality-checked metadata on authors, publications, and venues\
   \ in journals, conferences, etc.\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
@@ -27,12 +30,18 @@ maintainers:
 artifacts:
 - artifact: monthly-snapshot
   title: Monthly Snapshot
+  abstract: "This artifact is a monthly snapshot of the DBLP KG, providing bibliographic\
+    \ metadata on major journals, conference proceedings, including authors and publication\
+    \ venues.\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
   description: "This artifact is a monthly snapshot of the DBLP KG, providing bibliographic\
     \ metadata on major journals, conference proceedings, including authors and publication\
     \ venues.\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
   versions:
   - version: 2025-09-01
     title: DBLP RDF Release of September 2025
+    abstract: "This file contains all the DBLP data in a single file. The dblp\
+      \ computer science bibliography is the open indexing service and knowledge graph\
+      \ of the computer science community.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
     description: "This file contains all the DBLP data in a single file. The dblp\
       \ computer science bibliography is the open indexing service and knowledge graph\
       \ of the computer science community.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
@@ -46,6 +55,13 @@ artifacts:
       status: active
   - version: 2025-10-01
     title: Monthly Snapshot
+    abstract: 'This file contains all the dblp data in a single file. The dblp
+      computer science bibliography is the open indexing service and knowledge graph
+      of the computer science community. This version and its metadata have been **automatically
+      retrieved and published** by an automated update process.
+
+
+      Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml'
     description: 'This file contains all the dblp data in a single file. The dblp
       computer science bibliography is the open indexing service and knowledge graph
       of the computer science community. This version and its metadata have been **automatically
@@ -63,6 +79,13 @@ artifacts:
       status: active
   - version: 2025-11-01
     title: Monthly Snapshot
+    abstract: 'This file contains all the dblp data in a single file. The dblp
+      computer science bibliography is the open indexing service and knowledge graph
+      of the computer science community. This version and its metadata have been **automatically
+      retrieved and published** by an automated update process.
+
+
+      Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml'
     description: 'This file contains all the dblp data in a single file. The dblp
       computer science bibliography is the open indexing service and knowledge graph
       of the computer science community. This version and its metadata have been **automatically
@@ -80,6 +103,13 @@ artifacts:
       status: active
   - version: 2025-12-01
     title: Monthly Snapshot
+    abstract: 'This file contains all the dblp data in a single file. The dblp
+      computer science bibliography is the open indexing service and knowledge graph
+      of the computer science community. This version and its metadata have been **automatically
+      retrieved and published** by an automated update process.
+
+
+      Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml'
     description: 'This file contains all the dblp data in a single file. The dblp
       computer science bibliography is the open indexing service and knowledge graph
       of the computer science community. This version and its metadata have been **automatically
@@ -97,6 +127,13 @@ artifacts:
       status: active
   - version: 2026-01-01
     title: Monthly Snapshot
+    abstract: 'This file contains all the dblp data in a single file. The dblp
+      computer science bibliography is the open indexing service and knowledge graph
+      of the computer science community. This version and its metadata have been **automatically
+      retrieved and published** by an automated update process.
+
+
+      Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml'
     description: 'This file contains all the dblp data in a single file. The dblp
       computer science bibliography is the open indexing service and knowledge graph
       of the computer science community. This version and its metadata have been **automatically
@@ -114,6 +151,13 @@ artifacts:
       status: active
   - version: 2026-02-01
     title: Monthly Snapshot
+    abstract: 'This file contains all the dblp data in a single file. The dblp
+      computer science bibliography is the open indexing service and knowledge graph
+      of the computer science community. This version and its metadata have been **automatically
+      retrieved and published** by an automated update process.
+
+
+      Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml'
     description: 'This file contains all the dblp data in a single file. The dblp
       computer science bibliography is the open indexing service and knowledge graph
       of the computer science community. This version and its metadata have been **automatically
@@ -131,6 +175,13 @@ artifacts:
       status: active
   - version: 2026-03-01
     title: Monthly Snapshot
+    abstract: 'This file contains all the dblp data in a single file. The dblp
+      computer science bibliography is the open indexing service and knowledge graph
+      of the computer science community. This version and its metadata have been **automatically
+      retrieved and published** by an automated update process.
+
+
+      Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml'
     description: 'This file contains all the dblp data in a single file. The dblp
       computer science bibliography is the open indexing service and knowledge graph
       of the computer science community. This version and its metadata have been **automatically
@@ -148,6 +199,13 @@ artifacts:
       status: active
   - version: 2026-04-01
     title: Monthly Snapshot
+    abstract: 'This file contains all the dblp data in a single file. The dblp
+      computer science bibliography is the open indexing service and knowledge graph
+      of the computer science community. This version and its metadata have been **automatically
+      retrieved and published** by an automated update process.
+
+
+      Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml'
     description: 'This file contains all the dblp data in a single file. The dblp
       computer science bibliography is the open indexing service and knowledge graph
       of the computer science community. This version and its metadata have been **automatically
@@ -165,6 +223,13 @@ artifacts:
       status: active
   - version: 2026-05-01
     title: Monthly Snapshot
+    abstract: 'This file contains all the dblp data in a single file. The dblp
+      computer science bibliography is the open indexing service and knowledge graph
+      of the computer science community. This version and its metadata have been **automatically
+      retrieved and published** by an automated update process.
+
+
+      Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml'
     description: 'This file contains all the dblp data in a single file. The dblp
       computer science bibliography is the open indexing service and knowledge graph
       of the computer science community. This version and its metadata have been **automatically

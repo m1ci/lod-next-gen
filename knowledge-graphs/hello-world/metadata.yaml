@@ -52,10 +52,12 @@ maintainers:
 artifacts:
 - artifact: chucks-data
   title: chucks-data
+  abstract: Secrete files about Chuck Norris.
   description: Secrete files about Chuck Norris.
   versions:
   - version: 2026.05.28
     title: chucks-data
+    abstract: Secrete files about Chuck Norris.
     description: Secrete files about Chuck Norris.
     license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
     distributions:

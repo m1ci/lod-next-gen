@@ -1,6 +1,9 @@
 databus-account: knowledge-graph-catalog
 id: yago
 title: YAGO
+abstract: "YAGO is a high-quality knowledge graph based on Wikidata. It uses human-readable\
+  \ IDs, schema.org classes & properties, a curated Wikidata taxonomy, and SHACL constraints\
+  \ for clean data.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
 description: "YAGO is a high-quality knowledge graph based on Wikidata. It uses human-readable\
   \ IDs, schema.org classes & properties, a curated Wikidata taxonomy, and SHACL constraints\
   \ for clean data.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
@@ -23,12 +26,27 @@ maintainers:
 artifacts:
 - artifact: yago-full
   title: YAGO Full
+  abstract: "The complete YAGO Knowledge Graph, containing millions of entities,\
+    \ facts, and semantic relationships, suitable for large-scale reasoning and knowledge-driven\
+    \ applications.\n\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
   description: "The complete YAGO Knowledge Graph, containing millions of entities,\
     \ facts, and semantic relationships, suitable for large-scale reasoning and knowledge-driven\
     \ applications.\n\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
   versions:
   - version: 4.5.0.2
     title: YAGO Full
+    abstract: "YAGO 4.5 is the latest version of the YAGO knowledge base. It is\
+      \ based on Wikidata \u2014 the largest public general-purpose knowledge base.\
+      \ YAGO refines the data as follows:\n 1. All entity identifiers and property\
+      \ identifiers are human-readable.\n 2. The top-level classes come from schema.org\
+      \ \u2014 a standard repertoire of classes and properties maintained by Google\
+      \ and others. The lower level classes are a careful selection of the Wikidata\
+      \ taxonomy.\n 3. The properties come from schema.org.\n4. YAGO 4.5 contains\
+      \ semantic constraints in the form of SHACL. These constraints keep the data\
+      \ clean, and allow for logical reasoning on YAGO. YAGO is thus a simplified,\
+      \ cleaned, and \u201Creasonable\u201D version of Wikidata. It contains 49 million\
+      \ entities and 109 million facts. See above for getting started!\n\n Found an\
+      \ issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
     description: "YAGO 4.5 is the latest version of the YAGO knowledge base. It is\
       \ based on Wikidata \u2014 the largest public general-purpose knowledge base.\
       \ YAGO refines the data as follows:\n 1. All entity identifiers and property\
@@ -51,12 +69,27 @@ artifacts:
       status: active
 - artifact: yago-tiny
   title: YAGO Tiny
+  abstract: "A lightweight version of the YAGO Knowledge Graph, offering a small,\
+    \ manageable dataset of key entities and relationships for quick experiments and\
+    \ testing.\n\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
   description: "A lightweight version of the YAGO Knowledge Graph, offering a small,\
     \ manageable dataset of key entities and relationships for quick experiments and\
     \ testing.\n\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
   versions:
   - version: 4.5.0.2
     title: YAGO Tiny
+    abstract: "YAGO 4.5 is the latest version of the YAGO knowledge base. It is\
+      \ based on Wikidata \u2014 the largest public general-purpose knowledge base.\
+      \ YAGO refines the data as follows:\n 1. All entity identifiers and property\
+      \ identifiers are human-readable.\n 2. The top-level classes come from schema.org\
+      \ \u2014 a standard repertoire of classes and properties maintained by Google\
+      \ and others. The lower level classes are a careful selection of the Wikidata\
+      \ taxonomy.\n 3. The properties come from schema.org.\n4. YAGO 4.5 contains\
+      \ semantic constraints in the form of SHACL. These constraints keep the data\
+      \ clean, and allow for logical reasoning on YAGO. YAGO is thus a simplified,\
+      \ cleaned, and \u201Creasonable\u201D version of Wikidata. It contains 49 million\
+      \ entities and 109 million facts. See above for getting started!\n\n Found an\
+      \ issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
     description: "YAGO 4.5 is the latest version of the YAGO knowledge base. It is\
       \ based on Wikidata \u2014 the largest public general-purpose knowledge base.\
       \ YAGO refines the data as follows:\n 1. All entity identifiers and property\

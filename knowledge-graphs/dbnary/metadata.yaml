@@ -1,6 +1,9 @@
 databus-account: knowledge-graph-catalog
 id: dbnary
 title: DBnary
+abstract: Dbnary is an effort to provide multilingual lexical data extracted from
+  wiktionary. The extracted data is made available as LLOD (Linguistic Linked Open
+  Data). This data set has won the Monnet challenge in 2012.
 description: Dbnary is an effort to provide multilingual lexical data extracted from
   wiktionary. The extracted data is made available as LLOD (Linguistic Linked Open
   Data). This data set has won the Monnet challenge in 2012.
@@ -19,10 +22,12 @@ maintainers:
 artifacts:
 - artifact: en_dbnary_ontolex
   title: en_dbnary_ontolex
+  abstract: The core data as it has been extracted from Wiktionary.
   description: The core data as it has been extracted from Wiktionary.
   versions:
   - version: 20250901
     title: en_dbnary_ontolex
+    abstract: The core data as it has been extracted from Wiktionary.
     description: The core data as it has been extracted from Wiktionary.
     license: https://creativecommons.org/licenses/by-sa/3.0/rdf
     distributions:
