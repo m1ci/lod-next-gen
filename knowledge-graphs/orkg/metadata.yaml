@@ -440,9 +440,9 @@ artifacts:
     - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260519.gz
       format: nt
       compression: gz
-      size:
-      sha256:
-      status: pending
+      size: 41555682
+      sha256: ce91ac8aebba832c43818120874755582e4a920dfdc469fbd5f21c6a05a6b0a0
+      status: active
   - version: 2026.05.20
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -453,9 +453,9 @@ artifacts:
     - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260520.gz
       format: nt
       compression: gz
-      size:
-      sha256:
-      status: pending
+      size: 41558150
+      sha256: bb8b29fb0fa70dee36eebe4e60bd093f2cf6695a102156c4516c16d34f8cd468
+      status: active
   - version: 2026.05.21
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -466,9 +466,9 @@ artifacts:
     - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260521.gz
       format: nt
       compression: gz
-      size:
-      sha256:
-      status: pending
+      size: 41560985
+      sha256: c8d139f655ebb02f71059eaf99e141803e18c332c2c6800721ac19e8febdeb51
+      status: active
   - version: 2026.05.22
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -479,9 +479,9 @@ artifacts:
     - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260522.gz
       format: nt
       compression: gz
-      size:
-      sha256:
-      status: pending
+      size: 41560785
+      sha256: ce10a8e1971793a9974b1ef79da6017033175a081ec19ee55a912a9ef849a20a
+      status: active
   - version: 2026.05.23
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -492,9 +492,9 @@ artifacts:
     - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260523.gz
       format: nt
       compression: gz
-      size:
-      sha256:
-      status: pending
+      size: 41569185
+      sha256: eda4ec862d52f28c5a5a2e473f71c6dda57a3faf55c713aac57180817c3278c5
+      status: active
   - version: 2026.05.24
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -505,9 +505,9 @@ artifacts:
     - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260524.gz
       format: nt
       compression: gz
-      size:
-      sha256:
-      status: pending
+      size: 41573233
+      sha256: 58e07ec83db08cd1780afc7a1c845ff0d5308ebb70871fdb29fd80917b74954d
+      status: active
   - version: 2026.05.25
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -518,9 +518,9 @@ artifacts:
     - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260525.gz
       format: nt
       compression: gz
-      size:
-      sha256:
-      status: pending
+      size: 41573233
+      sha256: 48ded56f7f95dc9acde3fa7454d9872127da77a70be719d243d544115b619ccd
+      status: active
   - version: 2026.05.26
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -531,9 +531,9 @@ artifacts:
     - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260526.gz
       format: nt
       compression: gz
-      size:
-      sha256:
-      status: pending
+      size: 41574001
+      sha256: 13ac049da08bb5f886c650766c612e4fe515b88bf5ca07f2c1d9de79e028f7f0
+      status: active
   - version: 2026.05.27
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -544,9 +544,9 @@ artifacts:
     - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260527.gz
       format: nt
       compression: gz
-      size:
-      sha256:
-      status: pending
+      size: 41576242
+      sha256: b5ef9c51b733e731971c0bb3d11b9bdf94ff8e2bd878871c33a20efd27fec95f
+      status: active
   - version: 2026.05.28
     title: ORKG Daily Dump
     description: "The Open Research Knowledge Graph provides scholarly knowledge as\
@@ -557,6 +557,6 @@ artifacts:
     - file: https://orkg.org/files/rdf-dumps/rdf-export-orkg.nt-20260528.gz
       format: nt
       compression: gz
-      size:
-      sha256:
-      status: pending
+      size: 41580112
+      sha256: b0e7710c744f01a98c1806e1b363257a72d45d8b392e80ead408768359e62e9b
+      status: active
