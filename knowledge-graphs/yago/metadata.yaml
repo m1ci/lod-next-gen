@@ -26,8 +26,8 @@ maintainers:
 artifacts:
 - artifact: yago-full
   title: YAGO Full
-  abstract: "The complete YAGO Knowledge Graph, containing millions of entities,\
-    \ facts, and semantic relationships, suitable for large-scale reasoning and knowledge-driven\
+  abstract: "The complete YAGO Knowledge Graph, containing millions of entities, facts,\
+    \ and semantic relationships, suitable for large-scale reasoning and knowledge-driven\
     \ applications.\n\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
   description: "The complete YAGO Knowledge Graph, containing millions of entities,\
     \ facts, and semantic relationships, suitable for large-scale reasoning and knowledge-driven\
@@ -35,8 +35,8 @@ artifacts:
   versions:
   - version: 4.5.0.2
     title: YAGO Full
-    abstract: "YAGO 4.5 is the latest version of the YAGO knowledge base. It is\
-      \ based on Wikidata \u2014 the largest public general-purpose knowledge base."
+    abstract: "YAGO 4.5 is the latest version of the YAGO knowledge base. It is based\
+      \ on Wikidata \u2014 the largest public general-purpose knowledge base."
     description: "YAGO 4.5 is the latest version of the YAGO knowledge base. It is\
       \ based on Wikidata \u2014 the largest public general-purpose knowledge base.\
       \ YAGO refines the data as follows:\n 1. All entity identifiers and property\
@@ -68,8 +68,8 @@ artifacts:
   versions:
   - version: 4.5.0.2
     title: YAGO Tiny
-    abstract: "YAGO 4.5 is the latest version of the YAGO knowledge base. It is\
-      \ based on Wikidata \u2014 the largest public general-purpose knowledge base."
+    abstract: "YAGO 4.5 is the latest version of the YAGO knowledge base. It is based\
+      \ on Wikidata \u2014 the largest public general-purpose knowledge base."
     description: "YAGO 4.5 is the latest version of the YAGO knowledge base. It is\
       \ based on Wikidata \u2014 the largest public general-purpose knowledge base.\
       \ YAGO refines the data as follows:\n 1. All entity identifiers and property\
@@ -89,4 +89,4 @@ artifacts:
       compression: zip
       size: 200800361
       sha256: c9e52cf0338c9dd6586f4d601b02398fef55253a2be94dcace8ae9115f0d889d
-      status: pending
+      status: active
