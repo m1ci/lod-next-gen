@@ -25,6 +25,7 @@ databus-publish: false
 license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
 keywords:
 - cross-domain
+- big data
 internal_namespaces:
 - http://dbpedia.org/resource/
 sparql:
