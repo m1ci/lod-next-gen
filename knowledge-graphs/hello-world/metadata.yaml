@@ -1,6 +1,7 @@
 databus-account: knowledge-graph-catalog
 id: hello-world
 title: Hello World
+abstract: Hello World KG short description
 description: |
   **Hello World Knowledge Graph** is a minimal example of graph-based data modeling. It shows how **entities (nodes)** and **relationships (edges)** represent structured information.
 
