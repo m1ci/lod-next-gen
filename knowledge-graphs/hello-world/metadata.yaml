@@ -1,0 +1,34 @@
+databus-account: knowledge-graph-catalog
+id: hello-world
+title: Hello World
+description: "Hello World descriptionn"
+homepage: https://example.org/
+databus-publish: false
+license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
+keywords:
+- cross-domain
+internal_namespaces:
+- http://dbpedia.org/resource/
+sparql:
+- name: main
+  url: http://example.org/sparql
+maintainers:
+- name: Chuck Norris
+  contact: Chuck.Norris@gmail.com
+  github: chuck
+artifacts:
+- artifact: chucks-data
+  title: chucks-data
+  description: Secrete files about Chuck Norris.
+  versions:
+  - version: 2026.05.28
+    title: chucks-data
+    description: Secrete files about Chuck Norris.
+    license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
+    distributions:
+    - file: https://drops.dagstuhl.de/storage/artifacts/dblp/rdf/2026/dblp-2026-05-01.nt.gz
+      format: ttl
+      compression: bz2
+      size: 46346259
+      sha256:
+      status: active

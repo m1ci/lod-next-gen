@@ -3,6 +3,7 @@ import requests
 import os
 import sys
 import json
+import hashlib
 
 # --- Config ---
 API_PUBLISH = "https://databus.dbpedia.org/api/publish?fetch-file-properties=false"
@@ -10,6 +11,17 @@ API_PUBLISH = "https://databus.dbpedia.org/api/publish?fetch-file-properties=fal
 # YAML file path from argument
 yaml_file = sys.argv[1]
 
+
+# --- Helper function ---
+def calculate_sha256(url):
+    """Downloads file in chunks to calculate sha256."""
+    h = hashlib.sha256()
+    with requests.get(url, stream=True) as r:
+        r.raise_for_status()
+        for chunk in r.iter_content(chunk_size=8192):
+            if chunk:
+                h.update(chunk)
+    return h.hexdigest()
 
 
 # --- Load YAML ---
@@ -44,22 +56,27 @@ if not data.get("databus-publish", False):
     print(f"Skipping {yaml_file}: databus-publish is false")
     sys.exit(0)
 
+
 # --- Helper function ---
 def send_publish(payload):
     print("=== Payload to publish ===")
     print(json.dumps(payload, indent=2))
     print("=========================")
+
     headers = {
         "accept": "application/json",
         "Content-Type": "application/ld+json",
         "X-API-KEY": API_KEY
     }
+
     resp = requests.post(API_PUBLISH, headers=headers, json=payload)
     resp.raise_for_status()
     return resp.json()
 
+
 # --- Step 1: Publish Group ---
 group_id = f"https://databus.dbpedia.org/{data['databus-account']}/{data['id']}"
+
 group_payload = {
     "@context": "https://databus.dbpedia.org/res/context.jsonld",
     "@graph": {
@@ -69,12 +86,15 @@ group_payload = {
         "abstract": data.get("description", "")
     }
 }
+
 send_publish(group_payload)
 print(f"✅ Published group: {group_id}")
+
 
 # --- Step 2: Publish Artifacts & Versions ---
 for artifact in data.get("artifacts", []):
     artifact_id = f"{group_id}/{artifact['artifact'].replace(' ', '-')}"
+    
     artifact_payload = {
         "@context": "https://databus.dbpedia.org/res/context.jsonld",
         "@graph": {
@@ -84,21 +104,36 @@ for artifact in data.get("artifacts", []):
             "abstract": artifact.get("description", "")
         }
     }
+
     send_publish(artifact_payload)
     print(f"✅ Published artifact: {artifact_id}")
 
     for version in artifact.get("versions", []):
         version_str = str(version['version'])
         version_id = f"{artifact_id}/{version_str.replace(' ', '-')}"
+        
         dist_list = []
+
         for i, dist in enumerate(version.get("distributions", []), start=1):
             part_id = f"{version_id}#e{i}"
+
+            sha256 = dist.get("sha256")
+
+            # compute if missing / empty
+            if not sha256:
+                file_url = dist.get("file")
+                if not file_url:
+                    raise ValueError(f"Missing file URL for distribution {part_id}")
+
+                print(f"⚠️ Missing sha256 for {file_url}, computing...")
+                sha256 = calculate_sha256(file_url)
+
             dist_list.append({
                 "@id": part_id,
                 "@type": "Part",
                 "formatExtension": dist.get("format"),
                 "compression": dist.get("compression"),
-                "sha256sum": dist.get("sha256"),
+                "sha256sum": sha256,
                 "dcat:byteSize": dist.get("size"),
                 "downloadURL": dist.get("file")
             })
@@ -110,12 +145,17 @@ for artifact in data.get("artifacts", []):
                 "@id": version_id,
                 "title": version["title"],
                 "description": version.get("description", ""),
-                "license": version.get("license", "https://creativecommons.org/licenses/by/4.0/"),
+                "license": version.get(
+                    "license",
+                    "https://creativecommons.org/licenses/by/4.0/"
+                ),
                 "distribution": dist_list
             }
         }
+
         send_publish(version_payload)
         print(f"✅ Published version: {version_id}")
+
 
 # --- Reset databus-publish flag ---
 data["databus-publish"] = False
