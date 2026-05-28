@@ -1,7 +1,7 @@
 databus-account: knowledge-graph-catalog
 id: hello-world
 title: Hello World
-description: "Hello World descriptionn"
+description: Hello World descriptionn
 homepage: https://example.org/
 databus-publish: false
 license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
@@ -30,5 +30,5 @@ artifacts:
       format: ttl
       compression: bz2
       size: 46346259
-      sha256:
-      status: pending
+      sha256: null
+      status: active
