@@ -1,9 +1,9 @@
 databus-account: knowledge-graph-catalog
 id: dblp
 title: DBLP
-abstract: "The DBLP computer science bibliography KG is an open, curated KG of\
-  \ DBLP data, offering quality-checked metadata on authors, publications, and venues\
-  \ in journals, conferences, etc.\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
+abstract: "The DBLP computer science bibliography KG is an open, curated KG of DBLP\
+  \ data, offering quality-checked metadata on authors, publications, and venues in\
+  \ journals, conferences, etc.\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
 description: "The DBLP computer science bibliography KG is an open, curated KG of\
   \ DBLP data, offering quality-checked metadata on authors, publications, and venues\
   \ in journals, conferences, etc.\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
@@ -39,9 +39,9 @@ artifacts:
   versions:
   - version: 2025-09-01
     title: DBLP RDF Release of September 2025
-    abstract: 'This file contains all the dblp data in a single file. The dblp
-      computer science bibliography is the open indexing service and knowledge graph
-      of the computer science community.'
+    abstract: This file contains all the dblp data in a single file. The dblp computer
+      science bibliography is the open indexing service and knowledge graph of the
+      computer science community.
     description: "This file contains all the DBLP data in a single file. The dblp\
       \ computer science bibliography is the open indexing service and knowledge graph\
       \ of the computer science community.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
@@ -55,9 +55,9 @@ artifacts:
       status: active
   - version: 2025-10-01
     title: Monthly Snapshot
-    abstract: 'This file contains all the dblp data in a single file. The dblp
-      computer science bibliography is the open indexing service and knowledge graph
-      of the computer science community.'
+    abstract: This file contains all the dblp data in a single file. The dblp computer
+      science bibliography is the open indexing service and knowledge graph of the
+      computer science community.
     description: 'This file contains all the dblp data in a single file. The dblp
       computer science bibliography is the open indexing service and knowledge graph
       of the computer science community. This version and its metadata have been **automatically
@@ -75,9 +75,9 @@ artifacts:
       status: active
   - version: 2025-11-01
     title: Monthly Snapshot
-    abstract: 'This file contains all the dblp data in a single file. The dblp
-      computer science bibliography is the open indexing service and knowledge graph
-      of the computer science community.'
+    abstract: This file contains all the dblp data in a single file. The dblp computer
+      science bibliography is the open indexing service and knowledge graph of the
+      computer science community.
     description: 'This file contains all the dblp data in a single file. The dblp
       computer science bibliography is the open indexing service and knowledge graph
       of the computer science community. This version and its metadata have been **automatically
@@ -95,9 +95,9 @@ artifacts:
       status: active
   - version: 2025-12-01
     title: Monthly Snapshot
-    abstract: 'This file contains all the dblp data in a single file. The dblp
-      computer science bibliography is the open indexing service and knowledge graph
-      of the computer science community.'
+    abstract: This file contains all the dblp data in a single file. The dblp computer
+      science bibliography is the open indexing service and knowledge graph of the
+      computer science community.
     description: 'This file contains all the dblp data in a single file. The dblp
       computer science bibliography is the open indexing service and knowledge graph
       of the computer science community. This version and its metadata have been **automatically
@@ -115,9 +115,9 @@ artifacts:
       status: active
   - version: 2026-01-01
     title: Monthly Snapshot
-    abstract: 'This file contains all the dblp data in a single file. The dblp
-      computer science bibliography is the open indexing service and knowledge graph
-      of the computer science community.'
+    abstract: This file contains all the dblp data in a single file. The dblp computer
+      science bibliography is the open indexing service and knowledge graph of the
+      computer science community.
     description: 'This file contains all the dblp data in a single file. The dblp
       computer science bibliography is the open indexing service and knowledge graph
       of the computer science community. This version and its metadata have been **automatically
@@ -135,9 +135,9 @@ artifacts:
       status: active
   - version: 2026-02-01
     title: Monthly Snapshot
-    abstract: 'This file contains all the dblp data in a single file. The dblp
-      computer science bibliography is the open indexing service and knowledge graph
-      of the computer science community.'
+    abstract: This file contains all the dblp data in a single file. The dblp computer
+      science bibliography is the open indexing service and knowledge graph of the
+      computer science community.
     description: 'This file contains all the dblp data in a single file. The dblp
       computer science bibliography is the open indexing service and knowledge graph
       of the computer science community. This version and its metadata have been **automatically
@@ -155,9 +155,9 @@ artifacts:
       status: active
   - version: 2026-03-01
     title: Monthly Snapshot
-    abstract: 'This file contains all the dblp data in a single file. The dblp
-      computer science bibliography is the open indexing service and knowledge graph
-      of the computer science community.'
+    abstract: This file contains all the dblp data in a single file. The dblp computer
+      science bibliography is the open indexing service and knowledge graph of the
+      computer science community.
     description: 'This file contains all the dblp data in a single file. The dblp
       computer science bibliography is the open indexing service and knowledge graph
       of the computer science community. This version and its metadata have been **automatically
@@ -175,9 +175,9 @@ artifacts:
       status: active
   - version: 2026-04-01
     title: Monthly Snapshot
-    abstract: 'This file contains all the dblp data in a single file. The dblp
-      computer science bibliography is the open indexing service and knowledge graph
-      of the computer science community.'
+    abstract: This file contains all the dblp data in a single file. The dblp computer
+      science bibliography is the open indexing service and knowledge graph of the
+      computer science community.
     description: 'This file contains all the dblp data in a single file. The dblp
       computer science bibliography is the open indexing service and knowledge graph
       of the computer science community. This version and its metadata have been **automatically
@@ -195,9 +195,9 @@ artifacts:
       status: active
   - version: 2026-05-01
     title: Monthly Snapshot
-    abstract: 'This file contains all the dblp data in a single file. The dblp
-      computer science bibliography is the open indexing service and knowledge graph
-      of the computer science community.'
+    abstract: This file contains all the dblp data in a single file. The dblp computer
+      science bibliography is the open indexing service and knowledge graph of the
+      computer science community.
     description: 'This file contains all the dblp data in a single file. The dblp
       computer science bibliography is the open indexing service and knowledge graph
       of the computer science community. This version and its metadata have been **automatically
@@ -212,4 +212,4 @@ artifacts:
       compression: gz
       size: 5048198037
       sha256: 4bbd3f32196273b46c9c1556f1c0d799213919f216aa0ead0c570193d6433668
-      status: pending
+      status: active
