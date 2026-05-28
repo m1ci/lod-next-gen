@@ -107,7 +107,7 @@ send_publish({
         "@id": group_id,
         "@type": "Group",
         "title": data["title"],
-        "abstract": data.get("description", ""),
+        "abstract": data.get("abstract", ""),
         "description": data.get("description", "")
     }
 })
@@ -125,7 +125,7 @@ for artifact in data.get("artifacts", []):
             "@id": artifact_id,
             "@type": "Artifact",
             "title": artifact["title"],
-            "abstract": artifact.get("description", ""),
+            "abstract": artifact.get("abstract", ""),
             "description": artifact.get("description", "")
         }
     })
@@ -180,7 +180,7 @@ for artifact in data.get("artifacts", []):
                 "@type": "Version",
                 "@id": version_id,
                 "title": version["title"],
-                "abstract": version.get("description", ""),
+                "abstract": version.get("abstract", ""),
                 "description": version.get("description", ""),
                 "license": version.get(
                     "license",
