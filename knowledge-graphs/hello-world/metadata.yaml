@@ -1,7 +1,7 @@
 databus-account: knowledge-graph-catalog
 id: hello-world
 title: Hello World
-abstract: Hello World KG short description
+abstract: Hello World KG short description (group abs)
 description: '**Hello World Knowledge Graph** is a minimal example of graph-based
   data modeling. It shows how **entities (nodes)** and **relationships (edges)** represent
   structured information.
@@ -52,13 +52,13 @@ maintainers:
 artifacts:
 - artifact: chucks-data
   title: chucks-data
-  abstract: Secrete files about Chuck Norris.
-  description: Secrete files about Chuck Norris.
+  abstract: Secrete files about Chuck Norris (art abs).
+  description: Secrete files about Chuck Norris (art dis).
   versions:
   - version: 2026.05.28
     title: chucks-data
-    abstract: Secrete files about Chuck Norris.
-    description: Secrete files about Chuck Norris.
+    abstract: Secrete files about Chuck Norris (ver abs).
+    description: Secrete files about Chuck Norris (ver des).
     license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
     distributions:
     - file: https://downloads.dbpedia.org/repo/dbpedia/mappings/instance-types/2020.06.01/instance-types_lang%3Dar_specific.ttl.bz2
@@ -66,4 +66,4 @@ artifacts:
       compression: bz2
       size: 3686365
       sha256: 6f761964c4d3ba2ab52c36fa0ac8c7950d68c03cd2ebc6109285ebf05abf5c43
-      status: active
+      status: pending

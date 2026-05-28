@@ -70,6 +70,13 @@ def update_yaml(new_date, url, size, data):
     new_version_entry = {
         "version": new_date,
         "title": "Monthly Snapshot",
+        "abstract": (
+            "This file contains all the dblp data in a single file. "
+            "The dblp computer science bibliography is the open indexing service "
+            "and knowledge graph of the computer science community. "
+            "This version and its metadata have been **automatically retrieved and published** by an automated update process.\n\n"
+            "Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
+        ),
         "description": (
             "This file contains all the dblp data in a single file. "
             "The dblp computer science bibliography is the open indexing service "
