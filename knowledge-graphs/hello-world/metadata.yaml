@@ -31,4 +31,4 @@ artifacts:
       compression: bz2
       size: 46346259
       sha256:
-      status: active
+      status: pending
