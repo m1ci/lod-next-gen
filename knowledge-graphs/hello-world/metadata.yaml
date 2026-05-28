@@ -1,7 +1,7 @@
 databus-account: knowledge-graph-catalog
 id: hello-world
 title: Hello World
-description: Hello World descriptionn
+description: **Hello World Knowledge Graph** is a minimal example of graph-based data modeling. It shows how **entities (nodes)** and **relationships (edges)** represent structured information.\n\n**Overview**\nA small graph of people, places, and greetings.\n\n**Entities**\n- **Alice** (Person)\n- **Bob** (Person)\n- **Hello World** (Message)\n- **Prague** (City)\n\n**Relationships**\n- Alice **greets** Bob\n- Bob responds with \"Hello World\"\n- Alice **lives in** Prague\n- Bob **lives in** Prague
 homepage: https://example.org/
 databus-publish: false
 license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
