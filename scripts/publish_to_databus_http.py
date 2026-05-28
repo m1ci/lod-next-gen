@@ -8,11 +8,10 @@ import hashlib
 # --- Config ---
 API_PUBLISH = "https://databus.dbpedia.org/api/publish?fetch-file-properties=false"
 
-# YAML file path from argument
 yaml_file = sys.argv[1]
 
 
-# --- Helper function ---
+# --- Helpers ---
 def calculate_sha256(url):
     """Downloads file in chunks to calculate sha256."""
     h = hashlib.sha256()
@@ -22,6 +21,33 @@ def calculate_sha256(url):
             if chunk:
                 h.update(chunk)
     return h.hexdigest()
+
+
+def fetch_size(url):
+    """
+    Fetch file size using HTTP HEAD request (Content-Length).
+    Returns int or None if unavailable.
+    """
+    try:
+        r = requests.head(url, allow_redirects=True, timeout=30)
+        r.raise_for_status()
+
+        size = r.headers.get("Content-Length")
+        if size is not None:
+            return int(size)
+
+        # fallback: GET if HEAD is unreliable
+        r = requests.get(url, stream=True, timeout=30)
+        r.raise_for_status()
+
+        size = r.headers.get("Content-Length")
+        if size is not None:
+            return int(size)
+
+    except Exception as e:
+        print(f"⚠️ Could not fetch size for {url}: {e}")
+
+    return None
 
 
 # --- Load YAML ---
@@ -37,27 +63,26 @@ if not data:
     sys.exit(1)
 
 
-# Determine account and API key
+# --- Auth ---
 databus_account = data.get("databus-account")
 if not databus_account:
     raise ValueError("databus-account is not specified in metadata.yaml")
 
-
-# API key environment variable convention
 api_key_env = databus_account.upper().replace("-", "_")
 API_KEY = os.environ.get(api_key_env)
+
 if not API_KEY:
     print("Error: DATABUS_API_KEY not set")
     sys.exit(1)
 
 
-# --- Check databus-publish flag ---
+# --- Publish flag ---
 if not data.get("databus-publish", False):
     print(f"Skipping {yaml_file}: databus-publish is false")
     sys.exit(0)
 
 
-# --- Helper function ---
+# --- Publisher ---
 def send_publish(payload):
     print("=== Payload to publish ===")
     print(json.dumps(payload, indent=2))
@@ -74,8 +99,8 @@ def send_publish(payload):
     return resp.json()
 
 
-# --- Step 1: Publish Group ---
-group_id = f"https://databus.dbpedia.org/{data['databus-account']}/{data['id']}"
+# --- Step 1: Group ---
+group_id = f"https://databus.dbpedia.org/{databus_account}/{data['id']}"
 
 group_payload = {
     "@context": "https://databus.dbpedia.org/res/context.jsonld",
@@ -91,10 +116,10 @@ send_publish(group_payload)
 print(f"✅ Published group: {group_id}")
 
 
-# --- Step 2: Publish Artifacts & Versions ---
+# --- Step 2: Artifacts & Versions ---
 for artifact in data.get("artifacts", []):
     artifact_id = f"{group_id}/{artifact['artifact'].replace(' ', '-')}"
-    
+
     artifact_payload = {
         "@context": "https://databus.dbpedia.org/res/context.jsonld",
         "@graph": {
@@ -109,24 +134,34 @@ for artifact in data.get("artifacts", []):
     print(f"✅ Published artifact: {artifact_id}")
 
     for version in artifact.get("versions", []):
-        version_str = str(version['version'])
+        version_str = str(version["version"])
         version_id = f"{artifact_id}/{version_str.replace(' ', '-')}"
-        
+
         dist_list = []
 
         for i, dist in enumerate(version.get("distributions", []), start=1):
             part_id = f"{version_id}#e{i}"
+            file_url = dist.get("file")
 
+            if not file_url:
+                raise ValueError(f"Missing file URL for distribution {part_id}")
+
+            # --- SHA256 ---
             sha256 = dist.get("sha256")
-
-            # compute if missing / empty
             if not sha256:
-                file_url = dist.get("file")
-                if not file_url:
-                    raise ValueError(f"Missing file URL for distribution {part_id}")
-
                 print(f"⚠️ Missing sha256 for {file_url}, computing...")
                 sha256 = calculate_sha256(file_url)
+
+            # --- SIZE ---
+            size = dist.get("size")
+            if not size:
+                print(f"⚠️ Missing size for {file_url}, fetching via HEAD...")
+                size = fetch_size(file_url)
+
+            # FINAL fallback
+            if not size:
+                print(f"⚠️ Size still unavailable for {file_url}, defaulting to 1")
+                size = 1
 
             dist_list.append({
                 "@id": part_id,
@@ -134,8 +169,8 @@ for artifact in data.get("artifacts", []):
                 "formatExtension": dist.get("format"),
                 "compression": dist.get("compression"),
                 "sha256sum": sha256,
-                "dcat:byteSize": dist.get("size"),
-                "downloadURL": dist.get("file")
+                "dcat:byteSize": size,
+                "downloadURL": file_url
             })
 
         version_payload = {
@@ -157,7 +192,7 @@ for artifact in data.get("artifacts", []):
         print(f"✅ Published version: {version_id}")
 
 
-# --- Reset databus-publish flag ---
+# --- Reset flag ---
 data["databus-publish"] = False
 with open(yaml_file, "w") as f:
     yaml.dump(data, f, sort_keys=False)
