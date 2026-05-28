@@ -29,8 +29,8 @@ artifacts:
   versions:
   - version: 2022.12.01
     title: instance-types
-    abstract: The dataset contains a file with just the types as classified with
-      the mapping extractor.
+    abstract: The dataset contains a file with just the types as classified with the
+      mapping extractor.
     description: The dataset contains a file with just the types as classified with
       the mapping extractor.
     license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
@@ -40,4 +40,4 @@ artifacts:
       compression: bz2
       size: 46346259
       sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: pending
+      status: active
