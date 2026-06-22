@@ -225,14 +225,18 @@ def publish_artifact(group_id, artifact_uri, api_key):
 # =========================================================
 # VERSIONS
 # =========================================================
-def query_versions(artifact_uri):
+def query_versions(artifact_uri, graph):
     query = f"""
 PREFIX databus: <https://dataid.dbpedia.org/databus#>
+PREFIX databus-cv: <https://dataid.dbpedia.org/databus-cv#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
 
 SELECT DISTINCT ?version
 WHERE {{
   ?version databus:group <{SOURCE_GROUP}> .
   ?version databus:artifact <{artifact_uri}> .
+  ?version dcat:distribution ?distribution .
+  ?distribution databus-cv:graph "{graph}" .
 }}
 """
 
@@ -343,7 +347,8 @@ def main():
     parser.add_argument("group_id")
     parser.add_argument("group_title")
     parser.add_argument("--api-key", required=False)
-
+    parser.add_argument("--graph", required=True)
+    
     args = parser.parse_args()
 
     api_key = args.api_key or os.getenv("DATABUS_API_KEY")
@@ -375,7 +380,7 @@ def main():
 
             artifact_id = artifact_uri.rstrip("/").split("/")[-1]
 
-            versions = query_versions(artifact_uri)
+            versions = query_versions(artifact_uri, args.graph)
 
             print(f"FOUND {len(versions)} VERSIONS")
 
