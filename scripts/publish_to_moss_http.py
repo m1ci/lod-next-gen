@@ -70,23 +70,27 @@ if not keywords:
 # Build Turtle
 # -----------------------
 
-ttl = """PREFIX schema: <https://schema.org/>
+# Escape keywords safely
+keyword_values = ", ".join(
+    f'"{str(k).replace(chr(34), r"\"")}"'
+    for k in keywords
+)
 
-<%s>
-""" % resource
+ttl = f"""PREFIX schema: <https://schema.org/>
+PREFIX databus: <https://dataid.dbpedia.org/databus#>
+PREFIX void: <http://rdfs.org/ns/void#>
 
-for kw in keywords:
-    escaped = str(kw).replace('"', '\\"')
-    ttl += f'    schema:keywords "{escaped}" ;\n'
+<{resource}>
+    a databus:Group ;
+    schema:keywords {keyword_values} .
+"""
 
-ttl = ttl.rstrip(" ;\n") + " .\n"
-
-print("=== Turtle ===")
+print("=== Turtle payload ===")
 print(ttl)
-print("================")
+print("======================")
 
 # -----------------------
-# POST
+# POST to MOSS
 # -----------------------
 
 headers = {
@@ -105,11 +109,13 @@ response = requests.post(
     params=params,
     headers=headers,
     data=ttl.encode("utf-8"),
+    timeout=60,
 )
 
 try:
     response.raise_for_status()
 except requests.HTTPError:
+    print("❌ MOSS API error:")
     print(response.text)
     raise
 
