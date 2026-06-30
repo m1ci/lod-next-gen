@@ -48,8 +48,16 @@ jobs:
             python scripts/publish_to_databus_http.py "$f"
           done
 
+      # 6️⃣ Publish metadata to MOSS
+      - name: Publish metadata to MOSS
+        if: ${{ success() }}
+        run: |
+          echo "Publishing YAMLs to MOSS..."
+          for f in knowledge-graphs/**/*.yaml; do
+            python scripts/publish_to_moss_http.py "$f"
+          done
 
-      # 6️⃣ Commit updated YAML back to the repository
+      # 7️⃣ Commit updated YAML back to repository
       - name: Commit YAML updates
         if: ${{ success() }}
         run: |
