@@ -70,7 +70,6 @@ if not keywords:
 # Build Turtle
 # -----------------------
 
-# Escape keywords safely
 keyword_values = ", ".join(
     f'"{str(k).replace(chr(34), r"\"")}"'
     for k in keywords
@@ -100,7 +99,7 @@ headers = {
 }
 
 params = {
-    "module": "keyword",
+    "module": "kg-metadata",   # ✅ UPDATED HERE
     "resource": resource,
 }
 
