@@ -71,8 +71,7 @@ if not keywords:
 # -----------------------
 
 keyword_values = ", ".join(
-    f'"{str(k).replace(chr(34), r"\"")}"'
-    for k in keywords
+    f'"{k}"' for k in keywords
 )
 
 ttl = f"""PREFIX schema: <https://schema.org/>
