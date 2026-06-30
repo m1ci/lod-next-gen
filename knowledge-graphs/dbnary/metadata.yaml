@@ -9,6 +9,7 @@ description: Dbnary is an effort to provide multilingual lexical data extracted 
   Data). This data set has won the Monnet challenge in 2012.
 homepage: https://kaiko.getalp.org
 databus-publish: false
+moss-publish: true
 license: https://creativecommons.org/licenses/by-sa/3.0/rdf
 keywords:
 - linguistics
