@@ -15,6 +15,7 @@ jobs:
     env:
       KNOWLEDGE_GRAPH_CATALOG: ${{ secrets.KNOWLEDGE_GRAPH_CATALOG }}
       DEUTSCHE_NATBIB: ${{ secrets.DEUTSCHE_NATBIB }}
+      MOSS_KG_CATALOG: ${{ secrets.MOSS_KG_CATALOG }}
 
     steps:
       # 1️⃣ Checkout the repository
