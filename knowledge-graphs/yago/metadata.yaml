@@ -9,7 +9,7 @@ description: "YAGO is a high-quality knowledge graph based on Wikidata. It uses 
   \ for clean data.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
 homepage: https://kaiko.getalp.org
 databus-publish: false
-moss-publish: true
+moss-publish: false
 license: https://creativecommons.org/licenses/by-sa/3.0/rdf
 keywords:
 - rdf

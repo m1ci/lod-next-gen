@@ -9,7 +9,7 @@ description: "The Open Research Knowledge Graph provides scholarly knowledge as 
   \ an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
 homepage: https://orkg.org
 databus-publish: false
-moss-publish: true
+moss-publish: false
 license: https://creativecommons.org/publicdomain/zero/1.0/rdf
 keywords:
 - rdf
