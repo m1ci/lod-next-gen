@@ -7,10 +7,12 @@ abstract: "The Open Research Knowledge Graph provides scholarly knowledge as a K
 description: "The Open Research Knowledge Graph provides scholarly knowledge as a\
   \ KG enabling querying, comparison, and reuse of scientific information.\n\n Found\
   \ an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/orkg/matadata.yaml"
-homepage: https://orkg.org
 databus-publish: false
-moss-publish: false
+moss-publish: true
 license: https://creativecommons.org/publicdomain/zero/1.0/rdf
+homepage: https://orkg.org
+domains:
+- publications-education-research
 keywords:
 - rdf
 - knowledge graph
