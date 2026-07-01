@@ -14,11 +14,12 @@ homepage: https://orkg.org
 domains:
 - publications-education-research
 keywords:
-- rdf
-- knowledge graph
+- scholarly knowledge graph
+- scientific knowledge graph
 - scholarly data
-- entities
-- relations
+- research contributions
+- fair research data
+- structured research papers
 sparql:
 - name: main
   url: https://www.orkg.org/orkg/sparql/
