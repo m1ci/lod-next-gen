@@ -2,14 +2,16 @@ databus-account: knowledge-graph-catalog
 id: fr-dbpedia-kg
 title: French DBpedia KG
 databus-publish: false
-moss-publish: false
+moss-publish: true
 homepage: https://dbpedia.org
 domains:
 - cross-domain
 keywords:
-- rdf
-- knowledge graph
-- entites
+- french
+- multilingual knowledge graph
+- wikipedia
+- encyclopedia
+- dbpedia
 maintainers:
 - name: Milan Dojchinovski
   contact: dojcinovski.milan@gmail.com
