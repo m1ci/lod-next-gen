@@ -7,11 +7,11 @@ abstract: "The DBLP computer science bibliography KG is an open, curated KG of D
 description: "The DBLP computer science bibliography KG is an open, curated KG of\
   \ DBLP data, offering quality-checked metadata on authors, publications, and venues\
   \ in journals, conferences, etc.\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
-homepage: https://drops.dagstuhl.de/entities/collection/dblp
-databus-publish: false
-moss-publish: false
-license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
 check-new-release: dblp_release_auto_update.py
+databus-publish: false
+moss-publish: true
+license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
+homepage: https://drops.dagstuhl.de/entities/collection/dblp
 keywords:
 - dblp
 - computer
@@ -19,15 +19,13 @@ keywords:
 - bibliography
 - knowledge graph
 - open data
+domains:
+- publications-education-research
 internal_namespaces:
 - https://dblp.org/
 sparql:
 - name: main
   url: https://sparql.dblp.org
-maintainers:
-- name: n/a
-  contact: n/a
-  github: n/a
 artifacts:
 - artifact: monthly-snapshot
   title: Monthly Snapshot
