@@ -53,6 +53,9 @@ maintainers:
 - name: Chuck Norris
   contact: Chuck.Norris@gmail.com
   github: chuck
+- name: Chuck Norris2
+  contact: Chuck.Norris2@gmail.com
+  github: chuck2
 internal_namespaces:
 - http://dbpedia.org/resource/
 artifacts:
