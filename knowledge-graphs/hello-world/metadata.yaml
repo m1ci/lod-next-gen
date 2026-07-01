@@ -35,16 +35,17 @@ description: '**Hello World Knowledge Graph** is a minimal example of graph-base
 
 
   '
-homepage: https://example.org/
 databus-publish: false
-moss-publish: false
+moss-publish: true
 license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
+homepage: https://example.org/
+domains:
+- cross-domain
+- geography
 keywords:
 - cross-domain
 - geography
 - intro
-internal_namespaces:
-- http://dbpedia.org/resource/
 sparql:
 - name: main
   url: http://example.org/sparql
@@ -52,6 +53,8 @@ maintainers:
 - name: Chuck Norris
   contact: Chuck.Norris@gmail.com
   github: chuck
+internal_namespaces:
+- http://dbpedia.org/resource/
 artifacts:
 - artifact: chucks-data
   title: chucks-data

@@ -55,33 +55,101 @@ if not dataset_id:
 
 resource = f"https://databus.dbpedia.org/{databus_account}/{dataset_id}"
 
+# -----------------------
+# Optional metadata
+# -----------------------
+
+homepage = data.get("homepage")
+domains = data.get("domains", [])
 keywords = data.get("keywords", [])
+sparql = data.get("sparql", [])
+maintainers = data.get("maintainers", [])
 
-if not keywords:
-    print(f"⚠️ No keywords defined for {yaml_file}. Nothing to publish.")
+# -----------------------
+# If nothing to publish
+# -----------------------
+
+if not any([homepage, domains, keywords, sparql, maintainers]):
+    print(f"⚠️ No publishable metadata for {yaml_file}")
+
     data["moss-publish"] = False
-
     with open(yaml_file, "w") as f:
         yaml.dump(data, f, sort_keys=False)
 
     sys.exit(0)
 
 # -----------------------
-# Build Turtle
+# Build Turtle dynamically
 # -----------------------
 
-keyword_values = ", ".join(
-    f'"{k}"' for k in keywords
-)
+triples = []
 
-ttl = f"""PREFIX schema: <https://schema.org/>
-PREFIX databus: <https://dataid.dbpedia.org/databus#>
-PREFIX void: <http://rdfs.org/ns/void#>
+triples.append(f"<{resource}> a databus:Group ;")
 
-<{resource}>
-    a databus:Group ;
-    schema:keywords {keyword_values} .
-"""
+# homepage
+if homepage:
+    triples.append(f"    foaf:homepage <{homepage}> ;")
+
+# domains → dcterms:subject
+if domains:
+    domain_values = ",\n        ".join(f'"{d}"' for d in domains)
+    triples.append(f"    dcterms:subject {domain_values} ;")
+
+# keywords → schema:keywords
+if keywords:
+    keyword_values = ",\n        ".join(f'"{k}"' for k in keywords)
+    triples.append(f"    schema:keywords {keyword_values} ;")
+
+# sparql endpoint (take first if list)
+if sparql:
+    endpoint = sparql[0].get("url")
+    if endpoint:
+        triples.append(f"    void:sparqlEndpoint <{endpoint}> ;")
+
+# maintainers
+if maintainers:
+    m = maintainers[0]  # current model supports one maintainer block
+    name = m.get("name")
+    email = m.get("contact")
+    github = m.get("github")
+
+    maintainer_block = [
+        "    schema:maintainer [",
+        "        a foaf:Person ;"
+    ]
+
+    if name:
+        maintainer_block.append(f'        foaf:name "{name}" ;')
+
+    if email:
+        maintainer_block.append(f'        foaf:mbox <mailto:{email}> ;')
+
+    if github:
+        maintainer_block.append(
+            "        foaf:account ["
+            " a foaf:OnlineAccount ;"
+            f' foaf:accountName "{github}" ;'
+            " foaf:accountServiceHomepage <https://github.com/> ;"
+            " ] ;"
+        )
+
+    maintainer_block.append("    ] ;")
+
+    triples.extend(maintainer_block)
+
+# fix last semicolon → dot
+if triples:
+    triples[-1] = triples[-1].rstrip(" ;") + " ."
+
+ttl = "\n".join([
+    "PREFIX schema: <https://schema.org/>",
+    "PREFIX databus: <https://dataid.dbpedia.org/databus#>",
+    "PREFIX void: <http://rdfs.org/ns/void#>",
+    "PREFIX foaf: <http://xmlns.com/foaf/0.1/>",
+    "PREFIX dcterms: <http://purl.org/dc/terms/>",
+    "",
+    *triples
+])
 
 print("=== Turtle payload ===")
 print(ttl)
@@ -98,7 +166,7 @@ headers = {
 }
 
 params = {
-    "module": "kg-metadata",   # ✅ UPDATED HERE
+    "module": "kg-metadata",
     "resource": resource,
 }
 
@@ -117,7 +185,7 @@ except requests.HTTPError:
     print(response.text)
     raise
 
-print(f"✅ Published keywords for {resource}")
+print(f"✅ Published metadata for {resource}")
 
 # -----------------------
 # Reset publish flag
