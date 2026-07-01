@@ -66,7 +66,7 @@ sparql = data.get("sparql", [])
 maintainers = data.get("maintainers", [])
 
 # -----------------------
-# If nothing to publish
+# Check if anything exists
 # -----------------------
 
 if not any([homepage, domains, keywords, sparql, maintainers]):
@@ -90,54 +90,54 @@ triples.append(f"<{resource}> a databus:Group ;")
 if homepage:
     triples.append(f"    foaf:homepage <{homepage}> ;")
 
-# domains → dcterms:subject
+# domains -> dcterms:subject
 if domains:
     domain_values = ",\n        ".join(f'"{d}"' for d in domains)
     triples.append(f"    dcterms:subject {domain_values} ;")
 
-# keywords → schema:keywords
+# keywords -> schema:keywords
 if keywords:
     keyword_values = ",\n        ".join(f'"{k}"' for k in keywords)
     triples.append(f"    schema:keywords {keyword_values} ;")
 
-# sparql endpoint (take first if list)
+# sparql endpoint
 if sparql:
     endpoint = sparql[0].get("url")
     if endpoint:
         triples.append(f"    void:sparqlEndpoint <{endpoint}> ;")
 
-# maintainers
+# maintainers (MULTIPLE FIXED)
 if maintainers:
-    m = maintainers[0]  # current model supports one maintainer block
-    name = m.get("name")
-    email = m.get("contact")
-    github = m.get("github")
+    for m in maintainers:
+        name = m.get("name")
+        email = m.get("contact")
+        github = m.get("github")
 
-    maintainer_block = [
-        "    schema:maintainer [",
-        "        a foaf:Person ;"
-    ]
+        maintainer_block = [
+            "    schema:maintainer [",
+            "        a foaf:Person ;"
+        ]
 
-    if name:
-        maintainer_block.append(f'        foaf:name "{name}" ;')
+        if name:
+            maintainer_block.append(f'        foaf:name "{name}" ;')
 
-    if email:
-        maintainer_block.append(f'        foaf:mbox <mailto:{email}> ;')
+        if email:
+            maintainer_block.append(f'        foaf:mbox <mailto:{email}> ;')
 
-    if github:
-        maintainer_block.append(
-            "        foaf:account ["
-            " a foaf:OnlineAccount ;"
-            f' foaf:accountName "{github}" ;'
-            " foaf:accountServiceHomepage <https://github.com/> ;"
-            " ] ;"
-        )
+        if github:
+            maintainer_block.append(
+                "        foaf:account ["
+                " a foaf:OnlineAccount ;"
+                f' foaf:accountName "{github}" ;'
+                " foaf:accountServiceHomepage <https://github.com/> ;"
+                " ] ;"
+            )
 
-    maintainer_block.append("    ] ;")
+        maintainer_block.append("    ] ;")
 
-    triples.extend(maintainer_block)
+        triples.extend(maintainer_block)
 
-# fix last semicolon → dot
+# replace last semicolon with dot
 if triples:
     triples[-1] = triples[-1].rstrip(" ;") + " ."
 
