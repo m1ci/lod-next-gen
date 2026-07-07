@@ -2,7 +2,7 @@ databus-account: knowledge-graph-catalog
 id: fr-dbpedia-kg
 title: French DBpedia KG
 databus-publish: false
-moss-publish: false
+moss-publish: true
 homepage: https://dbpedia.org
 domains:
 - cross-domain
@@ -16,3 +16,4 @@ maintainers:
 - name: Milan Dojchinovski
   contact: dojcinovski.milan@gmail.com
   github: m1ci
+last-version-size: 1824656179
