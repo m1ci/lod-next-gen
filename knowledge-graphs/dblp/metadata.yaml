@@ -9,7 +9,7 @@ description: "The DBLP computer science bibliography KG is an open, curated KG o
   \ in journals, conferences, etc.\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml"
 check-new-release: dblp_release_auto_update.py
 databus-publish: false
-moss-publish: false
+moss-publish: true
 license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
 homepage: https://drops.dagstuhl.de/entities/collection/dblp
 keywords:
@@ -20,7 +20,7 @@ keywords:
 - knowledge graph
 - open data
 domains:
-- publications-education-research
+- Publications, Education & Research
 internal_namespaces:
 - https://dblp.org/
 sparql:
