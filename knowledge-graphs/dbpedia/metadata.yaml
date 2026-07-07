@@ -12,7 +12,9 @@ databus-publish: false
 moss-publish: false
 license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
 keywords:
-- cross-domain
+- Cross-domain
+domains:
+- Cross-domain
 internal_namespaces:
 - http://dbpedia.org/resource/
 sparql:
