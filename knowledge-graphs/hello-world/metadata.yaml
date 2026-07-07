@@ -40,7 +40,7 @@ moss-publish: false
 license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
 homepage: https://example.org/
 domains:
-- Cross-domain
+- Life Sciences & Health
 keywords:
 - cross-domain
 - geography
