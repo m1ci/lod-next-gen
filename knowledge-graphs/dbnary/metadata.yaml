@@ -20,6 +20,7 @@ maintainers:
 - name: "Gilles S\xE9rasset"
   contact: Gilles.Serasset@imag.fr
   github: serasset
+last-version-size: 201326592
 artifacts:
 - artifact: en_dbnary_ontolex
   title: en_dbnary_ontolex
