@@ -9,7 +9,7 @@ description: "The DBpedia Knowledge Graph is a structured representation of Wiki
   \ semantic querying, data integration, and knowledge-driven applications."
 homepage: https://dbpedia.org/
 databus-publish: false
-moss-publish: true
+moss-publish: false
 license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
 keywords:
 - Cross-domain
