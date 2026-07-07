@@ -36,7 +36,7 @@ description: '**Hello World Knowledge Graph** is a minimal example of graph-base
 
   '
 databus-publish: false
-moss-publish: true
+moss-publish: false
 license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
 homepage: https://example.org/
 domains:
