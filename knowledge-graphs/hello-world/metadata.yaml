@@ -56,6 +56,7 @@ maintainers:
 - name: Chuck Norris2
   contact: Chuck.Norris2@gmail.com
   github: chuck2
+last-version-size: 3686365
 internal_namespaces:
 - http://dbpedia.org/resource/
 artifacts:
