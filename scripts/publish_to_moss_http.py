@@ -64,7 +64,7 @@ domains = data.get("domains", [])
 keywords = data.get("keywords", [])
 sparql = data.get("sparql", [])
 maintainers = data.get("maintainers", [])
-last_version_size = data.get("lastVersionSize")
+last_version_size = data.get("last-version-size")
 
 # -----------------------
 # Check if anything exists
