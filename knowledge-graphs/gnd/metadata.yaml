@@ -24,6 +24,7 @@ maintainers:
 - name: Tracy Arndt
   contact: T.Arndt@dnb.de
   github: n/a
+last-version-size: 3686365
 artifacts:
 - artifact: authorities-gnd-geografikum_lds
   title: authorities-gnd-geografikum_lds
