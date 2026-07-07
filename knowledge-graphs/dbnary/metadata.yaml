@@ -13,6 +13,8 @@ moss-publish: false
 license: https://creativecommons.org/licenses/by-sa/3.0/rdf
 keywords:
 - linguistics
+domains:
+- Linguistics, Social & Digital Knowledge Systems
 sparql:
 - name: main
   url: https://kaiko.getalp.org/sparql
