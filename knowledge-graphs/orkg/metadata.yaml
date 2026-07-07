@@ -27,6 +27,7 @@ maintainers:
 - name: Milan Dojchinovski
   contact: dojcinovski.milan@gmail.com
   github: m1ci
+last-version-size: 52688916
 artifacts:
 - artifact: orkg-daily-dump
   title: ORKG Daily dump
