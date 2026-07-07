@@ -5,7 +5,7 @@ databus-publish: false
 moss-publish: false
 homepage: https://dbpedia.org
 domains:
-- cross-domain
+- Cross-domain
 keywords:
 - french
 - multilingual knowledge graph
