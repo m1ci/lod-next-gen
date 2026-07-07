@@ -8,7 +8,7 @@ description: "YAGO is a high-quality knowledge graph based on Wikidata. It uses 
   \ IDs, schema.org classes & properties, a curated Wikidata taxonomy, and SHACL constraints\
   \ for clean data.\n\n Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/knowledge-graphs/yago/matadata.yaml"
 databus-publish: false
-moss-publish: false
+moss-publish: true
 license: https://creativecommons.org/licenses/by-sa/3.0/rdf
 homepage: https://yago-knowledge.org
 domains:
@@ -26,6 +26,7 @@ maintainers:
 - name: Fabian Suchanek
   contact: fabian@suchanek.name
   github: fmsuchanek
+last-version-size: 12563723171
 artifacts:
 - artifact: yago-full
   title: YAGO Full
