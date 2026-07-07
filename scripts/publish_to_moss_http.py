@@ -64,12 +64,20 @@ domains = data.get("domains", [])
 keywords = data.get("keywords", [])
 sparql = data.get("sparql", [])
 maintainers = data.get("maintainers", [])
+last_version_size = data.get("lastVersionSize")
 
 # -----------------------
 # Check if anything exists
 # -----------------------
 
-if not any([homepage, domains, keywords, sparql, maintainers]):
+if not any([
+    homepage,
+    domains,
+    keywords,
+    sparql,
+    maintainers,
+    last_version_size is not None,
+]):
     print(f"⚠️ No publishable metadata for {yaml_file}")
 
     data["moss-publish"] = False
@@ -100,13 +108,17 @@ if keywords:
     keyword_values = ",\n        ".join(f'"{k}"' for k in keywords)
     triples.append(f"    schema:keywords {keyword_values} ;")
 
-# sparql endpoint
+# SPARQL endpoint
 if sparql:
     endpoint = sparql[0].get("url")
     if endpoint:
         triples.append(f"    void:sparqlEndpoint <{endpoint}> ;")
 
-# maintainers (MULTIPLE FIXED)
+# Dataset size
+if last_version_size is not None:
+    triples.append(f'    dcat:byteSize "{last_version_size}" ;')
+
+# Maintainers
 if maintainers:
     for m in maintainers:
         name = m.get("name")
@@ -125,19 +137,19 @@ if maintainers:
             maintainer_block.append(f'        foaf:mbox <mailto:{email}> ;')
 
         if github:
-            maintainer_block.append(
-                "        foaf:account ["
-                " a foaf:OnlineAccount ;"
-                f' foaf:accountName "{github}" ;'
-                " foaf:accountServiceHomepage <https://github.com/> ;"
-                " ] ;"
-            )
+            maintainer_block.extend([
+                "        foaf:account [",
+                "            a foaf:OnlineAccount ;",
+                f'            foaf:accountName "{github}" ;',
+                "            foaf:accountServiceHomepage <https://github.com/> ;",
+                "        ] ;"
+            ])
 
         maintainer_block.append("    ] ;")
 
         triples.extend(maintainer_block)
 
-# replace last semicolon with dot
+# Replace final semicolon with a period
 if triples:
     triples[-1] = triples[-1].rstrip(" ;") + " ."
 
@@ -147,6 +159,7 @@ ttl = "\n".join([
     "PREFIX void: <http://rdfs.org/ns/void#>",
     "PREFIX foaf: <http://xmlns.com/foaf/0.1/>",
     "PREFIX dcterms: <http://purl.org/dc/terms/>",
+    "PREFIX dcat: <http://www.w3.org/ns/dcat#>",
     "",
     *triples
 ])
