@@ -250,5 +250,5 @@ artifacts:
       format: nt
       compression: gz
       size: 5125379331
-      sha256: null
-      status: pending
+      sha256: 0cd865488b83c324b3c3eebad41df8ea5d185b76549f0763034df926b1352942
+      status: active
