@@ -3,7 +3,7 @@ name: Update KG catalog sizes
 on:
   schedule:
     # Run every hour
-    - cron: "0 * * * *"
+    - cron: "30 * * * *"
   workflow_dispatch:
 
 jobs:
