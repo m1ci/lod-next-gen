@@ -1,0 +1,42 @@
+name: Update KG catalog sizes
+
+on:
+  schedule:
+    # Run every day at 02:00 UTC
+    - cron: "0 2 * * *"
+
+  workflow_dispatch:
+
+jobs:
+  update-kg-sizes:
+
+    runs-on: ubuntu-latest
+
+    env:
+      MOSS_KG_CATALOG: ${{ secrets.MOSS_KG_CATALOG }}
+
+    steps:
+
+      # 1. Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+
+      # 2. Setup Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install requests rdflib
+
+
+      # 4. Update KG sizes
+      - name: Update KG sizes in MOSS
+        run: |
+          python scripts/update_kg_sizes.py
