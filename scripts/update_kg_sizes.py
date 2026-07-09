@@ -22,6 +22,9 @@ def sparql(query):
     Execute SPARQL query against Databus
     """
 
+    print("\n========== SPARQL REQUEST ==========")
+    print(query)
+
     r = requests.get(
         DATABUS_ENDPOINT,
         params={
@@ -30,6 +33,8 @@ def sparql(query):
         },
         timeout=60
     )
+
+    print("STATUS:", r.status_code)
 
     r.raise_for_status()
 
@@ -51,10 +56,12 @@ WHERE {{
 
     result = sparql(query)
 
-    return [
+    kgs = [
         x["kg"]["value"]
         for x in result["results"]["bindings"]
     ]
+
+    return kgs
 
 
 
@@ -88,9 +95,7 @@ WHERE {{
 GROUP BY ?latestVersion
 """
 
-
     result = sparql(query)
-
 
     bindings = result["results"]["bindings"]
 
@@ -112,16 +117,38 @@ def get_moss_metadata(kg):
         "/kg-metadata"
     )
 
+    headers = {
+        "Accept": "text/turtle"
+    }
+
+
+    print("\n========== MOSS GET REQUEST ==========")
+    print("METHOD: GET")
+    print("URL:")
+    print(url)
+
+    print("HEADERS:")
+    print(headers)
+
 
     r = requests.get(
         url,
-        headers={
-            "Accept": "text/turtle"
-        },
+        headers=headers,
         timeout=60
     )
 
+
+    print("\nMOSS RESPONSE:")
+    print("STATUS:", r.status_code)
+
     r.raise_for_status()
+
+
+    print("\nCURRENT MOSS TURTLE:")
+    print(r.text)
+
+    print("========== END MOSS GET ==========\n")
+
 
     return r.text
 
@@ -138,6 +165,20 @@ def update_byte_size(turtle, kg, size):
 
 
     subject = URIRef(kg)
+
+
+    old_values = list(
+        g.objects(
+            subject,
+            DATACATALOG.byteSize
+        )
+    )
+
+
+    print("Existing dcat:byteSize values:")
+    for value in old_values:
+        print(value)
+
 
     # remove existing values
 
@@ -161,9 +202,17 @@ def update_byte_size(turtle, kg, size):
     )
 
 
-    return g.serialize(
+    updated = g.serialize(
         format="turtle"
     )
+
+
+    print("\n========== UPDATED TURTLE ==========")
+    print(updated)
+    print("========== END UPDATED TURTLE ==========\n")
+
+
+    return updated
 
 
 
@@ -177,20 +226,51 @@ def publish_to_moss(kg, turtle):
     )
 
 
+    headers = {
+        "accept": "application/json",
+        "X-API-KEY": MOSS_KEY,
+        "Content-Type": "text/turtle"
+    }
+
+
+    print("\n========== MOSS POST REQUEST ==========")
+
+    print("METHOD:")
+    print("POST")
+
+    print("\nURL:")
+    print(url)
+
+    print("\nHEADERS:")
+    print({
+        "accept": headers["accept"],
+        "X-API-KEY": "***hidden***",
+        "Content-Type": headers["Content-Type"]
+    })
+
+
+    print("\nPAYLOAD:")
+    print(turtle)
+
+
+    print("========== SENDING ==========")
+
+
     r = requests.post(
         url,
-        headers={
-            "accept": "application/json",
-            "X-API-KEY": MOSS_KEY,
-            "Content-Type": "text/turtle"
-        },
+        headers=headers,
         data=turtle,
         timeout=60
     )
 
 
-    if not r.ok:
-        print(r.text)
+    print("\nMOSS POST RESPONSE:")
+    print("STATUS:", r.status_code)
+    print("BODY:")
+    print(r.text)
+
+    print("========== END MOSS POST ==========\n")
+
 
     r.raise_for_status()
 
@@ -202,14 +282,19 @@ def main():
 
     kgs = get_kgs()
 
-    print(f"Found {len(kgs)} KGs")
+    print(
+        f"Found {len(kgs)} KGs"
+    )
 
 
     for kg in kgs:
 
         try:
 
-            print("\nProcessing:", kg)
+            print("\n\n================================")
+            print("Processing:")
+            print(kg)
+            print("================================")
 
 
             size = get_latest_size(kg)
@@ -242,7 +327,10 @@ def main():
             )
 
 
-            print("Published successfully")
+            print(
+                "Published successfully:",
+                kg
+            )
 
 
         except Exception as e:
