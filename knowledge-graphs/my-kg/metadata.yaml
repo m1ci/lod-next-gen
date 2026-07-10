@@ -1,0 +1,50 @@
+databus-account: knowledge-graph-catalog # Leave as is. Don't update.
+id: my-kg # UPDATE: set unique id of your KG. Check for already used ids at https://databus.dbpedia.org/knowledge-graph-catalog
+title: My First KG # UPDATE: set the title of the KG
+abstract: This is the coolest KG. # UPDATE: Provide short description of the KG (e.g. 2 sentences)
+description: 'This is the coolest KG.' # UPDATE: Provide extended description of the KG. You can either use free text or markdown syntax.
+moss-publish: true # UPDATE: set to true when publishing the KG for the first or when introduced updates to the general metadata of the KG.
+databus-publish: true # UPDATE: set to true when publishing the KG for the first time  or when introduced updates to the KG artifacts or versions.
+license: http://purl.oclc.org/NET/rdflicense/cc-by3.0 # UPDATE: Provide the general license for the KG
+homepage: https://example.org/ # UPDATE: home page for the KG, if exist.
+domains:
+- Cross-domain # UPDATE: the main domain reflecting the content of the KG. Choose from the 8 defined domains below.
+
+# Cross-domain
+# Geography & Environment
+# Government & Public Sector
+# Life Sciences & Health
+# Economy, Industry & Infrastructure
+# Publications, Education & Research
+# Media, Culture & Entertainment
+# Linguistics, Social & Digital Knowledge Systems
+# ...for more about domains see https://github.com/m1ci/lod-next-gen/blob/main/README.md
+
+keywords: # UPDATE: provide 3-8 keywords describing your KG
+- cross-domain
+- geography
+- intro
+sparql: # Provide SPARQL endpoint details, if endpoint is available
+- name: main
+  url: http://example.org/sparql
+maintainers: # UPDATE: add contact info of the KG maintainer
+- name: Chuck Norris
+  contact: Chuck.Norris@gmail.com
+  github: chuck # username on github
+artifacts: # UPDATE: provide list of artifacts associated with your KG. 
+# Typically an artifact corresponds to a partition of your KG (if your KG is provided in multiple partitions)
+- artifact: first-artifact # UPDATE: provide id for your artifact 
+  title: First Artifact # UPDATE: provide title for the artifact
+  abstract: My first artifact. # UPDATE: provide short description of the artifact (e.g. 2 sentences)
+  description: My first artifact. #UPDATE: provide extended description of the artifact
+  versions:
+  - version: 2026.07.10
+    title: First Artifact # UPDATE: provide title for the version
+    abstract: My first artifact # UPDATE: provide short description of the version (e.g. 2 sentences)
+    description: My first artifact # UPDATE: provide extended description of the version
+    license: http://purl.oclc.org/NET/rdflicense/cc-by3.0 # UPDATE: URL identifying the license
+    distributions: # here list all files assciated with the artifact and the version
+    - file: https://downloads.dbpedia.org/repo/dbpedia/mappings/instance-types/2020.06.01/instance-types_lang%3Dar_specific.ttl.bz2 # UPDATE: provide valid download URL
+      format: ttl # UPDATE: provide the format of the file, e.g. nt or ttl
+      compression: bz2 # UPDATE: if the file is compressed, e.g. bz2, indicate that info
+      status: pending # INFO: pending means that the catalog will be updated (then it will be set to active). Later, if you make any changes and want to propagate them to the catalog, set the flag to pending.
