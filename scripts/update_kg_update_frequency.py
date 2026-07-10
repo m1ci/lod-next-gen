@@ -10,7 +10,7 @@ MOSS_ENDPOINT = "https://moss.dev.dbpedia.link"
 
 KG_CATALOG = "https://databus.dbpedia.org/knowledge-graph-catalog"
 
-MOSS = Namespace("https://moss.dev.dbpedia.link/ontology/")
+MOSS = Namespace("http://dataid.dbpedia.org/ns/moss#")
 
 MOSS_KEY = os.environ["MOSS_KG_CATALOG"]
 
@@ -92,7 +92,7 @@ def get_moss_metadata(kg):
 
     url = (
         f"{MOSS_ENDPOINT}/entries/"
-        f"{kg.replace('https://','')}"
+        f"{kg.replace('https://', '')}"
         "/kg-metadata"
     )
 
@@ -101,6 +101,8 @@ def get_moss_metadata(kg):
     }
 
     print("\n========== MOSS GET REQUEST ==========")
+    print("METHOD: GET")
+    print("URL:")
     print(url)
 
     r = requests.get(
@@ -112,6 +114,9 @@ def get_moss_metadata(kg):
     print("STATUS:", r.status_code)
 
     r.raise_for_status()
+
+    print("\nCURRENT MOSS TURTLE:")
+    print(r.text)
 
     return r.text
 
@@ -127,8 +132,18 @@ def update_frequency(turtle, kg, updates):
 
     subject = URIRef(kg)
 
-    print("Removing existing moss:updatesLast180Days")
+    old_values = list(
+        g.objects(
+            subject,
+            MOSS.updatesLast180Days
+        )
+    )
 
+    print("Existing moss:updatesLast180Days values:")
+    for value in old_values:
+        print(value)
+
+    # Remove existing value(s)
     g.remove(
         (
             subject,
@@ -137,11 +152,7 @@ def update_frequency(turtle, kg, updates):
         )
     )
 
-    print(
-        "Adding moss:updatesLast180Days =",
-        updates
-    )
-
+    # Add new value
     g.add(
         (
             subject,
@@ -157,7 +168,9 @@ def update_frequency(turtle, kg, updates):
         format="turtle"
     )
 
+    print("\n========== UPDATED TURTLE ==========")
     print(updated)
+    print("========== END UPDATED TURTLE ==========\n")
 
     return updated
 
@@ -177,6 +190,21 @@ def publish_to_moss(kg, turtle):
         "Content-Type": "text/turtle"
     }
 
+    print("\n========== MOSS POST REQUEST ==========")
+    print("METHOD: POST")
+    print("URL:")
+    print(url)
+
+    print("\nHEADERS:")
+    print({
+        "accept": headers["accept"],
+        "X-API-KEY": "***hidden***",
+        "Content-Type": headers["Content-Type"]
+    })
+
+    print("\nPAYLOAD:")
+    print(turtle)
+
     r = requests.post(
         url,
         headers=headers,
@@ -184,7 +212,9 @@ def publish_to_moss(kg, turtle):
         timeout=60
     )
 
+    print("\nMOSS POST RESPONSE:")
     print("STATUS:", r.status_code)
+    print("BODY:")
     print(r.text)
 
     r.raise_for_status()
@@ -203,7 +233,8 @@ def main():
         try:
 
             print("\n================================")
-            print("Processing:", kg)
+            print("Processing:")
+            print(kg)
             print("================================")
 
             updates = get_updates_last_180_days(kg)
@@ -213,10 +244,10 @@ def main():
                 updates
             )
 
-            turtle = get_moss_metadata(kg)
+            moss_data = get_moss_metadata(kg)
 
             updated = update_frequency(
-                turtle,
+                moss_data,
                 kg,
                 updates
             )
