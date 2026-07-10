@@ -1,4 +1,4 @@
-# lod-next-gen
+# LOD Next Gen repository
 
 
 ## KG Domain Classification (Modernized LOD cloud domains)
