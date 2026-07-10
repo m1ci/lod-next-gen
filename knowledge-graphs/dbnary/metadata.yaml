@@ -9,7 +9,7 @@ description: Dbnary is an effort to provide multilingual lexical data extracted 
   Data). This data set has won the Monnet challenge in 2012.
 homepage: https://kaiko.getalp.org
 databus-publish: false
-moss-publish: true
+moss-publish: false
 license: https://creativecommons.org/licenses/by-sa/3.0/rdf
 keywords:
 - linguistics
@@ -19,7 +19,7 @@ sparql:
 - name: main
   url: https://kaiko.getalp.org/sparql
 maintainers:
-- name: "Gilles Serasset"
+- name: Gilles Serasset
   contact: Gilles.Serasset@imag.fr
   github: serasset
 last-version-size: 201326592
