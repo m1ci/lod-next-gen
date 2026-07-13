@@ -45,7 +45,9 @@ artifacts:
     - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_ontolex_20250101.ttl.bz2
       format: ttl
       compression: bz2
-      status: pending
+      status: active
+      sha256: cb575b3c1d428f5d5b2db24221d05b69bd9fec4b6e2b84feb10dc67f8b290b6d
+      size: 186158915
 - artifact: en_dbnary_enhancement
   title: en_dbnary_enhancement
   abstract: An enhanced DBnary dataset with additional automatically computed lexical
@@ -64,7 +66,9 @@ artifacts:
     - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_enhancement_20250101.ttl.bz2
       format: ttl
       compression: bz2
-      status: pending
+      status: active
+      sha256: 68c2af6aea69be25bf20a7e0c8f8628d792659549842c332fc74ab3f6fef8e48
+      size: 10576538
 - artifact: en_dbnary_morphology
   title: en_dbnary_morphology
   abstract: A DBnary dataset containing morphological information and inflected lexical
@@ -85,7 +89,9 @@ artifacts:
     - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_morphology_20250101.ttl.bz2
       format: ttl
       compression: bz2
-      status: pending
+      status: active
+      sha256: c3b49366144fb4dca7f16605a0daa92486c54e1d556fc176640ab0fe7c5e2403
+      size: 11637512
 - artifact: en_dbnary_lime
   title: en_dbnary_lime
   abstract: A DBnary metadata dataset describing linguistic resources using the OntoLex-LIME
@@ -104,7 +110,9 @@ artifacts:
     - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_lime_20250101.ttl.bz2
       format: ttl
       compression: bz2
-      status: pending
+      status: active
+      sha256: 49f34070eb2cb4afa4930beb95669fafb493eab12062da97cc7788d40629fe88
+      size: 6559907
 - artifact: en_dbnary_statistics
   title: en_dbnary_statistics
   abstract: A DBnary dataset containing extraction and enhancement statistics for
@@ -125,7 +133,9 @@ artifacts:
     - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_statistics_20250101.ttl.bz2
       format: ttl
       compression: bz2
-      status: pending
+      status: active
+      sha256: 1cbe210144d09a9f55c0ffb5e19d202a87a0110c604a5ba7fdb5453ed4b386a6
+      size: 18870
 - artifact: en_dbnary_etymology
   title: en_dbnary_etymology
   abstract: A DBnary dataset containing etymological information extracted from English
@@ -144,7 +154,9 @@ artifacts:
     - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_etymology_20250101.ttl.bz2
       format: ttl
       compression: bz2
-      status: pending
+      status: active
+      sha256: 10cc2726f17275e0c21ad85014acbb46e2a3b77d76ca84cf8ef399af473bb31c
+      size: 107884354
 - artifact: en_dbnary_exolex_ontolex
   title: en_dbnary_exolex_ontolex
   abstract: A DBnary dataset containing lexical information for non-English languages
@@ -165,7 +177,9 @@ artifacts:
     - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_exolex_ontolex_20250101.ttl.bz2
       format: ttl
       compression: bz2
-      status: pending
+      status: active
+      sha256: 07e132d535d292951bafc06a3389fcfab63518900fe9035c376e7a4e810734bc
+      size: 292205993
 - artifact: en_dbnary_exolex_lime
   title: en_dbnary_exolex_lime
   abstract: A DBnary dataset describing multilingual lexical resources extracted from
@@ -184,4 +198,6 @@ artifacts:
     - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_exolex_lime_20250101.ttl.bz2
       format: ttl
       compression: bz2
-      status: pending
+      status: active
+      sha256: 38e8154969ab62bc4b65b49d1c3a3a0add2ac9bb98e0b50ecb25f3eb4b8d9339
+      size: 30082574
