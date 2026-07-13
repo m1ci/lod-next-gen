@@ -10,6 +10,7 @@ description: DBnary provides multilingual lexical data extracted from Wiktionary
   senses, translations, and linguistic relations represented using semantic web standards
   such as OntoLex-Lemon.
 homepage: https://kaiko.getalp.org
+check-new-release: dbnary_release_auto_update.py
 databus-publish: false
 moss-publish: false
 license: https://creativecommons.org/licenses/by-sa/3.0/rdf
