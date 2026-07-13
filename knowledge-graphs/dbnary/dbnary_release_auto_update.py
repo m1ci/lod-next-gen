@@ -43,6 +43,20 @@ def save_yaml(data):
         )
 
 
+def normalize_date(value):
+    """
+    Converts YAML dates or strings into datetime.date.
+    """
+
+    if hasattr(value, "year"):
+        return value
+
+    return datetime.strptime(
+        str(value),
+        "%Y-%m-%d"
+    ).date()
+
+
 def get_latest_yaml_version(artifact):
     """
     Finds the newest published version of an artifact.
@@ -55,13 +69,15 @@ def get_latest_yaml_version(artifact):
     for entry in versions:
         try:
             dates.append(
-                datetime.strptime(
-                    str(entry["version"]),
-                    "%Y-%m-%d"
-                ).date()
+                normalize_date(
+                    entry["version"]
+                )
             )
-        except ValueError:
-            pass
+        except Exception:
+            print(
+                "Skipping invalid YAML version:",
+                entry.get("version")
+            )
 
     if not dates:
         return None
@@ -71,30 +87,35 @@ def get_latest_yaml_version(artifact):
 
 def get_latest_version_metadata(artifact):
     """
-    Returns the metadata of the latest existing version.
-    Used as a template for the new version.
+    Returns the newest existing version entry.
+    Used as metadata template.
     """
 
-    versions = artifact.get("versions", [])
+    versions = artifact.get(
+        "versions",
+        []
+    )
 
     if not versions:
         return {}
 
     return max(
         versions,
-        key=lambda x: datetime.strptime(
-            str(x["version"]),
-            "%Y-%m-%d"
+        key=lambda x: normalize_date(
+            x["version"]
         )
     )
 
 
 def get_available_versions(prefix):
     """
-    Finds all available DBnary releases for an artifact.
+    Finds all available DBnary releases for one artifact.
     """
 
-    response = requests.get(BASE_URL)
+    response = requests.get(
+        BASE_URL
+    )
+
     response.raise_for_status()
 
     html = response.text
@@ -108,10 +129,20 @@ def get_available_versions(prefix):
 
     for date_string in pattern.findall(html):
 
-        version_date = datetime.strptime(
-            date_string,
-            "%Y%m%d"
-        ).date()
+        # Ignore invalid historical dates
+        try:
+            version_date = datetime.strptime(
+                date_string,
+                "%Y%m%d"
+            ).date()
+
+        except ValueError:
+            print(
+                "Skipping invalid DBnary version:",
+                date_string
+            )
+            continue
+
 
         filename = (
             prefix +
@@ -121,14 +152,23 @@ def get_available_versions(prefix):
 
         url = BASE_URL + filename
 
-        head = requests.head(url)
 
-        size = int(
-            head.headers.get(
-                "Content-Length",
-                0
+        try:
+            head = requests.head(
+                url,
+                timeout=20
             )
-        )
+
+            size = int(
+                head.headers.get(
+                    "Content-Length",
+                    0
+                )
+            )
+
+        except Exception:
+            size = 0
+
 
         releases.append(
             {
@@ -137,6 +177,7 @@ def get_available_versions(prefix):
                 "size": size
             }
         )
+
 
     return sorted(
         releases,
@@ -149,13 +190,15 @@ def get_next_version(
     available_versions
 ):
     """
-    Gets the first missing version after current version.
+    Returns the first available version after
+    the current YAML version.
     """
 
     candidates = [
-        v for v in available_versions
+        version
+        for version in available_versions
         if current_version is None
-        or v["version"] > current_version
+        or version["version"] > current_version
     ]
 
     if not candidates:
@@ -169,8 +212,8 @@ def create_version_entry(
     new_release
 ):
     """
-    Creates a new version by copying metadata
-    from the previous version.
+    Creates a new version entry.
+    Copies metadata from previous version.
     """
 
     previous = get_latest_version_metadata(
@@ -179,18 +222,29 @@ def create_version_entry(
 
     entry = {}
 
-    # Copy everything except version/distributions
+    # Copy existing metadata
     for key, value in previous.items():
+
         if key not in [
             "version",
+            "title",
             "distributions"
         ]:
             entry[key] = value
 
+
+    artifact_id = artifact.get(
+        "artifact"
+        or artifact.get("id")
+        or artifact.get("name")
+    )
+
+
     entry["version"] = new_release["version"]
 
-    # Ensure title is artifact name
-    entry["title"] = artifact["artifact"]
+    # Artifact name as title
+    entry["title"] = artifact_id
+
 
     entry["distributions"] = [
         {
@@ -203,25 +257,47 @@ def create_version_entry(
         }
     ]
 
+
     return entry
 
 
-def process_artifact(artifact):
+def get_artifact_id(artifact):
     """
-    Updates one DBnary artifact.
+    Supports different YAML field names.
     """
 
-    artifact_id = artifact.get("artifact")
+    return (
+        artifact.get("artifact")
+        or artifact.get("id")
+        or artifact.get("name")
+    )
+
+
+def process_artifact(artifact):
+
+    artifact_id = get_artifact_id(
+        artifact
+    )
 
     if not artifact_id:
         return
 
-    prefix = artifact_id + "_"
+
+    prefix = artifact_id
+
+    if not prefix.endswith("_"):
+        prefix += "_"
+
 
     if prefix not in SUPPORTED_ARTIFACTS:
         return
 
-    print("\nChecking:", artifact_id)
+
+    print(
+        "\nChecking:",
+        artifact_id
+    )
+
 
     current_version = get_latest_yaml_version(
         artifact
@@ -232,47 +308,71 @@ def process_artifact(artifact):
         current_version
     )
 
+
     available = get_available_versions(
         prefix
     )
+
+
+    print(
+        "Available releases:",
+        len(available)
+    )
+
 
     new_version = get_next_version(
         current_version,
         available
     )
 
+
     if not new_version:
-        print("No update available.")
+        print(
+            "No update available."
+        )
         return
+
 
     print(
         "Adding version:",
         new_version["version"]
     )
 
+
     entry = create_version_entry(
         artifact,
         new_version
     )
 
-    artifact["versions"].append(entry)
+
+    artifact["versions"].append(
+        entry
+    )
 
 
 def main():
 
     data = load_yaml()
 
+
     for artifact in data.get(
         "artifacts",
         []
     ):
+
         process_artifact(
             artifact
         )
 
-    save_yaml(data)
 
-    print("\nDone.")
+    save_yaml(
+        data
+    )
+
+
+    print(
+        "\nDone."
+    )
 
 
 if __name__ == "__main__":
