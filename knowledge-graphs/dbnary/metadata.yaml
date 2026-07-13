@@ -65,8 +65,8 @@ artifacts:
       format: ttl
       compression: bz2
       size: 187134724
-      sha256: null
-      status: pending
+      sha256: 05a747caf62f6658c6ef23c757a7df3101ba2cdad72f0073a822e4693d263206
+      status: active
 - artifact: en_dbnary_enhancement
   title: en_dbnary_enhancement
   abstract: An enhanced DBnary dataset with additional automatically computed lexical
