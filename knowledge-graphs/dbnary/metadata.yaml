@@ -1,43 +1,168 @@
 databus-account: knowledge-graph-catalog
+
 id: dbnary
+
 title: DBnary
-abstract: Dbnary is an effort to provide multilingual lexical data extracted from
-  wiktionary. The extracted data is made available as LLOD (Linguistic Linked Open
-  Data). This data set has won the Monnet challenge in 2012.
-description: Dbnary is an effort to provide multilingual lexical data extracted from
-  wiktionary. The extracted data is made available as LLOD (Linguistic Linked Open
-  Data). This data set has won the Monnet challenge in 2012.
+
+abstract: DBnary provides multilingual lexical data extracted from Wiktionary and published as Linguistic Linked Open Data (LLOD). It includes lexical entries, forms, senses, translations, and linguistic relations represented using semantic web standards such as OntoLex-Lemon.
+
+description: DBnary provides multilingual lexical data extracted from Wiktionary and published as Linguistic Linked Open Data (LLOD). It includes lexical entries, forms, senses, translations, and linguistic relations represented using semantic web standards such as OntoLex-Lemon.
+
 homepage: https://kaiko.getalp.org
-databus-publish: false
-moss-publish: false
+
+databus-publish: true
+
+moss-publish: true
+
 license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+
 keywords:
 - linguistics
+
 domains:
 - Linguistics, Social & Digital Knowledge Systems
+
 sparql:
 - name: main
   url: https://kaiko.getalp.org/sparql
+
 maintainers:
 - name: Gilles Serasset
   contact: Gilles.Serasset@imag.fr
   github: serasset
-last-version-size: 201326592
+
 artifacts:
+
 - artifact: en_dbnary_ontolex
   title: en_dbnary_ontolex
-  abstract: The core data as it has been extracted from Wiktionary.
-  description: The core data as it has been extracted from Wiktionary.
+  abstract: The core DBnary lexical dataset extracted from English Wiktionary and represented using the OntoLex-Lemon vocabulary.
+  description: The core DBnary lexical dataset extracted from English Wiktionary and represented using the OntoLex-Lemon vocabulary, containing lexical entries, forms, senses, translations, and lexical relations.
   versions:
-  - version: 20250901
+  - version: 2026-06-01
     title: en_dbnary_ontolex
-    abstract: The core data as it has been extracted from Wiktionary.
-    description: The core data as it has been extracted from Wiktionary.
+    abstract: The core DBnary lexical dataset extracted from English Wiktionary and represented using the OntoLex-Lemon vocabulary.
+    description: The core DBnary lexical dataset extracted from English Wiktionary and represented using the OntoLex-Lemon vocabulary, containing lexical entries, forms, senses, translations, and lexical relations.
     license: https://creativecommons.org/licenses/by-sa/3.0/rdf
     distributions:
-    - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_ontolex_20250901.ttl.bz2
+    - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_ontolex_20260601.ttl.bz2
       format: ttl
       compression: bz2
-      size: 201326592
-      sha256: 6b148c103921f48a2bfa290bd1c7d86730d1a551fce63425a4dc3aa3d63c390f
-      status: active
+      status: pending
+
+
+- artifact: en_dbnary_enhancement
+  title: en_dbnary_enhancement
+  abstract: An enhanced DBnary dataset with additional automatically computed lexical links and disambiguated translations.
+  description: An enhanced version of the DBnary lexical dataset providing additional computed information, including links between translations and lexical senses.
+  versions:
+  - version: 2026-06-01
+    title: en_dbnary_enhancement
+    abstract: An enhanced DBnary dataset with additional automatically computed lexical links and disambiguated translations.
+    description: An enhanced version of the DBnary lexical dataset providing additional computed information, including links between translations and lexical senses.
+    license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+    distributions:
+    - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_enhancement_20260601.ttl.bz2
+      format: ttl
+      compression: bz2
+      status: pending
+
+
+- artifact: en_dbnary_morphology
+  title: en_dbnary_morphology
+  abstract: A DBnary dataset containing morphological information and inflected lexical forms extracted from Wiktionary.
+  description: A DBnary dataset containing morphological information, inflectional forms, and linguistic annotations associated with lexical entries extracted from Wiktionary.
+  versions:
+  - version: 2026-06-01
+    title: en_dbnary_morphology
+    abstract: A DBnary dataset containing morphological information and inflected lexical forms extracted from Wiktionary.
+    description: A DBnary dataset containing morphological information, inflectional forms, and linguistic annotations associated with lexical entries extracted from Wiktionary.
+    license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+    distributions:
+    - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_morphology_20260601.ttl.bz2
+      format: ttl
+      compression: bz2
+      status: pending
+
+
+- artifact: en_dbnary_lime
+  title: en_dbnary_lime
+  abstract: A DBnary metadata dataset describing linguistic resources using the OntoLex-LIME vocabulary.
+  description: A DBnary dataset providing metadata about extracted linguistic resources, including language coverage and lexical resource statistics.
+  versions:
+  - version: 2026-06-01
+    title: en_dbnary_lime
+    abstract: A DBnary metadata dataset describing linguistic resources using the OntoLex-LIME vocabulary.
+    description: A DBnary dataset providing metadata about extracted linguistic resources, including language coverage and lexical resource statistics.
+    license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+    distributions:
+    - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_lime_20260601.ttl.bz2
+      format: ttl
+      compression: bz2
+      status: pending
+
+- artifact: en_dbnary_statistics
+  title: en_dbnary_statistics
+  abstract: A DBnary dataset containing extraction and enhancement statistics for DBnary releases.
+  description: A DBnary statistics dataset providing quantitative information about extracted lexical resources and enhancement processes represented using the RDF Data Cube vocabulary.
+  versions:
+  - version: 2026-06-01
+    title: en_dbnary_statistics
+    abstract: A DBnary dataset containing extraction and enhancement statistics for DBnary releases.
+    description: A DBnary statistics dataset providing quantitative information about extracted lexical resources and enhancement processes represented using the RDF Data Cube vocabulary.
+    license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+    distributions:
+    - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_statistics_20260601.ttl.bz2
+      format: ttl
+      compression: bz2
+      status: pending
+
+
+- artifact: en_dbnary_etymology
+  title: en_dbnary_etymology
+  abstract: A DBnary dataset containing etymological information extracted from English Wiktionary.
+  description: A DBnary dataset providing information about word origins, historical relationships, and etymological descriptions extracted from English Wiktionary.
+  versions:
+  - version: 2026-06-01
+    title: en_dbnary_etymology
+    abstract: A DBnary dataset containing etymological information extracted from English Wiktionary.
+    description: A DBnary dataset providing information about word origins, historical relationships, and etymological descriptions extracted from English Wiktionary.
+    license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+    distributions:
+    - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_etymology_20260601.ttl.bz2
+      format: ttl
+      compression: bz2
+      status: pending
+
+
+- artifact: en_dbnary_exolex_ontolex
+  title: en_dbnary_exolex_ontolex
+  abstract: A DBnary dataset containing lexical information for non-English languages extracted from English Wiktionary.
+  description: A DBnary dataset containing multilingual lexical information represented using OntoLex and extracted from non-English entries of the English Wiktionary edition.
+  versions:
+  - version: 2026-06-01
+    title: en_dbnary_exolex_ontolex
+    abstract: A DBnary dataset containing lexical information for non-English languages extracted from English Wiktionary.
+    description: A DBnary dataset containing multilingual lexical information represented using OntoLex and extracted from non-English entries of the English Wiktionary edition.
+    license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+    distributions:
+    - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_exolex_ontolex_20260601.ttl.bz2
+      format: ttl
+      compression: bz2
+      status: pending
+
+
+- artifact: en_dbnary_exolex_lime
+  title: en_dbnary_exolex_lime
+  abstract: A DBnary dataset describing multilingual lexical resources extracted from English Wiktionary using OntoLex-LIME.
+  description: A DBnary metadata dataset describing multilingual lexical resources extracted from English Wiktionary and represented using the OntoLex-LIME vocabulary.
+  versions:
+  - version: 2026-06-01
+    title: en_dbnary_exolex_lime
+    abstract: A DBnary dataset describing multilingual lexical resources extracted from English Wiktionary using OntoLex-LIME.
+    description: A DBnary metadata dataset describing multilingual lexical resources extracted from English Wiktionary and represented using the OntoLex-LIME vocabulary.
+    license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+    distributions:
+    - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_exolex_lime_20260601.ttl.bz2
+      format: ttl
+      compression: bz2
+      status: pending
