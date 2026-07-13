@@ -49,24 +49,6 @@ artifacts:
       status: active
       sha256: cb575b3c1d428f5d5b2db24221d05b69bd9fec4b6e2b84feb10dc67f8b290b6d
       size: 186158915
-  - version: 2025-01-20
-    title: Monthly Snapshot
-    abstract: DBnary provides multilingual lexical data extracted from Wiktionary
-      and published as Linguistic Linked Open Data (LLOD).
-    description: 'DBnary provides multilingual lexical data extracted from Wiktionary
-      and published as Linguistic Linked Open Data (LLOD). This version and its metadata
-      have been **automatically retrieved and published** by an automated update process.
-
-
-      Found an issue? Update metadata in the DBpedia knowledge graph catalog.'
-    license: https://creativecommons.org/licenses/by-sa/3.0/rdf
-    distributions:
-    - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_ontolex_20250120.ttl.bz2
-      format: ttl
-      compression: bz2
-      size: 187134724
-      sha256: 05a747caf62f6658c6ef23c757a7df3101ba2cdad72f0073a822e4693d263206
-      status: active
 - artifact: en_dbnary_enhancement
   title: en_dbnary_enhancement
   abstract: An enhanced DBnary dataset with additional automatically computed lexical

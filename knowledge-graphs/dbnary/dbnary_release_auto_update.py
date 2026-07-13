@@ -7,15 +7,12 @@ import requests
 from datetime import datetime
 
 
-# Path to metadata.yaml
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 YAML_FILE = os.path.join(SCRIPT_DIR, "metadata.yaml")
 
-# DBnary release directory
 BASE_URL = "https://kaiko.getalp.org/static/ontolex/en/"
 
 
-# Supported DBnary artifacts
 SUPPORTED_ARTIFACTS = [
     "en_dbnary_ontolex_",
     "en_dbnary_enhancement_",
@@ -28,83 +25,73 @@ SUPPORTED_ARTIFACTS = [
 ]
 
 
-def get_artifact_prefix(data):
-    """
-    Detects which DBnary artifact is described by metadata.yaml.
-    """
-
-    artifact_id = data["artifacts"][0].get("artifact")
-
-    if not artifact_id:
-        raise ValueError(
-            "Cannot determine artifact. "
-            "Expected 'artifact' field in metadata.yaml"
-        )
-
-    artifact_prefix = artifact_id + "_"
-
-    if artifact_prefix not in SUPPORTED_ARTIFACTS:
-        raise ValueError(
-            f"Unsupported DBnary artifact: {artifact_prefix}"
-        )
-
-    return artifact_prefix
-
-
-def get_current_yaml_version(data):
-    """
-    Finds the newest version already published in metadata.yaml.
-    Does not rely on ordering.
-    """
-
-    versions = data["artifacts"][0]["versions"]
-
-    dates = []
-
-    for version_entry in versions:
-        version = str(version_entry["version"])
-
-        try:
-            version_date = datetime.strptime(
-                version,
-                "%Y-%m-%d"
-            ).date()
-
-            dates.append(version_date)
-
-        except ValueError:
-            print(
-                f"Skipping unsupported version format: {version}"
-            )
-
-    if not dates:
-        raise ValueError(
-            "No valid versions found in metadata.yaml"
-        )
-
-    return max(dates)
-
-
 def load_yaml():
-    """
-    Loads metadata.yaml.
-    """
-
     if not os.path.exists(YAML_FILE):
-        raise FileNotFoundError(
-            f"{YAML_FILE} not found"
-        )
+        raise FileNotFoundError(YAML_FILE)
 
     with open(YAML_FILE, "r") as f:
         return yaml.safe_load(f)
 
 
-def get_available_versions(artifact_prefix):
-    """
-    Finds available DBnary releases for the selected artifact.
+def save_yaml(data):
+    with open(YAML_FILE, "w") as f:
+        yaml.dump(
+            data,
+            f,
+            sort_keys=False,
+            allow_unicode=True
+        )
 
-    Example:
-    en_dbnary_lime_20260601.ttl.bz2
+
+def get_latest_yaml_version(artifact):
+    """
+    Finds the newest published version of an artifact.
+    """
+
+    versions = artifact.get("versions", [])
+
+    dates = []
+
+    for entry in versions:
+        try:
+            dates.append(
+                datetime.strptime(
+                    str(entry["version"]),
+                    "%Y-%m-%d"
+                ).date()
+            )
+        except ValueError:
+            pass
+
+    if not dates:
+        return None
+
+    return max(dates)
+
+
+def get_latest_version_metadata(artifact):
+    """
+    Returns the metadata of the latest existing version.
+    Used as a template for the new version.
+    """
+
+    versions = artifact.get("versions", [])
+
+    if not versions:
+        return {}
+
+    return max(
+        versions,
+        key=lambda x: datetime.strptime(
+            str(x["version"]),
+            "%Y-%m-%d"
+        )
+    )
+
+
+def get_available_versions(prefix):
+    """
+    Finds all available DBnary releases for an artifact.
     """
 
     response = requests.get(BASE_URL)
@@ -112,183 +99,180 @@ def get_available_versions(artifact_prefix):
 
     html = response.text
 
-    versions = []
-
     pattern = re.compile(
-        re.escape(artifact_prefix) +
+        re.escape(prefix) +
         r"(\d{8})\.ttl\.bz2"
     )
 
-    for match in pattern.findall(html):
+    releases = []
+
+    for date_string in pattern.findall(html):
 
         version_date = datetime.strptime(
-            match,
+            date_string,
             "%Y%m%d"
         ).date()
 
         filename = (
-            f"{artifact_prefix}"
-            f"{match}.ttl.bz2"
+            prefix +
+            date_string +
+            ".ttl.bz2"
         )
 
         url = BASE_URL + filename
 
-        # Get exact file size
         head = requests.head(url)
 
-        if head.status_code == 200:
-            size = int(
-                head.headers.get(
-                    "Content-Length",
-                    0
-                )
+        size = int(
+            head.headers.get(
+                "Content-Length",
+                0
             )
-        else:
-            size = 0
+        )
 
-        versions.append(
+        releases.append(
             {
                 "version": version_date,
                 "url": url,
-                "size": size,
+                "size": size
             }
         )
 
-    versions.sort(
+    return sorted(
+        releases,
         key=lambda x: x["version"]
     )
 
-    return versions
 
-
-def find_next_version(
+def get_next_version(
     current_version,
     available_versions
 ):
     """
-    Returns the first available version newer
-    than the current YAML version.
+    Gets the first missing version after current version.
     """
 
-    newer_versions = [
+    candidates = [
         v for v in available_versions
-        if v["version"] > current_version
+        if current_version is None
+        or v["version"] > current_version
     ]
 
-    if not newer_versions:
+    if not candidates:
         return None
 
-    # Pick the next missing version, not the newest
-    return min(
-        newer_versions,
-        key=lambda x: x["version"]
-    )
+    return candidates[0]
 
 
-def update_yaml(
-    data,
-    new_version
+def create_version_entry(
+    artifact,
+    new_release
 ):
     """
-    Adds the new DBnary version entry.
+    Creates a new version by copying metadata
+    from the previous version.
     """
 
-    version_date = new_version["version"]
+    previous = get_latest_version_metadata(
+        artifact
+    )
 
-    entry = {
-        "version": version_date,
-        "title": "Monthly Snapshot",
-        "abstract": (
-            "DBnary provides multilingual lexical data "
-            "extracted from Wiktionary and published as "
-            "Linguistic Linked Open Data (LLOD)."
-        ),
-        "description": (
-            "DBnary provides multilingual lexical data "
-            "extracted from Wiktionary and published as "
-            "Linguistic Linked Open Data (LLOD). "
-            "This version and its metadata have been "
-            "**automatically retrieved and published** "
-            "by an automated update process.\n\n"
-            "Found an issue? Update metadata in the "
-            "DBpedia knowledge graph catalog."
-        ),
-        "license": data["license"],
-        "distributions": [
-            {
-                "file": new_version["url"],
-                "format": "ttl",
-                "compression": "bz2",
-                "size": new_version["size"],
-                "sha256": None,
-                "status": "pending",
-            }
-        ],
-    }
+    entry = {}
 
-    data["artifacts"][0]["versions"].append(entry)
+    # Copy everything except version/distributions
+    for key, value in previous.items():
+        if key not in [
+            "version",
+            "distributions"
+        ]:
+            entry[key] = value
 
-    with open(YAML_FILE, "w") as f:
-        yaml.dump(
-            data,
-            f,
-            sort_keys=False
-        )
+    entry["version"] = new_release["version"]
+
+    # Ensure title is artifact name
+    entry["title"] = artifact["artifact"]
+
+    entry["distributions"] = [
+        {
+            "file": new_release["url"],
+            "format": "ttl",
+            "compression": "bz2",
+            "size": new_release["size"],
+            "sha256": None,
+            "status": "pending"
+        }
+    ]
+
+    return entry
+
+
+def process_artifact(artifact):
+    """
+    Updates one DBnary artifact.
+    """
+
+    artifact_id = artifact.get("artifact")
+
+    if not artifact_id:
+        return
+
+    prefix = artifact_id + "_"
+
+    if prefix not in SUPPORTED_ARTIFACTS:
+        return
+
+    print("\nChecking:", artifact_id)
+
+    current_version = get_latest_yaml_version(
+        artifact
+    )
 
     print(
-        "Added new version:",
-        version_date.strftime("%Y-%m-%d")
+        "Current version:",
+        current_version
     )
+
+    available = get_available_versions(
+        prefix
+    )
+
+    new_version = get_next_version(
+        current_version,
+        available
+    )
+
+    if not new_version:
+        print("No update available.")
+        return
+
+    print(
+        "Adding version:",
+        new_version["version"]
+    )
+
+    entry = create_version_entry(
+        artifact,
+        new_version
+    )
+
+    artifact["versions"].append(entry)
 
 
 def main():
 
     data = load_yaml()
 
-    artifact_prefix = get_artifact_prefix(data)
-
-    print(
-        "Checking artifact:",
-        artifact_prefix
-    )
-
-    current_version = get_current_yaml_version(data)
-
-    print(
-        "Current YAML version:",
-        current_version
-    )
-
-    available_versions = get_available_versions(
-        artifact_prefix
-    )
-
-    if not available_versions:
-        print(
-            "No DBnary releases found."
+    for artifact in data.get(
+        "artifacts",
+        []
+    ):
+        process_artifact(
+            artifact
         )
-        return
 
-    next_version = find_next_version(
-        current_version,
-        available_versions
-    )
+    save_yaml(data)
 
-    if not next_version:
-        print(
-            "No newer DBnary version available."
-        )
-        return
-
-    print(
-        "New DBnary version found:",
-        next_version["version"]
-    )
-
-    update_yaml(
-        data,
-        next_version
-    )
+    print("\nDone.")
 
 
 if __name__ == "__main__":
