@@ -177,6 +177,52 @@ def update_frequency(turtle, kg, updates):
 
 def publish_to_moss(kg, turtle):
 
+    # Parse turtle
+    g = Graph()
+
+    g.parse(
+        data=turtle,
+        format="turtle"
+    )
+
+
+    # Remove MOSS MetadataEntry triples before publishing
+    metadata_subject = URIRef(
+        f"{MOSS_ENDPOINT}/entries/{kg.replace('https://', '')}/kg-metadata"
+    )
+
+
+    print("\nRemoving triples before POST:")
+    print(metadata_subject)
+
+
+    triples = list(
+        g.triples(
+            (
+                metadata_subject,
+                None,
+                None
+            )
+        )
+    )
+
+
+    print(
+        f"Removing {len(triples)} triples"
+    )
+
+
+    for triple in triples:
+        print("Removing:", triple)
+        g.remove(triple)
+
+
+    # Serialize cleaned payload
+    turtle = g.serialize(
+        format="turtle"
+    )
+
+
     url = (
         f"{MOSS_ENDPOINT}"
         f"/api/v1/save-entry"
@@ -190,20 +236,15 @@ def publish_to_moss(kg, turtle):
         "Content-Type": "text/turtle"
     }
 
+
     print("\n========== MOSS POST REQUEST ==========")
     print("METHOD: POST")
     print("URL:")
     print(url)
 
-    print("\nHEADERS:")
-    print({
-        "accept": headers["accept"],
-        "X-API-KEY": "***hidden***",
-        "Content-Type": headers["Content-Type"]
-    })
-
     print("\nPAYLOAD:")
     print(turtle)
+
 
     r = requests.post(
         url,
@@ -212,10 +253,12 @@ def publish_to_moss(kg, turtle):
         timeout=60
     )
 
+
     print("\nMOSS POST RESPONSE:")
     print("STATUS:", r.status_code)
     print("BODY:")
     print(r.text)
+
 
     r.raise_for_status()
 
