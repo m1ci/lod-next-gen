@@ -180,7 +180,7 @@ def update_byte_size(turtle, kg, size):
         print(value)
 
 
-    # remove existing values
+    # remove existing byteSize values
 
     g.remove(
         (
@@ -191,7 +191,7 @@ def update_byte_size(turtle, kg, size):
     )
 
 
-    # add new value
+    # add new byteSize value
 
     g.add(
         (
@@ -200,6 +200,39 @@ def update_byte_size(turtle, kg, size):
             Literal(str(size))
         )
     )
+
+
+    #
+    # Remove MOSS MetadataEntry triples
+    #
+    metadata_subject = URIRef(
+        f"{MOSS_ENDPOINT}/entries/{kg.replace('https://','')}/kg-metadata"
+    )
+
+
+    print("\nRemoving metadata triples with subject:")
+    print(metadata_subject)
+
+
+    metadata_triples = list(
+        g.triples(
+            (
+                metadata_subject,
+                None,
+                None
+            )
+        )
+    )
+
+
+    print(
+        f"Removing {len(metadata_triples)} triples"
+    )
+
+
+    for triple in metadata_triples:
+        print("Removing:", triple)
+        g.remove(triple)
 
 
     updated = g.serialize(
@@ -213,7 +246,6 @@ def update_byte_size(turtle, kg, size):
 
 
     return updated
-
 
 
 def publish_to_moss(kg, turtle):
