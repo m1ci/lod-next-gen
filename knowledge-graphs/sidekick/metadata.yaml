@@ -1,86 +1,85 @@
-databus-account: knowledge-graph-catalog # Leave as is. Don't update.
-id: sidekick # set unique id of your KG. Check for already used ids at https://databus.dbpedia.org/knowledge-graph-catalog
-title: SIDEKICK # set the title of the KG
-# Provide short description of the KG (e.g. 2 sentences)
-abstract: >
-  SIDEKICK is a biomedical knowledge graph that integrates drug indications,
-  contraindications, and adverse reactions extracted from FDA Structured Product
-  Labels.
-# Provide extended description of the KG. You can either use free text or markdown syntax.
-description: |
-  SIDEKICK is a semantically integrated biomedical knowledge graph for drug
+databus-account: knowledge-graph-catalog
+id: sidekick
+title: SIDEKICK
+abstract: 'SIDEKICK is a biomedical knowledge graph that integrates drug indications,
+  contraindications, and adverse reactions extracted from FDA Structured Product Labels.
+
+  '
+description: 'SIDEKICK is a semantically integrated biomedical knowledge graph for
+  drug
+
   safety information. It contains indications, contraindications, adverse drug
+
   reactions, and drug interaction information extracted from more than 50,000
+
   FDA Structured Product Labels using a workflow combining Large Language Models
+
   (LLMs) and Graph Retrieval-Augmented Generation (Graph RAG).
 
+
   Clinical entities are normalized to established biomedical ontologies,
+
   including the Human Phenotype Ontology (HPO), MONDO Disease Ontology, and
+
   RxNorm. The dataset is represented as RDF using the Semanticscience Integrated
+
   Ontology (SIO) as an upper ontology, enabling semantic reasoning, SPARQL
+
   querying, and integration with other Semantic Web resources. The knowledge
+
   graph is intended to support pharmacovigilance, drug repurposing, and clinical
+
   decision support.
-moss-publish: true # set to true when publishing the KG for the first or when introduced updates to the general metadata of the KG.
-databus-publish: true # set to true when publishing the KG for the first time  or when introduced updates to the KG artifacts or versions.
-license: https://creativecommons.org/licenses/by/4.0/ # Provide the general license for the KG
-homepage: https://sidekick.bio2vec.net/ # home page for the KG, if exist.
+
+  '
+moss-publish: false
+databus-publish: false
+license: https://creativecommons.org/licenses/by/4.0/
+homepage: https://sidekick.bio2vec.net/
 domains:
-- Life Sciences & Health # the main domain reflecting the content of the KG. Choose from the 8 defined domains below.
-
-# Cross-domain
-# Geography & Environment
-# Government & Public Sector
-# Life Sciences & Health
-# Economy, Industry & Infrastructure
-# Publications, Education & Research
-# Media, Culture & Entertainment
-# Linguistics, Social & Digital Knowledge Systems
-# ...for more about domains see https://github.com/m1ci/lod-next-gen/blob/main/README.md
-
-keywords: # provide 3-8 keywords describing your KG
+- Life Sciences & Health
+keywords:
 - pharmacovigilance
 - drug safety
 - HPO
 - MONDO
 - RxNorm
 - biomedical ontology
-sparql: # Provide SPARQL endpoint details, if endpoint is available
+sparql:
 - name: main
   url: https://sidekick.bio2vec.net/sparql
-maintainers: # add contact info of the KG maintainer
+maintainers:
 - name: Robert Hoehndorf
   contact: robert.hoehndorf@kaust.edu.sa
-  github: leechuck # username on github
-artifacts: # provide list of artifacts associated with your KG. 
-# Typically an artifact corresponds to a partition of your KG (if your KG is provided in multiple partitions)
-- artifact: sidekick-rdf # provide id for your artifact 
-  title: SIDEKICK RDF Knowledge Graph # provide title for the artifact
-  # provide short description of the artifact (e.g. 2 sentences)
-  abstract: >
-      RDF serialization of the SIDEKICK knowledge graph integrating drug
-      indications, contraindications, adverse reactions, and drug interaction
-      information mapped to biomedical ontologies.
-  # provide extended description of the artifact
-  description: >
-      This artifact contains the complete RDF representation of the SIDEKICK
-      knowledge graph. It models pharmaceutical products, active ingredients,
-      indications, contraindications, adverse reactions, and provenance using
-      RDF and the Semanticscience Integrated Ontology (SIO). Clinical concepts
-      are linked to HPO, MONDO, and RxNorm, enabling semantic interoperability
-      and reasoning.
+  github: leechuck
+artifacts:
+- artifact: sidekick-rdf
+  title: SIDEKICK RDF Knowledge Graph
+  abstract: 'RDF serialization of the SIDEKICK knowledge graph integrating drug indications,
+    contraindications, adverse reactions, and drug interaction information mapped
+    to biomedical ontologies.
+
+    '
+  description: 'This artifact contains the complete RDF representation of the SIDEKICK
+    knowledge graph. It models pharmaceutical products, active ingredients, indications,
+    contraindications, adverse reactions, and provenance using RDF and the Semanticscience
+    Integrated Ontology (SIO). Clinical concepts are linked to HPO, MONDO, and RxNorm,
+    enabling semantic interoperability and reasoning.
+
+    '
   versions:
   - version: 2025.12.01
-    title: SIDEKICK RDF Knowledge Graph (2025.12.01) # provide title for the version
-    abstract: Release of the SIDEKICK RDF knowledge graph. # provide short description of the version (e.g. 2 sentences)
-    # provide extended description of the version
-    description: >
-          The authors state that SIDEKICK is intended to receive yearly updates.
-          This version represents the current public release described in the
-          paper.
-    license: https://creativecommons.org/licenses/by/4.0/ # URL identifying the license
-    distributions: # here list all files assciated with the artifact and the version
-    - file: https://zenodo.org/records/17779317/files/Sidekick_v1.ttl?download=1 # provide valid download URL
-      format: ttl # provide the format of the file, e.g. nt or ttl
-      compression: none # if the file is compressed, e.g. bz2, indicate that info
-      status: pending # INFO: pending means that the catalog will be updated (then it will be set to active). Later, if you make any changes and want to propagate them to the catalog, set the flag to pending.
+    title: SIDEKICK RDF Knowledge Graph (2025.12.01)
+    abstract: Release of the SIDEKICK RDF knowledge graph.
+    description: 'The authors state that SIDEKICK is intended to receive yearly updates.
+      This version represents the current public release described in the paper.
+
+      '
+    license: https://creativecommons.org/licenses/by/4.0/
+    distributions:
+    - file: https://zenodo.org/records/17779317/files/Sidekick_v1.ttl?download=1
+      format: ttl
+      compression: none
+      status: active
+      sha256: f5ea68046a7c95c32ab076f074046ea73af16e8e5ed5b468f0dd7a953a246151
+      size: 160013039
