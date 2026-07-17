@@ -26,7 +26,7 @@ body:
     label: description
     description: Provide extended description of the KG. You can either use free text or markdown syntax.
   validations:
-    required: false
+    required: true
 - type: input
   attributes:
     label: license 
