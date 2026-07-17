@@ -1,5 +1,5 @@
 name: 🚀 New KG
-description: File a bug/issue
+description: Submission form for a new knowledge graph.
 title: "[New KG] <kg-title>"
 labels: ["new-kg"]
 body:
@@ -8,7 +8,7 @@ body:
     label: KG ID 
     description: set unique ID of your KG. (e.g. food-kg).  Check for already used ids at https://databus.dbpedia.org/knowledge-graph-catalog
   validations:
-    required: false
+    required: true
 - type: checkboxes
   attributes:
     label: Is there an existing issue for this?
