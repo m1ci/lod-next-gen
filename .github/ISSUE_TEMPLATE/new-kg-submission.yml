@@ -1,8 +1,14 @@
-name: 🐞 Bug
+name: 🚀 New KG
 description: File a bug/issue
-title: "[BUG] <title>"
-labels: ["Bug", "Needs Triage"]
+title: "[New KG] <kg-title>"
+labels: ["new-kg"]
 body:
+- type: textarea
+  attributes:
+    label: KG ID 
+    description: set unique ID of your KG. (e.g. food-kg).  Check for already used ids at https://databus.dbpedia.org/knowledge-graph-catalog
+  validations:
+    required: false
 - type: checkboxes
   attributes:
     label: Is there an existing issue for this?
