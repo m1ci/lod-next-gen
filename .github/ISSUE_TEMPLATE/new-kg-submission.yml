@@ -1,12 +1,12 @@
 name: 🚀 New KG
-description: Submission form for a new knowledge graph.
+description: Submission form for a new Knowledge Graph.
 title: "[New KG] <kg-title>"
 labels: ["new-kg"]
 body:
-- type: textarea
+- type: input
   attributes:
     label: KG ID 
-    description: set unique ID of your KG. (e.g. food-kg).  Check for already used ids at https://databus.dbpedia.org/knowledge-graph-catalog
+    description: Set unique ID of your KG. (e.g. food-kg).  Check for already used ids at https://databus.dbpedia.org/knowledge-graph-catalog
   validations:
     required: true
 - type: checkboxes
