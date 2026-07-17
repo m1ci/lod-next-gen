@@ -9,6 +9,42 @@ body:
     description: Set unique ID of your KG. (e.g. food-kg).  Check for already used ids at https://databus.dbpedia.org/knowledge-graph-catalog
   validations:
     required: true
+- type: input
+  attributes:
+    label: KG Title 
+    description: Set the title of the KG.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: abstract
+    description: Provide short description of the KG (e.g. 2 sentences). Maximum 300 chars.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: description
+    description: Provide extended description of the KG. You can either use free text or markdown syntax.
+  validations:
+    required: false
+- type: input
+  attributes:
+    label: license 
+    description: Provide the general license for the KG, e.g. http://purl.oclc.org/NET/rdflicense/cc-by3.0
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: homepage 
+    description: Home page for the KG, if exist.
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: domain
+    description: the main domain reflecting the content of the KG. Choose from the 8 defined domains below TODO.
+  validations:
+    required: true
 - type: checkboxes
   attributes:
     label: Is there an existing issue for this?
