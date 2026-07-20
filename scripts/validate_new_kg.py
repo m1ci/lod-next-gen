@@ -71,11 +71,8 @@ keywords = get_field("Keywords")
 
 sparql_url = get_field("SPARQL Endpoint URL")
 
-maintainer_name = get_field("Maintainer Name")
-maintainer_contact = get_field("Maintainer Contact")
-
 artifacts_text = get_field(
-    "Artifacts, Versions and Distributions"
+    "KG Content (Artifacts, Versions and Distributions)"
 )
 
 
@@ -201,27 +198,7 @@ if sparql_url and not valid_url(sparql_url):
 
 
 # --------------------------------------------------
-# Maintainer
-# --------------------------------------------------
-
-if not maintainer_name:
-    add_error(
-        "Maintainer name is missing."
-    )
-
-if not maintainer_contact:
-    add_error(
-        "Maintainer contact is missing."
-    )
-
-elif "@" not in maintainer_contact:
-    add_error(
-        "Maintainer contact does not look like an email address."
-    )
-
-
-# --------------------------------------------------
-# Artifacts YAML
+# KG Content (Artifacts, Versions and Distributions)
 # --------------------------------------------------
 
 if not artifacts_text:
