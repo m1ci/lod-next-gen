@@ -62,11 +62,11 @@ def add_warning(message):
 
 kg_id = get_field("KG ID")
 title = get_field("KG Title")
-abstract = get_field("Abstract")
-description = get_field("Description")
+abstract = get_field("KG Short Abstract")
+description = get_field("KG Full Description")
 license_url = get_field("License")
-homepage = get_field("Homepage")
-domain = get_field("Primary Domain")
+homepage = get_field("KG Homepage")
+domain = get_field("KG Primary Domain")
 keywords = get_field("Keywords")
 
 sparql_url = get_field("SPARQL Endpoint URL")
