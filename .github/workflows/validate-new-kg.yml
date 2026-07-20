@@ -38,8 +38,13 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const message = process.env.MESSAGE;
-      
+            const fs = require('fs');
+
+            const message = fs.readFileSync(
+              'validation-result.md',
+              'utf8'
+            );
+
             github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
