@@ -34,8 +34,8 @@ body:
 
 - type: input
   attributes:
-    label: License 
-    description: Provide the general license for the KG, e.g. http://purl.oclc.org/NET/rdflicense/cc-by3.0
+    label: License
+    description: Provide the general license for the KG, e.g. http://purl.oclc.org/NET/rdflicense/cc-by3.0 Provide the license as URL.
   validations:
     required: true
 
