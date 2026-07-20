@@ -15,21 +15,15 @@ warnings = []
 def get_field(name):
     """
     Extract GitHub Issue Form field.
-
-    Example:
-
-    ### KG ID
-
-    my-kg
-
-    ### KG Title
-
-    My KG
     """
 
     pattern = rf"### {re.escape(name)}\s*\n\s*(.*?)(?=\n### |\Z)"
 
-    match = re.search(pattern, body, re.S)
+    match = re.search(
+        pattern,
+        body,
+        re.S
+    )
 
     if match:
         return match.group(1).strip()
@@ -39,13 +33,15 @@ def get_field(name):
 
 def clean_yaml(text):
     """
-    Remove Markdown YAML code fences if users pasted:
+    Remove Markdown YAML fences.
+
+    Converts:
 
     ```yaml
     - artifact: example
     ```
 
-    GitHub issue forms may contain these even with render: yaml.
+    into pure YAML.
     """
 
     if not text:
@@ -57,11 +53,9 @@ def clean_yaml(text):
 
         lines = text.splitlines()
 
-        # Remove opening fence (```yaml or ```)
         if lines[0].strip().startswith("```"):
             lines = lines[1:]
 
-        # Remove closing fence
         if lines and lines[-1].strip() == "```":
             lines = lines[:-1]
 
@@ -71,15 +65,19 @@ def clean_yaml(text):
 
 
 def valid_url(value):
+
     if not value:
         return False
 
     try:
+
         result = urlparse(value)
+
         return (
             result.scheme in ("http", "https")
             and result.netloc
         )
+
     except Exception:
         return False
 
@@ -100,12 +98,16 @@ kg_id = get_field("KG ID")
 title = get_field("KG Title")
 abstract = get_field("KG Short Abstract")
 description = get_field("KG Full Description")
+
 license_url = get_field("License")
 homepage = get_field("KG Homepage")
+
 domain = get_field("KG Primary Domain")
 keywords = get_field("Keywords")
 
-sparql_url = get_field("SPARQL Endpoint URL")
+sparql_url = get_field(
+    "SPARQL Endpoint URL"
+)
 
 artifacts_text = get_field(
     "KG Content (Artifacts, Versions and Distributions)"
@@ -117,9 +119,16 @@ artifacts_text = get_field(
 # --------------------------------------------------
 
 if not kg_id:
-    add_error("KG ID is missing.")
 
-elif not re.match(r"^[a-z0-9-]+$", kg_id):
+    add_error(
+        "KG ID is missing."
+    )
+
+elif not re.match(
+    r"^[a-z0-9-]+$",
+    kg_id
+):
+
     add_error(
         "KG ID must contain only lowercase letters, numbers and hyphens."
     )
@@ -130,28 +139,37 @@ elif not re.match(r"^[a-z0-9-]+$", kg_id):
 # --------------------------------------------------
 
 if not title:
-    add_error("KG Title is missing.")
-
-
-# --------------------------------------------------
-# KG Short Abstract
-# --------------------------------------------------
-
-if not abstract:
-    add_error("Abstract is missing.")
-
-elif len(abstract) > 300:
     add_error(
-        "Abstract exceeds the maximum length of 300 characters."
+        "KG Title is missing."
     )
 
 
 # --------------------------------------------------
-# KG Full Description
+# Abstract
+# --------------------------------------------------
+
+if not abstract:
+
+    add_error(
+        "Abstract is missing."
+    )
+
+elif len(abstract) > 300:
+
+    add_error(
+        "Abstract exceeds maximum length of 300 characters."
+    )
+
+
+# --------------------------------------------------
+# Description
 # --------------------------------------------------
 
 if not description:
-    add_error("Description is missing.")
+
+    add_error(
+        "Description is missing."
+    )
 
 
 # --------------------------------------------------
@@ -159,9 +177,13 @@ if not description:
 # --------------------------------------------------
 
 if not license_url:
-    add_error("License is missing.")
+
+    add_error(
+        "License is missing."
+    )
 
 elif not valid_url(license_url):
+
     add_error(
         f"License is not a valid URL: {license_url}"
     )
@@ -172,6 +194,7 @@ elif not valid_url(license_url):
 # --------------------------------------------------
 
 if homepage and not valid_url(homepage):
+
     add_error(
         f"Homepage is not a valid URL: {homepage}"
     )
@@ -192,7 +215,9 @@ allowed_domains = [
     "Linguistics, Social & Digital Knowledge Systems",
 ]
 
+
 if domain not in allowed_domains:
+
     add_error(
         f"Invalid domain: {domain}"
     )
@@ -203,7 +228,10 @@ if domain not in allowed_domains:
 # --------------------------------------------------
 
 if not keywords:
-    add_error("Keywords are missing.")
+
+    add_error(
+        "Keywords are missing."
+    )
 
 else:
 
@@ -214,28 +242,31 @@ else:
     ]
 
     if len(keyword_list) < 3:
+
         add_error(
             "At least 3 keywords are required."
         )
 
     if len(keyword_list) > 8:
+
         add_error(
             "Maximum 8 keywords are allowed."
         )
 
 
 # --------------------------------------------------
-# SPARQL endpoint
+# SPARQL
 # --------------------------------------------------
 
 if sparql_url and not valid_url(sparql_url):
+
     add_error(
         f"SPARQL endpoint URL is invalid: {sparql_url}"
     )
 
 
 # --------------------------------------------------
-# KG Content (Artifacts, Versions and Distributions)
+# Artifacts
 # --------------------------------------------------
 
 if not artifacts_text:
@@ -248,8 +279,6 @@ else:
 
     try:
 
-        # FIX:
-        # Remove ```yaml ... ``` wrappers if present
         artifacts_text = clean_yaml(
             artifacts_text
         )
@@ -258,7 +287,10 @@ else:
             artifacts_text
         )
 
-        if not isinstance(artifacts, list):
+        if not isinstance(
+            artifacts,
+            list
+        ):
 
             add_error(
                 "Artifacts must be a YAML list."
@@ -268,20 +300,18 @@ else:
 
             for i, artifact in enumerate(artifacts):
 
-                prefix = f"Artifact #{i+1}"
-
-                if not isinstance(artifact, dict):
-                    add_error(
-                        f"{prefix}: artifact must be a YAML object."
-                    )
-                    continue
+                prefix = (
+                    f"Artifact #{i+1}"
+                )
 
                 if "artifact" not in artifact:
+
                     add_error(
                         f"{prefix}: missing artifact id."
                     )
 
                 if "title" not in artifact:
+
                     add_error(
                         f"{prefix}: missing title."
                     )
@@ -300,42 +330,46 @@ else:
 
                     for j, version in enumerate(versions):
 
-                        vprefix = (
+                        prefix_version = (
                             f"{prefix}, version #{j+1}"
                         )
 
                         if "version" not in version:
+
                             add_error(
-                                f"{vprefix}: missing version number."
+                                f"{prefix_version}: missing version."
                             )
 
                         if "license" not in version:
+
                             add_error(
-                                f"{vprefix}: missing license."
+                                f"{prefix_version}: missing license."
                             )
 
-                        distributions = version.get(
-                            "distributions"
+                        distributions = (
+                            version.get(
+                                "distributions"
+                            )
                         )
 
                         if not distributions:
 
                             add_error(
-                                f"{vprefix}: no distributions defined."
+                                f"{prefix_version}: no distributions."
                             )
 
                         else:
 
                             for k, dist in enumerate(distributions):
 
-                                dprefix = (
-                                    f"{vprefix}, distribution #{k+1}"
+                                prefix_dist = (
+                                    f"{prefix_version}, distribution #{k+1}"
                                 )
 
                                 if "file" not in dist:
 
                                     add_error(
-                                        f"{dprefix}: missing file URL."
+                                        f"{prefix_dist}: missing file."
                                     )
 
                                 elif not valid_url(
@@ -343,13 +377,13 @@ else:
                                 ):
 
                                     add_error(
-                                        f"{dprefix}: invalid file URL."
+                                        f"{prefix_dist}: invalid file URL."
                                     )
 
                                 if "format" not in dist:
 
                                     add_error(
-                                        f"{dprefix}: missing format."
+                                        f"{prefix_dist}: missing format."
                                     )
 
 
@@ -361,10 +395,12 @@ else:
 
 
 # --------------------------------------------------
-# Generate GitHub comment
+# Result
 # --------------------------------------------------
 
 if errors:
+
+    status = "failed"
 
     result = """
 ## ❌ KG Metadata Validation Failed
@@ -379,20 +415,28 @@ The submission contains the following problems:
 
 else:
 
+    status = "success"
+
     result = """
 ## ✅ KG Metadata Validation Passed
 
 All mandatory metadata fields are valid.
 
+The KG metadata YAML generation step can proceed.
 """
 
-    if warnings:
 
-        result += "\nWarnings:\n\n"
+if warnings:
 
-        for warning in warnings:
-            result += f"- {warning}\n"
+    result += "\nWarnings:\n"
 
+    for warning in warnings:
+        result += f"- {warning}\n"
+
+
+# --------------------------------------------------
+# Write outputs
+# --------------------------------------------------
 
 Path(
     "validation-result.md"
@@ -400,5 +444,14 @@ Path(
     result,
     encoding="utf-8"
 )
+
+
+Path(
+    "validation-status"
+).write_text(
+    status,
+    encoding="utf-8"
+)
+
 
 print(result)
