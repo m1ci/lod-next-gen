@@ -17,7 +17,7 @@ def get_field(name):
     Extract GitHub Issue Form field.
 
     Example:
-    
+
     ### KG ID
 
     my-kg
@@ -37,13 +37,49 @@ def get_field(name):
     return None
 
 
+def clean_yaml(text):
+    """
+    Remove Markdown YAML code fences if users pasted:
+
+    ```yaml
+    - artifact: example
+    ```
+
+    GitHub issue forms may contain these even with render: yaml.
+    """
+
+    if not text:
+        return text
+
+    text = text.strip()
+
+    if text.startswith("```"):
+
+        lines = text.splitlines()
+
+        # Remove opening fence (```yaml or ```)
+        if lines[0].strip().startswith("```"):
+            lines = lines[1:]
+
+        # Remove closing fence
+        if lines and lines[-1].strip() == "```":
+            lines = lines[:-1]
+
+        text = "\n".join(lines)
+
+    return text.strip()
+
+
 def valid_url(value):
     if not value:
         return False
 
     try:
         result = urlparse(value)
-        return result.scheme in ("http", "https") and result.netloc
+        return (
+            result.scheme in ("http", "https")
+            and result.netloc
+        )
     except Exception:
         return False
 
@@ -170,6 +206,7 @@ if not keywords:
     add_error("Keywords are missing.")
 
 else:
+
     keyword_list = [
         x.strip()
         for x in keywords.split(",")
@@ -211,9 +248,18 @@ else:
 
     try:
 
-        artifacts = yaml.safe_load(artifacts_text)
+        # FIX:
+        # Remove ```yaml ... ``` wrappers if present
+        artifacts_text = clean_yaml(
+            artifacts_text
+        )
+
+        artifacts = yaml.safe_load(
+            artifacts_text
+        )
 
         if not isinstance(artifacts, list):
+
             add_error(
                 "Artifacts must be a YAML list."
             )
@@ -223,6 +269,12 @@ else:
             for i, artifact in enumerate(artifacts):
 
                 prefix = f"Artifact #{i+1}"
+
+                if not isinstance(artifact, dict):
+                    add_error(
+                        f"{prefix}: artifact must be a YAML object."
+                    )
+                    continue
 
                 if "artifact" not in artifact:
                     add_error(
@@ -234,9 +286,12 @@ else:
                         f"{prefix}: missing title."
                     )
 
-                versions = artifact.get("versions")
+                versions = artifact.get(
+                    "versions"
+                )
 
                 if not versions:
+
                     add_error(
                         f"{prefix}: no versions defined."
                     )
@@ -259,13 +314,12 @@ else:
                                 f"{vprefix}: missing license."
                             )
 
-                        distributions = (
-                            version.get(
-                                "distributions"
-                            )
+                        distributions = version.get(
+                            "distributions"
                         )
 
                         if not distributions:
+
                             add_error(
                                 f"{vprefix}: no distributions defined."
                             )
@@ -279,6 +333,7 @@ else:
                                 )
 
                                 if "file" not in dist:
+
                                     add_error(
                                         f"{dprefix}: missing file URL."
                                     )
@@ -286,11 +341,13 @@ else:
                                 elif not valid_url(
                                     dist["file"]
                                 ):
+
                                     add_error(
                                         f"{dprefix}: invalid file URL."
                                     )
 
                                 if "format" not in dist:
+
                                     add_error(
                                         f"{dprefix}: missing format."
                                     )
@@ -330,6 +387,7 @@ All mandatory metadata fields are valid.
 """
 
     if warnings:
+
         result += "\nWarnings:\n\n"
 
         for warning in warnings:
