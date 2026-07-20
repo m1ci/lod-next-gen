@@ -20,36 +20,36 @@ body:
 
 - type: textarea
   attributes:
-    label: abstract
+    label: KG Short Abstract
     description: Provide short description of the KG (e.g. 2 sentences). Maximum 300 chars.
   validations:
     required: true
 
 - type: textarea
   attributes:
-    label: description
+    label: KG Full Description
     description: Provide extended description of the KG. You can either use free text or markdown syntax.
   validations:
     required: true
 
 - type: input
   attributes:
-    label: license 
+    label: License 
     description: Provide the general license for the KG, e.g. http://purl.oclc.org/NET/rdflicense/cc-by3.0
   validations:
     required: true
 
 - type: input
   attributes:
-    label: homepage 
+    label: KG Homepage 
     description: Home page for the KG, if exist.
   validations:
-    required: true
+    required: false
 
 - type: dropdown
   id: domain
   attributes:
-    label: Primary Domain
+    label: KG Primary Domain
     description: Select the primary domain of the Knowledge Graph.
     options:
       - Cross-domain
@@ -67,7 +67,7 @@ body:
   id: keywords
   attributes:
     label: Keywords
-    description: Provide 3–8 comma-separated keywords.
+    description: Provide 3–8 comma-separated keywords whiich describe the KG.
     placeholder: linked data, rdf, geography
   validations:
     required: true
@@ -83,16 +83,16 @@ body:
 - type: input
   id: maintainer-name
   attributes:
-    label: Maintainer Name
-    description: Primary contact person.
+    label: KG Maintainer Name
+    description: Primary contact person. (optional)
   validations:
     required: false
 
 - type: input
   id: maintainer-contact
   attributes:
-    label: Maintainer Contact
-    description: Email address.
+    label: KG Maintainer Contact
+    description: Email address. (optional)
     placeholder: name@example.org
   validations:
     required: false
@@ -100,8 +100,8 @@ body:
 - type: input
   id: maintainer-github
   attributes:
-    label: Maintainer GitHub Username
-    description: Optional.
+    label: KG Maintainer GitHub Username
+    description:  Optional.
     placeholder: dbpedia
   validations:
     required: false
@@ -109,9 +109,9 @@ body:
 - type: textarea
   id: artifacts
   attributes:
-    label: Artifacts, Versions and Distributions
+    label: KG Content (Artifacts, Versions and Distributions)
     description: |
-      Describe all artifacts, versions and distributions using YAML.
+      Describe all artifacts, versions and distributions (using YAML_.
 
       One artifact typically corresponds to one partition of the KG.
 
@@ -134,7 +134,7 @@ body:
               - file: https://example.org/file1.ttl.bz2
                 format: ttl
                 compression: bz2
-      - artifact: seconnd-artifact
+      - artifact: second-artifact
         title: Second Artifact
         abstract: Short description.
         description: Longer description.
