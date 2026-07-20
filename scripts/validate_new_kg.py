@@ -79,6 +79,7 @@ def valid_url(value):
         )
 
     except Exception:
+
         return False
 
 
@@ -90,20 +91,53 @@ def add_warning(message):
     warnings.append(message)
 
 
+def kg_id_exists(kg_id):
+    """
+    Check if KG metadata already exists.
+    """
+
+    if not kg_id:
+        return False
+
+    metadata_file = (
+        Path("kgs")
+        / kg_id
+        / "metadata.yaml"
+    )
+
+    return metadata_file.exists()
+
+
 # --------------------------------------------------
 # Extract fields
 # --------------------------------------------------
 
 kg_id = get_field("KG ID")
 title = get_field("KG Title")
-abstract = get_field("KG Short Abstract")
-description = get_field("KG Full Description")
 
-license_url = get_field("License")
-homepage = get_field("KG Homepage")
+abstract = get_field(
+    "KG Short Abstract"
+)
 
-domain = get_field("KG Primary Domain")
-keywords = get_field("Keywords")
+description = get_field(
+    "KG Full Description"
+)
+
+license_url = get_field(
+    "License"
+)
+
+homepage = get_field(
+    "KG Homepage"
+)
+
+domain = get_field(
+    "KG Primary Domain"
+)
+
+keywords = get_field(
+    "Keywords"
+)
 
 sparql_url = get_field(
     "SPARQL Endpoint URL"
@@ -133,12 +167,19 @@ elif not re.match(
         "KG ID must contain only lowercase letters, numbers and hyphens."
     )
 
+elif kg_id_exists(kg_id):
+
+    add_error(
+        f"KG ID '{kg_id}' already exists in the catalog."
+    )
+
 
 # --------------------------------------------------
 # Title
 # --------------------------------------------------
 
 if not title:
+
     add_error(
         "KG Title is missing."
     )
@@ -255,7 +296,7 @@ else:
 
 
 # --------------------------------------------------
-# SPARQL
+# SPARQL endpoint
 # --------------------------------------------------
 
 if sparql_url and not valid_url(sparql_url):
@@ -300,9 +341,19 @@ else:
 
             for i, artifact in enumerate(artifacts):
 
-                prefix = (
-                    f"Artifact #{i+1}"
-                )
+                prefix = f"Artifact #{i+1}"
+
+                if not isinstance(
+                    artifact,
+                    dict
+                ):
+
+                    add_error(
+                        f"{prefix}: invalid YAML object."
+                    )
+
+                    continue
+
 
                 if "artifact" not in artifact:
 
@@ -310,15 +361,18 @@ else:
                         f"{prefix}: missing artifact id."
                     )
 
+
                 if "title" not in artifact:
 
                     add_error(
                         f"{prefix}: missing title."
                     )
 
+
                 versions = artifact.get(
                     "versions"
                 )
+
 
                 if not versions:
 
@@ -326,65 +380,73 @@ else:
                         f"{prefix}: no versions defined."
                     )
 
-                else:
+                    continue
 
-                    for j, version in enumerate(versions):
 
-                        prefix_version = (
-                            f"{prefix}, version #{j+1}"
+                for j, version in enumerate(versions):
+
+                    vp = (
+                        f"{prefix}, version #{j+1}"
+                    )
+
+                    if "version" not in version:
+
+                        add_error(
+                            f"{vp}: missing version."
                         )
 
-                        if "version" not in version:
 
-                            add_error(
-                                f"{prefix_version}: missing version."
-                            )
+                    if "license" not in version:
 
-                        if "license" not in version:
-
-                            add_error(
-                                f"{prefix_version}: missing license."
-                            )
-
-                        distributions = (
-                            version.get(
-                                "distributions"
-                            )
+                        add_error(
+                            f"{vp}: missing license."
                         )
 
-                        if not distributions:
+
+                    distributions = (
+                        version.get(
+                            "distributions"
+                        )
+                    )
+
+
+                    if not distributions:
+
+                        add_error(
+                            f"{vp}: no distributions."
+                        )
+
+                        continue
+
+
+                    for k, dist in enumerate(distributions):
+
+                        dp = (
+                            f"{vp}, distribution #{k+1}"
+                        )
+
+
+                        if "file" not in dist:
 
                             add_error(
-                                f"{prefix_version}: no distributions."
+                                f"{dp}: missing file."
                             )
 
-                        else:
 
-                            for k, dist in enumerate(distributions):
+                        elif not valid_url(
+                            dist["file"]
+                        ):
 
-                                prefix_dist = (
-                                    f"{prefix_version}, distribution #{k+1}"
-                                )
+                            add_error(
+                                f"{dp}: invalid file URL."
+                            )
 
-                                if "file" not in dist:
 
-                                    add_error(
-                                        f"{prefix_dist}: missing file."
-                                    )
+                        if "format" not in dist:
 
-                                elif not valid_url(
-                                    dist["file"]
-                                ):
-
-                                    add_error(
-                                        f"{prefix_dist}: invalid file URL."
-                                    )
-
-                                if "format" not in dist:
-
-                                    add_error(
-                                        f"{prefix_dist}: missing format."
-                                    )
+                            add_error(
+                                f"{dp}: missing format."
+                            )
 
 
     except yaml.YAMLError as e:
@@ -395,7 +457,7 @@ else:
 
 
 # --------------------------------------------------
-# Result
+# Write result
 # --------------------------------------------------
 
 if errors:
@@ -410,6 +472,7 @@ The submission contains the following problems:
 """
 
     for error in errors:
+
         result += f"- {error}\n"
 
 
@@ -431,12 +494,9 @@ if warnings:
     result += "\nWarnings:\n"
 
     for warning in warnings:
+
         result += f"- {warning}\n"
 
-
-# --------------------------------------------------
-# Write outputs
-# --------------------------------------------------
 
 Path(
     "validation-result.md"
