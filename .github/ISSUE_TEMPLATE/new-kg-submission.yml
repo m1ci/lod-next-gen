@@ -6,7 +6,7 @@ body:
 
 - type: input
   attributes:
-    label: KG ID 
+    label: KG ID
     description: Set unique ID of your KG. (e.g. food-kg).  Check for already used ids at https://databus.dbpedia.org/knowledge-graph-catalog
   validations:
     required: true
@@ -63,6 +63,24 @@ body:
   validations:
     required: true
 
+- type: input
+  id: keywords
+  attributes:
+    label: Keywords
+    description: Provide 3–8 comma-separated keywords.
+    placeholder: linked data, rdf, geography
+  validations:
+    required: true
+
+- type: input
+  id: sparql-name
+  attributes:
+    label: SPARQL Endpoint
+    description: Provide URL to the SPARQL endpoint, if it exist. (optional)
+  validations:
+    required: false
+
+    
 - type: checkboxes
   attributes:
     label: Is there an existing issue for this?
