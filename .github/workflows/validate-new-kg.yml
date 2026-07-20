@@ -76,12 +76,13 @@ jobs:
         if: steps.validation.outputs.status == 'success'
         uses: peter-evans/create-pull-request@v7
         with:
+          token: ${{ github.token }}
           commit-message: "Add new KG metadata"
           title: "Add new Knowledge Graph metadata"
           body: |
             Automatically generated from KG submission issue.
-
+      
             Source issue:
             ${{ github.event.issue.html_url }}
-
+      
           branch: new-kg-${{ github.event.issue.number }}
