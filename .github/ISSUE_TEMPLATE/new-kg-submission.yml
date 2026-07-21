@@ -93,7 +93,7 @@ body:
   attributes:
     label: KG Maintainer Contact
     description: Email address. (optional)
-    placeholder: name@example.org
+    placeholder: your@email.com
   validations:
     required: false
 
@@ -102,7 +102,6 @@ body:
   attributes:
     label: KG Maintainer GitHub Username
     description:  Optional.
-    placeholder: dbpedia
   validations:
     required: false
     
