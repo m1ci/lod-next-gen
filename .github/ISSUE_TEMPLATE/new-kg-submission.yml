@@ -113,12 +113,14 @@ body:
       Describe the content of your Knowledge Graph using YAML.
 
       The structure follows this hierarchy
-
+      
+      ```
       Knowledge Graph
         └── Artifact(s)
               └── Version(s)
                     └── Distribution file(s)
-
+      ```
+      
       An artifact represents a logical part of the Knowledge Graph.
       Typically, an artifact corresponds to a partition of the KG (e.g., a specific dataset, module, language version, or data subset).
 
