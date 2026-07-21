@@ -112,7 +112,7 @@ body:
     description: |
       Describe the content of your Knowledge Graph using YAML.
 
-      The structure follows this hierarchy
+      The structure follows this hierarchy:
       
       ```
       Knowledge Graph
@@ -121,12 +121,12 @@ body:
                     └── Distribution file(s)
       ```
       
-      An artifact represents a logical part of the Knowledge Graph.
+      - An **artifact** represents a logical part of the Knowledge Graph.
       Typically, an artifact corresponds to a partition of the KG (e.g., a specific dataset, module, language version, or data subset).
 
-      A version represents a specific release of an artifact at a particular point in time.
+      - A **version** represents a specific release of an artifact at a particular point in time.
 
-      A distribution represents a single downloadable file belonging to a specific artifact version.
+      - A **distribution** represents a single downloadable file belonging to a specific artifact version.
       Each distribution should provide the file URL and its format (and compression, if applicable).
 
       Update the example below with information about your Knowledge Graph.
