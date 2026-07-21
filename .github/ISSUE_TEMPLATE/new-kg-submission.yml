@@ -110,11 +110,9 @@ body:
   attributes:
     label: KG Content (Artifacts, Versions and Distributions)
     description: |
-      Describe all artifacts, versions and distributions (using YAML_.
-
+      Describe all artifacts, versions and distributions (using YAML).
       One artifact typically corresponds to one partition of the KG.
-
-      Remove the example below and replace it with your own metadata.
+      Update the example below with information about your knowledge graph.
     render: yaml
     value: |
       - artifact: first-artifact
@@ -133,6 +131,7 @@ body:
               - file: https://example.org/file1.ttl.bz2
                 format: ttl
                 compression: bz2
+
       - artifact: second-artifact
         title: Second Artifact
         abstract: Short description.
