@@ -2,38 +2,51 @@ name: Check URLs & Publish Knowledge Graphs
 
 on:
   push:
+    branches:
+      - main
     paths:
       - "knowledge-graphs/**/*.yaml"
+
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   check-and-publish:
     runs-on: ubuntu-latest
+
     env:
       KNOWLEDGE_GRAPH_CATALOG: ${{ secrets.KNOWLEDGE_GRAPH_CATALOG }}
       DEUTSCHE_NATBIB: ${{ secrets.DEUTSCHE_NATBIB }}
       MOSS_KG_CATALOG: ${{ secrets.MOSS_KG_CATALOG }}
 
     steps:
+
       # 1️⃣ Checkout the repository
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       # 2️⃣ Set up Python
       - name: Set up Python 3
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       # 3️⃣ Install dependencies
       - name: Install Python dependencies
-        run: pip install --upgrade pip && pip install pyyaml requests
-
-      # 4️⃣ Validate YAML and check URLs
-      - name: Validate YAML & check dataset URLs
-        id: validate
         run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml requests
+
+      # 4️⃣ Validate YAML and check dataset URLs
+      - name: Validate YAML & check dataset URLs
+        run: |
+          shopt -s globstar
           for f in knowledge-graphs/**/*.yaml; do
+            echo "Checking $f"
             python scripts/check_url_update_yaml.py "$f"
           done
 
@@ -42,7 +55,9 @@ jobs:
         if: ${{ success() }}
         run: |
           echo "Publishing YAMLs to Databus..."
+          shopt -s globstar
           for f in knowledge-graphs/**/*.yaml; do
+            echo "Publishing $f"
             python scripts/publish_to_databus_http.py "$f"
           done
 
@@ -51,7 +66,9 @@ jobs:
         if: ${{ success() }}
         run: |
           echo "Publishing YAMLs to MOSS..."
+          shopt -s globstar
           for f in knowledge-graphs/**/*.yaml; do
+            echo "Publishing $f"
             python scripts/publish_to_moss_http.py "$f"
           done
 
@@ -61,6 +78,12 @@ jobs:
         run: |
           git config user.name "LOD Cloud Bot"
           git config user.email "bot@lod-cloud.org"
+
           git add knowledge-graphs/**/*.yaml
-          git diff-index --quiet HEAD || git commit -m "Update dataset status & Databus metadata"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
+
+          if git diff --cached --quiet; then
+            echo "No YAML changes detected."
+          else
+            git commit -m "Update dataset status & Databus metadata"
+            git push
+          fi
