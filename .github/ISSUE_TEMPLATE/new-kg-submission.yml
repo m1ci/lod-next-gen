@@ -112,7 +112,7 @@ body:
     description: |
   Describe the content of your Knowledge Graph using YAML.
 
-  The structure follows this hierarchy:
+  The structure follows this hierarchy
 
   Knowledge Graph
     └── Artifact(s)
