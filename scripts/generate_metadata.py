@@ -129,6 +129,13 @@ if artifacts_text:
         )
     )
 
+    # Ensure every distribution has status: pending
+    if artifacts:
+        for artifact in artifacts:
+            for version in artifact.get("versions", []):
+                for distribution in version.get("distributions", []):
+                    distribution["status"] = "pending"
+
 
 # --------------------------------------------------
 # Build metadata YAML
@@ -196,7 +203,7 @@ if sparql_url:
 # --------------------------------------------------
 
 output_dir = Path(
-    "kgs"
+    "knowledge-graphs"
 ) / kg_id
 
 
