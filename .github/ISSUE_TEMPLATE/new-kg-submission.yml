@@ -110,15 +110,24 @@ body:
   attributes:
     label: KG Content (Artifacts, Versions and Distributions)
     description: |
-      Describe all artifacts, versions and distributions (using YAML).
+  Describe the content of your Knowledge Graph using YAML.
 
-      An artifact typically corresponds to one partition of the KG.
+  The structure follows this hierarchy:
 
-      A version corresponds to a specific release of an artifact.
+  Knowledge Graph
+    └── Artifact(s)
+          └── Version(s)
+                └── Distribution file(s)
 
-      A distribution corresponds to a single file associated with an artifact and version.
-      
-      Update the example below with information about your knowledge graph.
+  An artifact represents a logical part of the Knowledge Graph.
+  Typically, an artifact corresponds to a partition of the KG (e.g., a specific dataset, module, language version, or data subset).
+
+  A version represents a specific release of an artifact at a particular point in time.
+
+  A distribution represents a single downloadable file belonging to a specific artifact version.
+  Each distribution should provide the file URL and its format (and compression, if applicable).
+
+  Update the example below with information about your Knowledge Graph.
     render: yaml
     value: |
       - artifact: first-artifact
