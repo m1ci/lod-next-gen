@@ -1,6 +1,6 @@
 name: 🚀 New KG
 description: Submission form for a new Knowledge Graph.
-title: "[New KG] <kg-title>"
+title: "[New KG] kg-title"
 labels: ["new-kg"]
 body:
 
