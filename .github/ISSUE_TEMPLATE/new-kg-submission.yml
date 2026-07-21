@@ -111,7 +111,13 @@ body:
     label: KG Content (Artifacts, Versions and Distributions)
     description: |
       Describe all artifacts, versions and distributions (using YAML).
-      One artifact typically corresponds to one partition of the KG.
+
+      An artifact typically corresponds to one partition of the KG.
+
+      A version corresponds to a specific release of an artifact.
+
+      A distribution corresponds to a single file associated with an artifact and version.
+      
       Update the example below with information about your knowledge graph.
     render: yaml
     value: |
