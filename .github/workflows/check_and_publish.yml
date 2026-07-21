@@ -4,9 +4,6 @@ on:
   push:
     paths:
       - "knowledge-graphs/**/*.yaml"
-  pull_request:
-    paths:
-      - "knowledge-graphs/**/*.yaml"
   workflow_dispatch:
 
 jobs:
