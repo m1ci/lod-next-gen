@@ -24,7 +24,7 @@ description: 'The Computer Science Ontology (CSO) is a large-scale ontology of r
   areas. Secondly, it can be easily updated by running Klink-2 on a set of new publications.
   A more comprehensive discussion of the advantages of adopting an automatically generated
   ontology in the scholarly domain can be found in.'
-moss-publish: false
+moss-publish: true
 databus-publish: false
 license: https://creativecommons.org/licenses/by/4.0/
 homepage: https://w3id.org/cso
