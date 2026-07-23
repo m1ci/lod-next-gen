@@ -1,0 +1,31 @@
+databus-account: knowledge-graph-catalog
+id: my-new-kg
+title: My new KG
+abstract: my-new-kg
+description: my-new-kg
+moss-publish: true
+databus-publish: true
+license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
+homepage: https://dbpedia.org
+domains:
+- Economy, Industry & Infrastructure
+keywords:
+- dump
+- rdf
+- gpp
+artifacts:
+- artifact: first-artifact
+  title: First Artifact
+  abstract: Short description.
+  description: Longer description.
+  versions:
+  - version: 2026.07.10
+    title: First Artifact
+    abstract: Short description.
+    description: Longer description.
+    license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
+    distributions:
+    - file: https://downloads.dbpedia.org/repo/dbpedia/mappings/instance-types/2022.12.01/instance-types_lang=gl_specific.ttl.bz2
+      format: ttl
+      compression: bz2
+      status: pending
