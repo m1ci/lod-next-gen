@@ -1,0 +1,35 @@
+databus-account: knowledge-graph-catalog
+id: test-kg
+title: my test kg
+abstract: test kg abstract
+description: test kg description
+moss-publish: true
+databus-publish: true
+license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
+homepage: https://dbpedia.org
+domains:
+- Cross-domain
+keywords:
+- linked data
+- schema
+- rdf
+artifacts:
+- artifact: first-artifact
+  title: First Artifact
+  abstract: Short description.
+  description: Longer description.
+  versions:
+  - version: 2026.07.10
+    title: First Artifact
+    abstract: Short description.
+    description: Longer description.
+    license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
+    distributions:
+    - file: https://downloads.dbpedia.org/repo/dbpedia/mappings/instance-types/2022.12.01/instance-types_lang=gl_specific.ttl.bz2
+      format: ttl
+      compression: bz2
+      status: pending
+maintainers:
+- name: Milan
+  contact: milan@gmail.com
+  github: m1ci
