@@ -35,6 +35,10 @@ keywords:
 - scientometrics
 - knowledge organization systems
 - metascience
+maintainers:
+- name: Angelo Salatino
+  contact: angelo.salatino@open.ac.uk
+  github: angelo.salatino
 artifacts:
 - artifact: cso-nt
   title: Computer Science Ontology (N-Triples)
