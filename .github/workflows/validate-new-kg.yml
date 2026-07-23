@@ -35,11 +35,6 @@ jobs:
 
 
       # 4. Validate KG metadata
-      #
-      # This step writes:
-      #   status  -> steps.validation.outputs.status
-      #   message -> steps.validation.outputs.message
-      #
       - name: Validate KG metadata
         id: validation
         env:
@@ -84,9 +79,9 @@ jobs:
         with:
           token: ${{ github.token }}
 
-          commit-message: "Add new KG metadata"
+          commit-message: "Register New Knowledge Graph: ${{ steps.validation.outputs.title }}"
 
-          title: "Add new Knowledge Graph metadata"
+          title: "Register New Knowledge Graph: ${{ steps.validation.outputs.title }}"
 
           body: |
             Automatically generated from KG submission issue.
