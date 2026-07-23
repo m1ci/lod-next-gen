@@ -16,19 +16,32 @@ jobs:
 
     steps:
 
+      # 1. Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
+
+      # 2. Setup Python
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
+
+      # 3. Install dependencies
       - name: Install dependencies
         run: |
           pip install pyyaml requests
 
+
+      # 4. Validate KG metadata
+      #
+      # This step writes:
+      #   status  -> steps.validation.outputs.status
+      #   message -> steps.validation.outputs.message
+      #
       - name: Validate KG metadata
+        id: validation
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
@@ -37,32 +50,24 @@ jobs:
         run: |
           python scripts/validate_new_kg.py
 
-      - name: Read validation status
-        id: validation
-        run: |
-          echo "status=$(cat validation-status)" >> $GITHUB_OUTPUT
 
+      # 5. Comment validation result on issue
       - name: Comment validation result
         uses: actions/github-script@v7
+        env:
+          MESSAGE: ${{ steps.validation.outputs.message }}
         with:
           script: |
-            const fs = require('fs');
-
-            const message = fs.readFileSync(
-              'validation-result.md',
-              'utf8'
-            );
-
             github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
-              body: message
+              body: process.env.MESSAGE
             });
 
-      # Next step:
-      # generate metadata.yaml if validation succeeds
 
+      # 6. Generate KG metadata.yaml
+      # Only runs after successful validation
       - name: Generate KG metadata
         if: steps.validation.outputs.status == 'success'
         env:
@@ -70,20 +75,23 @@ jobs:
         run: |
           python scripts/generate_metadata.py
 
-      # Next step:
-      # create pull request after metadata generation
 
+      # 7. Create pull request
+      # Only runs after successful validation
       - name: Create Pull Request
         if: steps.validation.outputs.status == 'success'
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ github.token }}
+
           commit-message: "Add new KG metadata"
+
           title: "Add new Knowledge Graph metadata"
+
           body: |
             Automatically generated from KG submission issue.
-      
+
             Source issue:
             ${{ github.event.issue.html_url }}
-      
+
           branch: new-kg-${{ github.event.issue.number }}
