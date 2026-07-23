@@ -42,7 +42,7 @@ body:
 - type: input
   attributes:
     label: KG Homepage 
-    description: Home page for the KG.
+    description: URL of the official Knowledge Graph webpage or landing page.
   validations:
     required: true
 
