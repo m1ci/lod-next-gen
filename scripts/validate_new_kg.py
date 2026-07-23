@@ -537,6 +537,10 @@ if github_output:
         )
 
         f.write(
+            f"title={title}\n"
+        )
+
+        f.write(
             "message<<EOF\n"
         )
 
