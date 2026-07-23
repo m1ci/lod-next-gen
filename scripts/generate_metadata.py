@@ -144,10 +144,51 @@ artifacts_text = get_field(
 # Validate required fields
 # --------------------------------------------------
 
-if not domain:
+required_fields = {
+
+    "KG ID":
+        kg_id,
+
+    "KG Title":
+        title,
+
+    "KG Short Abstract":
+        abstract,
+
+    "KG Full Description":
+        description,
+
+    "License":
+        license_url,
+
+    "KG Homepage":
+        homepage,
+
+    "KG Primary Domain":
+        domain,
+
+    "Keywords":
+        keywords_text,
+
+    "KG Content":
+        artifacts_text
+}
+
+
+missing_fields = [
+
+    name
+    for name, value in required_fields.items()
+    if not value
+
+]
+
+
+if missing_fields:
 
     raise ValueError(
-        "KG Primary Domain is required"
+        "Missing required fields: "
+        + ", ".join(missing_fields)
     )
 
 
@@ -155,15 +196,15 @@ if not domain:
 # Parse keywords
 # --------------------------------------------------
 
-keywords = []
+keywords = [
 
-if keywords_text:
+    x.strip()
 
-    keywords = [
-        x.strip()
-        for x in keywords_text.split(",")
-        if x.strip()
-    ]
+    for x in keywords_text.split(",")
+
+    if x.strip()
+
+]
 
 
 # --------------------------------------------------
@@ -180,7 +221,9 @@ if artifacts_text:
         )
     )
 
+
     # Ensure every distribution has status: pending
+
     if artifacts:
 
         for artifact in artifacts:
@@ -228,6 +271,9 @@ metadata = {
     "license":
         license_url,
 
+    "homepage":
+        homepage,
+
     "domains":
         [
             domain
@@ -238,16 +284,8 @@ metadata = {
 
     "artifacts":
         artifacts
+
 }
-
-
-# --------------------------------------------------
-# Optional homepage
-# --------------------------------------------------
-
-if homepage:
-
-    metadata["homepage"] = homepage
 
 
 # --------------------------------------------------
@@ -257,10 +295,15 @@ if homepage:
 if sparql_url:
 
     metadata["sparql"] = [
+
         {
-            "name": "main",
-            "url": sparql_url
+            "name":
+                "main",
+
+            "url":
+                sparql_url
         }
+
     ]
 
 
@@ -269,27 +312,37 @@ if sparql_url:
 # --------------------------------------------------
 
 if any([
+
     maintainer_name,
+
     maintainer_contact,
+
     maintainer_github
+
 ]):
 
     maintainer = {}
+
 
     if maintainer_name:
 
         maintainer["name"] = maintainer_name
 
+
     if maintainer_contact:
 
         maintainer["contact"] = maintainer_contact
+
 
     if maintainer_github:
 
         maintainer["github"] = maintainer_github
 
+
     metadata["maintainers"] = [
+
         maintainer
+
     ]
 
 
