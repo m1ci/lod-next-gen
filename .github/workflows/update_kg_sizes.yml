@@ -2,12 +2,21 @@ name: Update KG catalog sizes
 
 on:
   schedule:
-    # Run every hour
+    # Run every hour at 26 minutes past the hour
     - cron: "26 * * * *"
   workflow_dispatch:
 
+  workflow_run:
+    workflows:
+      - "Check URLs & Publish Knowledge Graphs"
+    types:
+      - completed
+
 jobs:
   update-kg-metadata:
+
+    # Only run after successful workflow_run; always run for schedule/manual
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
 
     runs-on: ubuntu-latest
 
