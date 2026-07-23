@@ -95,6 +95,18 @@ sparql_url = get_field(
     "SPARQL Endpoint URL"
 )
 
+maintainer_name = get_field(
+    "KG Maintainer Name"
+)
+
+maintainer_contact = get_field(
+    "KG Maintainer Contact"
+)
+
+maintainer_github = get_field(
+    "KG Maintainer GitHub Username"
+)
+
 artifacts_text = get_field(
     "KG Content (Artifacts, Versions and Distributions)"
 )
@@ -197,6 +209,30 @@ if sparql_url:
         }
     ]
 
+# --------------------------------------------------
+# Optional maintainer
+# --------------------------------------------------
+
+if any([
+    maintainer_name,
+    maintainer_contact,
+    maintainer_github
+]):
+
+    maintainer = {}
+
+    if maintainer_name:
+        maintainer["name"] = maintainer_name
+
+    if maintainer_contact:
+        maintainer["contact"] = maintainer_contact
+
+    if maintainer_github:
+        maintainer["github"] = maintainer_github
+
+    metadata["maintainers"] = [
+        maintainer
+    ]
 
 # --------------------------------------------------
 # Create output directory
