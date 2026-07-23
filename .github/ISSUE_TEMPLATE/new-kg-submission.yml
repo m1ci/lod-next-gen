@@ -42,9 +42,9 @@ body:
 - type: input
   attributes:
     label: KG Homepage 
-    description: Home page for the KG, if exist.
+    description: Home page for the KG.
   validations:
-    required: false
+    required: true
 
 - type: dropdown
   id: domain
