@@ -35,14 +35,6 @@ def get_field(name):
 def clean_yaml(text):
     """
     Remove Markdown YAML fences.
-
-    Converts:
-
-    ```yaml
-    - artifact: example
-    ```
-
-    into pure YAML.
     """
 
     if not text:
@@ -114,7 +106,10 @@ def kg_id_exists(kg_id):
 # --------------------------------------------------
 
 kg_id = get_field("KG ID")
-title = get_field("KG Title")
+
+title = get_field(
+    "KG Title"
+)
 
 abstract = get_field(
     "KG Short Abstract"
@@ -235,11 +230,12 @@ elif not valid_url(license_url):
 # Homepage
 # --------------------------------------------------
 
-
 if homepage:
+
     homepage = homepage.strip()
 
     if not valid_url(homepage):
+
         add_error(
             f"Homepage is not a valid URL: {homepage}"
         )
@@ -250,14 +246,23 @@ if homepage:
 # --------------------------------------------------
 
 allowed_domains = [
+
     "Cross-domain",
+
     "Geography & Environment",
+
     "Government & Public Sector",
+
     "Life Sciences & Health",
+
     "Economy, Industry & Infrastructure",
+
     "Publications, Education & Research",
+
     "Media, Culture & Entertainment",
+
     "Linguistics, Social & Digital Knowledge Systems",
+
 ]
 
 
@@ -281,16 +286,22 @@ if not keywords:
 else:
 
     keyword_list = [
+
         x.strip()
+
         for x in keywords.split(",")
+
         if x.strip()
+
     ]
+
 
     if len(keyword_list) < 3:
 
         add_error(
             "At least 3 keywords are required."
         )
+
 
     if len(keyword_list) > 8:
 
@@ -332,6 +343,7 @@ else:
             artifacts_text
         )
 
+
         if not isinstance(
             artifacts,
             list
@@ -341,11 +353,13 @@ else:
                 "Artifacts must be a YAML list."
             )
 
+
         else:
 
             for i, artifact in enumerate(artifacts):
 
                 prefix = f"Artifact #{i+1}"
+
 
                 if not isinstance(
                     artifact,
@@ -393,6 +407,7 @@ else:
                         f"{prefix}, version #{j+1}"
                     )
 
+
                     if "version" not in version:
 
                         add_error(
@@ -407,10 +422,8 @@ else:
                         )
 
 
-                    distributions = (
-                        version.get(
-                            "distributions"
-                        )
+                    distributions = version.get(
+                        "distributions"
                     )
 
 
@@ -461,12 +474,12 @@ else:
 
 
 # --------------------------------------------------
-# Write result
+# Create validation result
 # --------------------------------------------------
 
 if errors:
 
-    status = "failed"
+    status = "failure"
 
     result = """
 ## ❌ KG Metadata Validation Failed
@@ -495,27 +508,47 @@ The KG metadata YAML generation step can proceed.
 
 if warnings:
 
-    result += "\nWarnings:\n"
+    result += "\n### Warnings:\n"
 
     for warning in warnings:
 
         result += f"- {warning}\n"
 
 
-Path(
-    "validation-result.md"
-).write_text(
-    result,
-    encoding="utf-8"
+# --------------------------------------------------
+# GitHub Actions outputs
+# --------------------------------------------------
+
+github_output = os.environ.get(
+    "GITHUB_OUTPUT"
 )
 
 
-Path(
-    "validation-status"
-).write_text(
-    status,
-    encoding="utf-8"
-)
+if github_output:
 
+    with open(
+        github_output,
+        "a",
+        encoding="utf-8"
+    ) as f:
+
+        f.write(
+            f"status={status}\n"
+        )
+
+        f.write(
+            "message<<EOF\n"
+        )
+
+        f.write(
+            result
+        )
+
+        f.write(
+            "\nEOF\n"
+        )
+
+
+# Show result in workflow logs
 
 print(result)
