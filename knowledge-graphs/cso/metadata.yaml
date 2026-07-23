@@ -47,7 +47,7 @@ artifacts:
   - version: 2025.07.29
     title: Computer Science Ontology v3.5 (N-Triples)
     abstract: A large-scale, automatically generated ontology of research areas in computer
-    science. Version 3.5 of CSO.
+      science. Version 3.5 of CSO.
     description: This release revisits the Cybersecurity branch by introducing new
       research topics and updating existing semantic connections with community feedback.
     license: https://creativecommons.org/licenses/by/4.0/
