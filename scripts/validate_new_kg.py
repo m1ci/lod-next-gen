@@ -13,10 +13,6 @@ warnings = []
 
 
 def get_field(name):
-    """
-    Extract GitHub Issue Form field.
-    """
-
     pattern = rf"### {re.escape(name)}\s*\n\s*(.*?)(?=\n### |\Z)"
 
     match = re.search(
@@ -26,7 +22,12 @@ def get_field(name):
     )
 
     if match:
-        return match.group(1).strip()
+        value = match.group(1).strip()
+
+        if value == "_No response_":
+            return None
+
+        return value
 
     return None
 
