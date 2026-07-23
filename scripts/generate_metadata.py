@@ -8,6 +8,29 @@ import yaml
 body = os.environ.get("ISSUE_BODY", "")
 
 
+def normalize_value(value):
+    """
+    Normalize GitHub Issue Form values.
+
+    Converts:
+    - "_No response_" -> None
+    - empty strings -> None
+    """
+
+    if not value:
+        return None
+
+    value = value.strip()
+
+    if value == "_No response_":
+        return None
+
+    if value == "":
+        return None
+
+    return value
+
+
 def get_field(name):
     """
     Extract GitHub Issue Form field.
@@ -22,7 +45,7 @@ def get_field(name):
     )
 
     if match:
-        return match.group(1).strip()
+        return normalize_value(match.group(1))
 
     return None
 
@@ -64,8 +87,13 @@ def clean_yaml(text):
 # Extract fields
 # --------------------------------------------------
 
-kg_id = get_field("KG ID")
-title = get_field("KG Title")
+kg_id = get_field(
+    "KG ID"
+)
+
+title = get_field(
+    "KG Title"
+)
 
 abstract = get_field(
     "KG Short Abstract"
@@ -113,6 +141,17 @@ artifacts_text = get_field(
 
 
 # --------------------------------------------------
+# Validate required fields
+# --------------------------------------------------
+
+if not domain:
+
+    raise ValueError(
+        "KG Primary Domain is required"
+    )
+
+
+# --------------------------------------------------
 # Parse keywords
 # --------------------------------------------------
 
@@ -143,9 +182,19 @@ if artifacts_text:
 
     # Ensure every distribution has status: pending
     if artifacts:
+
         for artifact in artifacts:
-            for version in artifact.get("versions", []):
-                for distribution in version.get("distributions", []):
+
+            for version in artifact.get(
+                "versions",
+                []
+            ):
+
+                for distribution in version.get(
+                    "distributions",
+                    []
+                ):
+
                     distribution["status"] = "pending"
 
 
@@ -179,9 +228,6 @@ metadata = {
     "license":
         license_url,
 
-    "homepage":
-        homepage,
-
     "domains":
         [
             domain
@@ -192,8 +238,16 @@ metadata = {
 
     "artifacts":
         artifacts
-
 }
+
+
+# --------------------------------------------------
+# Optional homepage
+# --------------------------------------------------
+
+if homepage:
+
+    metadata["homepage"] = homepage
 
 
 # --------------------------------------------------
@@ -209,6 +263,7 @@ if sparql_url:
         }
     ]
 
+
 # --------------------------------------------------
 # Optional maintainer
 # --------------------------------------------------
@@ -222,17 +277,21 @@ if any([
     maintainer = {}
 
     if maintainer_name:
+
         maintainer["name"] = maintainer_name
 
     if maintainer_contact:
+
         maintainer["contact"] = maintainer_contact
 
     if maintainer_github:
+
         maintainer["github"] = maintainer_github
 
     metadata["maintainers"] = [
         maintainer
     ]
+
 
 # --------------------------------------------------
 # Create output directory
