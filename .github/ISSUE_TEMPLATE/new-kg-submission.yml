@@ -75,7 +75,7 @@ body:
 - type: input
   id: sparql-name
   attributes:
-    label: SPARQL Endpoint
+    label: SPARQL Endpoint URL
     description: Provide URL to the SPARQL endpoint, if it exist. (optional)
   validations:
     required: false
