@@ -1,18 +1,18 @@
 databus-account: knowledge-graph-catalog
 id: test-kg
-title: my test kg
-abstract: test kg abstract
-description: test kg description
-moss-publish: false
-databus-publish: false
+title: test kg
+abstract: test kg abs
+description: test kg desc
+moss-publish: true
+databus-publish: true
 license: http://purl.oclc.org/NET/rdflicense/cc-by3.0
-homepage: https://dbpedia.org
+homepage: _No response_
 domains:
-- Cross-domain
+- Life Sciences & Health
 keywords:
-- linked data
-- schema
+- data
 - rdf
+- dump
 artifacts:
 - artifact: first-artifact
   title: First Artifact
@@ -28,10 +28,11 @@ artifacts:
     - file: https://downloads.dbpedia.org/repo/dbpedia/mappings/instance-types/2022.12.01/instance-types_lang=gl_specific.ttl.bz2
       format: ttl
       compression: bz2
-      status: active
-      sha256: 7086776b953cb8d248b7cac4bb508204788b05236fa59bb4d7a77f0be801e8c0
-      size: 920913
+      status: pending
+sparql:
+- name: main
+  url: _No response_
 maintainers:
 - name: Milan
-  contact: milan@gmail.com
-  github: m1ci
+  contact: milan@gmail.cm
+  github: _No response_
