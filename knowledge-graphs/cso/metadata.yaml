@@ -59,12 +59,12 @@ artifacts:
     - file: https://cso.kmi.open.ac.uk/download/version-3.5/CSO.3.5.nt.zip
       format: nt
       compression: zip
-      status: pending
+      status: active
       sha256: 47e535468e3c9fb9e9da91bc97a3756d472ce8513bd72b094dcd67c65e78d5cc
       size: 1271346
     - file: https://cso.kmi.open.ac.uk/download/version-3.5/CSO.3.5.ttl.zip
       format: ttl
       compression: zip
-      status: pending
+      status: active
       sha256: 7d8453692720dd761041e718e0dc07dbb36e22e9c5108afcd63ff31391b84c93
       size: 1151796
