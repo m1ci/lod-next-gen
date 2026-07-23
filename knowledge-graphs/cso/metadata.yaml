@@ -46,8 +46,8 @@ artifacts:
   versions:
   - version: 2025.07.29
     title: Computer Science Ontology v3.5 (N-Triples)
-    abstract: Version 3.5 of the Computer Science Ontology represented in N-Triples
-      format.
+    abstract: A large-scale, automatically generated ontology of research areas in computer
+    science. Version 3.5 of CSO.
     description: This release revisits the Cybersecurity branch by introducing new
       research topics and updating existing semantic connections with community feedback.
     license: https://creativecommons.org/licenses/by/4.0/
@@ -56,21 +56,6 @@ artifacts:
       format: nt
       compression: zip
       status: pending
-- artifact: cso-ttl
-  title: Computer Science Ontology (Turtle)
-  abstract: A large-scale, automatically generated ontology of research areas in computer
-    science in Turtle format.
-  description: The Computer Science Ontology (CSO) contains approximately 15,000 topics
-    linked by 166,000 semantic relationships, automatically generated using the Klink-2
-    algorithm on scholarly literature metadata.
-  versions:
-  - version: 2025.07.29
-    title: Computer Science Ontology v3.5 (Turtle)
-    abstract: Version 3.5 of the Computer Science Ontology represented in Turtle format.
-    description: This release revisits the Cybersecurity branch by introducing new
-      research topics and updating existing semantic connections with community feedback.
-    license: https://creativecommons.org/licenses/by/4.0/
-    distributions:
     - file: https://cso.kmi.open.ac.uk/download/version-3.5/CSO.3.5.ttl.zip
       format: ttl
       compression: zip
