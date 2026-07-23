@@ -500,9 +500,13 @@ else:
     result = """
 ## ✅ KG Metadata Validation Passed
 
-All mandatory metadata fields are valid.
+The submitted Knowledge Graph metadata has successfully completed all validation checks.
 
-The KG metadata YAML generation step can proceed.
+All required fields are present and correctly formatted.
+
+A pull request will now be created for review. Once approved and merged, the Knowledge Graph will be added to the KG Catalog ([https://kg-catalog.dbpedia.org/](https://kg-catalog.dbpedia.org/)).
+
+Thank you for your contribution!
 """
 
 
