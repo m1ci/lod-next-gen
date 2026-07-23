@@ -234,11 +234,14 @@ elif not valid_url(license_url):
 # Homepage
 # --------------------------------------------------
 
-if homepage and not valid_url(homepage):
 
-    add_error(
-        f"Homepage is not a valid URL: {homepage}"
-    )
+if homepage:
+    homepage = homepage.strip()
+
+    if not valid_url(homepage):
+        add_error(
+            f"Homepage is not a valid URL: {homepage}"
+        )
 
 
 # --------------------------------------------------
