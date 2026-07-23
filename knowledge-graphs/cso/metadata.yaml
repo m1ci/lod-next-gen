@@ -24,8 +24,8 @@ description: 'The Computer Science Ontology (CSO) is a large-scale ontology of r
   areas. Secondly, it can be easily updated by running Klink-2 on a set of new publications.
   A more comprehensive discussion of the advantages of adopting an automatically generated
   ontology in the scholarly domain can be found in.'
-moss-publish: true
-databus-publish: true
+moss-publish: false
+databus-publish: false
 license: https://creativecommons.org/licenses/by/4.0/
 homepage: https://w3id.org/cso
 domains:
@@ -46,8 +46,8 @@ artifacts:
   versions:
   - version: 2025.07.29
     title: Computer Science Ontology v3.5 (N-Triples)
-    abstract: A large-scale, automatically generated ontology of research areas in computer
-      science. Version 3.5 of CSO.
+    abstract: A large-scale, automatically generated ontology of research areas in
+      computer science. Version 3.5 of CSO.
     description: This release revisits the Cybersecurity branch by introducing new
       research topics and updating existing semantic connections with community feedback.
     license: https://creativecommons.org/licenses/by/4.0/
@@ -55,8 +55,12 @@ artifacts:
     - file: https://cso.kmi.open.ac.uk/download/version-3.5/CSO.3.5.nt.zip
       format: nt
       compression: zip
-      status: pending
+      status: active
+      sha256: 47e535468e3c9fb9e9da91bc97a3756d472ce8513bd72b094dcd67c65e78d5cc
+      size: 1271346
     - file: https://cso.kmi.open.ac.uk/download/version-3.5/CSO.3.5.ttl.zip
       format: ttl
       compression: zip
-      status: pending
+      status: active
+      sha256: 7d8453692720dd761041e718e0dc07dbb36e22e9c5108afcd63ff31391b84c93
+      size: 1151796
