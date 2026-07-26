@@ -257,8 +257,8 @@ artifacts:
       format: ttl
       compression: bz2
       size: 200150773
-      sha256: null
-      status: pending
+      sha256: 78178348122fad82e6f67cf247a7620389adce1614881cb36f0d102a1c927e98
+      status: active
 - artifact: en_dbnary_enhancement
   title: en_dbnary_enhancement
   abstract: An enhanced DBnary dataset with additional automatically computed lexical
@@ -474,8 +474,8 @@ artifacts:
       format: ttl
       compression: bz2
       size: 10837356
-      sha256: null
-      status: pending
+      sha256: 446f4b55671117ba93db6f4e9b6f26bdfc90c3c9b5d86ee326bd6d610d423cf0
+      status: active
 - artifact: en_dbnary_morphology
   title: en_dbnary_morphology
   abstract: A DBnary dataset containing morphological information and inflected lexical
@@ -707,8 +707,8 @@ artifacts:
       format: ttl
       compression: bz2
       size: 12014832
-      sha256: null
-      status: pending
+      sha256: beaff56d45dba5efbd540b8cb02576a310bec63d6882f8f7d23f4b39c7e70312
+      status: active
 - artifact: en_dbnary_lime
   title: en_dbnary_lime
   abstract: A DBnary metadata dataset describing linguistic resources using the OntoLex-LIME
@@ -924,8 +924,8 @@ artifacts:
       format: ttl
       compression: bz2
       size: 6842174
-      sha256: null
-      status: pending
+      sha256: 5f057d36e32547c29425b1b4c1e8b2099ebbe173cba9bd461ace8e4f39d1338a
+      status: active
 - artifact: en_dbnary_statistics
   title: en_dbnary_statistics
   abstract: A DBnary dataset containing extraction and enhancement statistics for
@@ -1157,8 +1157,8 @@ artifacts:
       format: ttl
       compression: bz2
       size: 19218
-      sha256: null
-      status: pending
+      sha256: e5c35fae8aeb4484793128ad400be09fc8f2f7dda2668e3623099896161a6cb9
+      status: active
 - artifact: en_dbnary_etymology
   title: en_dbnary_etymology
   abstract: A DBnary dataset containing etymological information extracted from English
@@ -1374,8 +1374,8 @@ artifacts:
       format: ttl
       compression: bz2
       size: 109874002
-      sha256: null
-      status: pending
+      sha256: ddedfde589900aefb6bdeeda6e1c73503c1f4c7b88c45af03a4f855aca9f293d
+      status: active
 - artifact: en_dbnary_exolex_ontolex
   title: en_dbnary_exolex_ontolex
   abstract: A DBnary dataset containing lexical information for non-English languages
@@ -1607,8 +1607,8 @@ artifacts:
       format: ttl
       compression: bz2
       size: 307030058
-      sha256: null
-      status: pending
+      sha256: 021200d4899e13b993f46f6882ce1ea6804b83d25dc8af68b6e03c79df6dcb58
+      status: active
 - artifact: en_dbnary_exolex_lime
   title: en_dbnary_exolex_lime
   abstract: A DBnary dataset describing multilingual lexical resources extracted from
@@ -1824,5 +1824,5 @@ artifacts:
       format: ttl
       compression: bz2
       size: 31086709
-      sha256: null
-      status: pending
+      sha256: 34e7330006a9c9ed7ceffdac374193718308b3d2eeb5d3a7dae4b0a777684685
+      status: active
