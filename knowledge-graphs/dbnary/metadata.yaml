@@ -379,6 +379,21 @@ artifacts:
       size: 205883696
       sha256: b7f8fec9dd6fa6c0854e781aeabae6923d4045b6270a7f026ead744402b698cf
       status: active
+  - abstract: The core DBnary lexical dataset extracted from English Wiktionary and
+      represented using the OntoLex-Lemon vocabulary.
+    description: The core DBnary lexical dataset extracted from English Wiktionary
+      and represented using the OntoLex-Lemon vocabulary, containing lexical entries,
+      forms, senses, translations, and lexical relations.
+    license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+    version: 2025-12-20
+    title: en_dbnary_ontolex
+    distributions:
+    - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_ontolex_20251220.ttl.bz2
+      format: ttl
+      compression: bz2
+      size: 206838266
+      sha256: null
+      status: pending
 - artifact: en_dbnary_enhancement
   title: en_dbnary_enhancement
   abstract: An enhanced DBnary dataset with additional automatically computed lexical
@@ -708,6 +723,20 @@ artifacts:
       size: 10908880
       sha256: 9dff4d4881b395f0e0d694758ae8be6826b9ce2c8b69355099fb28549c6de3c0
       status: active
+  - abstract: An enhanced DBnary dataset with additional automatically computed lexical
+      links and disambiguated translations.
+    description: An enhanced version of the DBnary lexical dataset providing additional
+      computed information, including links between translations and lexical senses.
+    license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+    version: 2025-12-20
+    title: en_dbnary_enhancement
+    distributions:
+    - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_enhancement_20251220.ttl.bz2
+      format: ttl
+      compression: bz2
+      size: 10906171
+      sha256: null
+      status: pending
 - artifact: en_dbnary_morphology
   title: en_dbnary_morphology
   abstract: A DBnary dataset containing morphological information and inflected lexical
@@ -1061,6 +1090,21 @@ artifacts:
       size: 12215725
       sha256: 7089b48e343810a0ce2107f4e064860509f7c1d5627084941ccdf8bce7b414d3
       status: active
+  - abstract: A DBnary dataset containing morphological information and inflected
+      lexical forms extracted from Wiktionary.
+    description: A DBnary dataset containing morphological information, inflectional
+      forms, and linguistic annotations associated with lexical entries extracted
+      from Wiktionary.
+    license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+    version: 2025-12-20
+    title: en_dbnary_morphology
+    distributions:
+    - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_morphology_20251220.ttl.bz2
+      format: ttl
+      compression: bz2
+      size: 12247281
+      sha256: null
+      status: pending
 - artifact: en_dbnary_lime
   title: en_dbnary_lime
   abstract: A DBnary metadata dataset describing linguistic resources using the OntoLex-LIME
@@ -1390,6 +1434,20 @@ artifacts:
       size: 6996126
       sha256: 4b2370ca69d53db459879faa5fb5b599cf143ad218ed9b8165546ca213e0356b
       status: active
+  - abstract: A DBnary metadata dataset describing linguistic resources using the
+      OntoLex-LIME vocabulary.
+    description: A DBnary dataset providing metadata about extracted linguistic resources,
+      including language coverage and lexical resource statistics.
+    license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+    version: 2025-12-20
+    title: en_dbnary_lime
+    distributions:
+    - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_lime_20251220.ttl.bz2
+      format: ttl
+      compression: bz2
+      size: 7025708
+      sha256: null
+      status: pending
 - artifact: en_dbnary_statistics
   title: en_dbnary_statistics
   abstract: A DBnary dataset containing extraction and enhancement statistics for
@@ -1743,6 +1801,21 @@ artifacts:
       size: 19455
       sha256: 79e4c63cc505c77a0caa50c64f4f81cbe72ebc5d6c61fb66098840791ce6292c
       status: active
+  - abstract: A DBnary dataset containing extraction and enhancement statistics for
+      DBnary releases.
+    description: A DBnary statistics dataset providing quantitative information about
+      extracted lexical resources and enhancement processes represented using the
+      RDF Data Cube vocabulary.
+    license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+    version: 2025-12-20
+    title: en_dbnary_statistics
+    distributions:
+    - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_statistics_20251220.ttl.bz2
+      format: ttl
+      compression: bz2
+      size: 19397
+      sha256: null
+      status: pending
 - artifact: en_dbnary_etymology
   title: en_dbnary_etymology
   abstract: A DBnary dataset containing etymological information extracted from English
@@ -2072,6 +2145,20 @@ artifacts:
       size: 111670988
       sha256: d91f35a15450f3566cb9d9ac8ca0748337191e0ed4aab902215ad52c33898a35
       status: active
+  - abstract: A DBnary dataset containing etymological information extracted from
+      English Wiktionary.
+    description: A DBnary dataset providing information about word origins, historical
+      relationships, and etymological descriptions extracted from English Wiktionary.
+    license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+    version: 2025-12-20
+    title: en_dbnary_etymology
+    distributions:
+    - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_etymology_20251220.ttl.bz2
+      format: ttl
+      compression: bz2
+      size: 111941349
+      sha256: null
+      status: pending
 - artifact: en_dbnary_exolex_ontolex
   title: en_dbnary_exolex_ontolex
   abstract: A DBnary dataset containing lexical information for non-English languages
@@ -2425,6 +2512,21 @@ artifacts:
       size: 314596730
       sha256: 80dd7d97ec3aadfe085b6822ebb4e74283193d02338418c89ae04db5b24ffea6
       status: active
+  - abstract: A DBnary dataset containing lexical information for non-English languages
+      extracted from English Wiktionary.
+    description: A DBnary dataset containing multilingual lexical information represented
+      using OntoLex and extracted from non-English entries of the English Wiktionary
+      edition.
+    license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+    version: 2025-12-20
+    title: en_dbnary_exolex_ontolex
+    distributions:
+    - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_exolex_ontolex_20251220.ttl.bz2
+      format: ttl
+      compression: bz2
+      size: 316532033
+      sha256: null
+      status: pending
 - artifact: en_dbnary_exolex_lime
   title: en_dbnary_exolex_lime
   abstract: A DBnary dataset describing multilingual lexical resources extracted from
@@ -2754,3 +2856,17 @@ artifacts:
       size: 31597316
       sha256: 72f16373e1e37b1f418b94c411f2aaf499f9d2a6226be466d60355b9078f2595
       status: active
+  - abstract: A DBnary dataset describing multilingual lexical resources extracted
+      from English Wiktionary using OntoLex-LIME.
+    description: A DBnary metadata dataset describing multilingual lexical resources
+      extracted from English Wiktionary and represented using the OntoLex-LIME vocabulary.
+    license: https://creativecommons.org/licenses/by-sa/3.0/rdf
+    version: 2025-12-20
+    title: en_dbnary_exolex_lime
+    distributions:
+    - file: https://kaiko.getalp.org/static/ontolex/en/en_dbnary_exolex_lime_20251220.ttl.bz2
+      format: ttl
+      compression: bz2
+      size: 31673316
+      sha256: null
+      status: pending

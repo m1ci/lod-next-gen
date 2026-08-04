@@ -253,3 +253,23 @@ artifacts:
       size: 5125379331
       sha256: 0cd865488b83c324b3c3eebad41df8ea5d185b76549f0763034df926b1352942
       status: active
+  - version: 2026-08-01
+    title: Monthly Snapshot
+    abstract: 'This file contains all the dblp data in a single file. The dblp computer
+      science bibliography is the open indexing service and knowledge graph of the
+      computer science community. '
+    description: 'This file contains all the dblp data in a single file. The dblp
+      computer science bibliography is the open indexing service and knowledge graph
+      of the computer science community. This version and its metadata have been **automatically
+      retrieved and published** by an automated update process.
+
+
+      Found an issue? Update metadata: https://github.com/m1ci/lod-next-gen/blob/main/knowledge-graphs/dblp/metadata.yaml'
+    license: https://creativecommons.org/publicdomain/zero/1.0/legalcode.rdf
+    distributions:
+    - file: https://drops.dagstuhl.de/storage/artifacts/dblp/rdf/2026/dblp-2026-08-01.nt.gz
+      format: nt
+      compression: gz
+      size: 5169918551
+      sha256: null
+      status: pending
