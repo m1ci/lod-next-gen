@@ -1,0 +1,83 @@
+databus-account: knowledge-graph-catalog
+id: sstim
+title: Sensory Stimulation Ontology (SSTIM)
+abstract: 'SSTIM is an OWL 2 ontology with a multilingual SKOS vocabulary and SHACL
+  shapes for describing sensory stimulation: techniques, protocols, exposure conditions,
+  observations, safety metadata, and evidence-qualified claims. It models parameters,
+  provenance and evidence status.'
+description: 'SSTIM provides shared terminology for describing the parameter-specified
+  delivery of structured sensory input across auditory, visual, haptic and other modalities,
+  so that stimulation sessions, stimuli, devices, exposure conditions and evidence
+  can be compared across systems rather than being locked in private schemas.
+
+
+  The 0.15.0 release contains 10,437 triples: 163 OWL classes, 157 object properties
+  and 140 datatype properties, plus 545 SKOS concepts across 67 concept schemes. It
+  ships SHACL validation shapes, conservative alignments to Wikidata and the OBO upper
+  ontologies (BFO, IAO, OBI, COB), and a modular structure with four named profile
+  closures (Kernel, Core, Core Plus, Full) declared in a machine-readable manifest.
+
+
+  Design notes that may matter for cataloguing:
+
+
+  - **Evidence is first-class and explicitly qualified.** Evidence assessments, observations,
+  hypotheses and safety applicability are distinct classes that cannot authorise one
+  another, and public claims are gated on applicable, current, provenance-complete
+  evidence.
+
+  - **No clinical claims.** SSTIM describes parameters, provenance and evidence status.
+  It does not define clinical practice, certify therapeutic efficacy, or model diagnosis
+  or treatment. See https://github.com/laBioSynCare/laBioSynCare.github.io/blob/main/docs/concept/SCOPE.md
+
+  - **Persistent identifiers.** `https://w3id.org/sstim` content-negotiates to Turtle,
+  JSON-LD and RDF/XML; each release is frozen byte-identical under a version IRI and
+  archived on Zenodo with a version DOI under the concept DOI 10.5281/zenodo.21286974.
+
+  - Registered at prefix.cc, catalogued in BARTOC (node 21154) and FAIRsharing (record
+  8494), and browsable in NCBO BioPortal.
+
+
+  Related W3C work: the Sensory Stimulation Vocabulary Community Group (https://www.w3.org/community/sstim/).'
+moss-publish: true
+databus-publish: true
+license: https://creativecommons.org/licenses/by/4.0/
+homepage: https://w3id.org/sstim
+domains:
+- Life Sciences & Health
+keywords:
+- sensory stimulation
+- ontology
+- SKOS vocabulary
+- SHACL
+- evidence
+- multisensory
+- neuromodulation
+- interoperability
+artifacts:
+- artifact: sstim
+  title: Sensory Stimulation Ontology
+  abstract: The whole-set SSTIM namespace - OWL classes and properties, the multilingual
+    SKOS vocabulary, SHACL shapes and external alignments in one frozen Turtle document.
+  description: SSTIM is published as a synchronized set of modules with four named
+    profile closures (Kernel, Core, Core Plus, Full). This artifact is the frozen
+    whole-set namespace catalogue for a release, which is the single file a consumer
+    needs to load the complete ontology.
+  versions:
+  - version: 2026.08.17
+    title: SSTIM 0.15.0
+    abstract: Release 0.15.0 of the Sensory Stimulation Ontology.
+    description: 10,437 triples — 163 OWL classes, 157 object properties, 140 datatype
+      properties, 545 SKOS concepts across 67 concept schemes. Archived on Zenodo
+      with its own version DOI under the all-versions concept DOI 10.5281/zenodo.21286974.
+    license: https://creativecommons.org/licenses/by/4.0/
+    distributions:
+    - file: https://labiosyncare.github.io/ontology/0.15.0/sstim-namespace.ttl
+      format: ttl
+      status: pending
+      sha256: 838b09a862af283d8a3ace16872f05cb43eb69ee061f3217077e94bc66cc2dfc
+      size: 727857
+maintainers:
+- name: Renato Fabbri
+  contact: renato.fabbri@gmail.com
+  github: ttm
