@@ -39,8 +39,8 @@ description: 'SSTIM provides shared terminology for describing the parameter-spe
 
 
   Related W3C work: the Sensory Stimulation Vocabulary Community Group (https://www.w3.org/community/sstim/).'
-moss-publish: true
-databus-publish: true
+moss-publish: false
+databus-publish: false
 license: https://creativecommons.org/licenses/by/4.0/
 homepage: https://w3id.org/sstim
 domains:
@@ -67,14 +67,14 @@ artifacts:
   - version: 2026.08.17
     title: SSTIM 0.15.0
     abstract: Release 0.15.0 of the Sensory Stimulation Ontology.
-    description: 10,437 triples — 163 OWL classes, 157 object properties, 140 datatype
-      properties, 545 SKOS concepts across 67 concept schemes. Archived on Zenodo
-      with its own version DOI under the all-versions concept DOI 10.5281/zenodo.21286974.
+    description: "10,437 triples \u2014 163 OWL classes, 157 object properties, 140\
+      \ datatype properties, 545 SKOS concepts across 67 concept schemes. Archived\
+      \ on Zenodo with its own version DOI under the all-versions concept DOI 10.5281/zenodo.21286974."
     license: https://creativecommons.org/licenses/by/4.0/
     distributions:
     - file: https://labiosyncare.github.io/ontology/0.15.0/sstim-namespace.ttl
       format: ttl
-      status: pending
+      status: active
       sha256: 838b09a862af283d8a3ace16872f05cb43eb69ee061f3217077e94bc66cc2dfc
       size: 727857
 maintainers:
