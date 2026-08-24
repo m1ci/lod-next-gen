@@ -175,14 +175,11 @@ for artifact in data.get("artifacts", []):
                 "@id": part_id,
                 "@type": "Part",
                 "formatExtension": dist.get("format"),
+                "compression": dist.get("compression", "none"),
                 "sha256sum": sha256,
                 "dcat:byteSize": size,
                 "downloadURL": file_url
             }
-            
-            # Add compression only if it is explicitly defined
-            if dist.get("compression"):
-                part["compression"] = dist["compression"]
             
             dist_list.append(part)
 
