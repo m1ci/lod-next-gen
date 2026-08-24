@@ -94,6 +94,13 @@ def send_publish(payload):
     }
 
     resp = requests.post(API_PUBLISH, headers=headers, json=payload)
+
+    if not resp.ok:
+        print("=== Databus error response ===")
+        print(resp.status_code)
+        print(resp.text)
+        print("==============================")
+
     resp.raise_for_status()
     return resp.json()
 
