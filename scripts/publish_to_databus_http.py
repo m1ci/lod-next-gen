@@ -164,15 +164,20 @@ for artifact in data.get("artifacts", []):
 
             dist["size"] = size  # ✅ UPDATE YAML IN MEMORY
 
-            dist_list.append({
+            part = {
                 "@id": part_id,
                 "@type": "Part",
                 "formatExtension": dist.get("format"),
-                "compression": dist.get("compression"),
                 "sha256sum": sha256,
                 "dcat:byteSize": size,
                 "downloadURL": file_url
-            })
+            }
+            
+            # Add compression only if it is explicitly defined
+            if dist.get("compression"):
+                part["compression"] = dist["compression"]
+            
+            dist_list.append(part)
 
         version_payload = {
             "@context": "https://databus.dbpedia.org/res/context.jsonld",
