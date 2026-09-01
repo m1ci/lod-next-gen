@@ -11,8 +11,8 @@ description: 'SSTIM provides shared terminology for describing the parameter-spe
   can be compared across systems rather than being locked in private schemas.
 
 
-  The 0.15.0 release contains 10,437 triples: 163 OWL classes, 157 object properties
-  and 140 datatype properties, plus 545 SKOS concepts across 67 concept schemes. It
+  The 0.16.0 release contains 11,506 triples: 164 SSTIM OWL classes, 158 object properties
+  and 143 datatype properties, plus 551 SKOS concepts across 68 concept schemes. It
   ships SHACL validation shapes, conservative alignments to Wikidata and the OBO upper
   ontologies (BFO, IAO, OBI, COB), and a modular structure with four named profile
   closures (Kernel, Core, Core Plus, Full) declared in a machine-readable manifest.
@@ -28,7 +28,7 @@ description: 'SSTIM provides shared terminology for describing the parameter-spe
 
   - **No clinical claims.** SSTIM describes parameters, provenance and evidence status.
   It does not define clinical practice, certify therapeutic efficacy, or model diagnosis
-  or treatment. See https://github.com/laBioSynCare/laBioSynCare.github.io/blob/main/docs/concept/SCOPE.md
+  or treatment. See https://github.com/w3c-cg/sstim/blob/main/docs/concept/SCOPE.md
 
   - **Persistent identifiers.** `https://w3id.org/sstim` content-negotiates to Turtle,
   JSON-LD and RDF/XML; each release is frozen byte-identical under a version IRI and
@@ -41,6 +41,7 @@ description: 'SSTIM provides shared terminology for describing the parameter-spe
   Related W3C work: the Sensory Stimulation Vocabulary Community Group (https://www.w3.org/community/sstim/).'
 moss-publish: false
 databus-publish: false
+check-new-release: sstim_release_auto_update.py
 license: https://creativecommons.org/licenses/by/4.0/
 homepage: https://w3id.org/sstim
 domains:
@@ -67,9 +68,9 @@ artifacts:
   - version: 2026.08.17
     title: SSTIM 0.15.0
     abstract: Release 0.15.0 of the Sensory Stimulation Ontology.
-    description: "10,437 triples \u2014 163 OWL classes, 157 object properties, 140\
-      \ datatype properties, 545 SKOS concepts across 67 concept schemes. Archived\
-      \ on Zenodo with its own version DOI under the all-versions concept DOI 10.5281/zenodo.21286974."
+    description: 10,437 triples — 163 OWL classes, 157 object properties, 140 datatype
+      properties, 545 SKOS concepts across 67 concept schemes. Archived on Zenodo
+      with its own version DOI under the all-versions concept DOI 10.5281/zenodo.21286974.
     license: https://creativecommons.org/licenses/by/4.0/
     distributions:
     - file: https://labiosyncare.github.io/ontology/0.15.0/sstim-namespace.ttl
@@ -77,6 +78,21 @@ artifacts:
       status: active
       sha256: 838b09a862af283d8a3ace16872f05cb43eb69ee061f3217077e94bc66cc2dfc
       size: 727857
+  - version: 2026.08.18
+    title: SSTIM 0.16.0
+    abstract: Release 0.16.0 of the Sensory Stimulation Ontology.
+    description: Frozen whole-set namespace document for SSTIM 0.16.0. The release
+      is byte-stable under its version IRI and archived on Zenodo under concept DOI
+      10.5281/zenodo.21286974. This catalog entry was discovered from the canonical
+      W3C-CG release tag and accepted only after its published immutable manifest
+      and ontology version agreed.
+    license: https://creativecommons.org/licenses/by/4.0/
+    distributions:
+    - file: https://w3c-cg.github.io/sstim/ontology/0.16.0/sstim-namespace.ttl
+      format: ttl
+      status: pending
+      sha256: 522abc802f2366356899ddedc5b2e548d5918368185fd84b178c6004398037b1
+      size: 788555
 maintainers:
 - name: Renato Fabbri
   contact: renato.fabbri@gmail.com
