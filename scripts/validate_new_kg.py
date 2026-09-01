@@ -484,7 +484,9 @@ if errors:
     result = """
 ## ❌ KG Metadata Validation Failed
 
-The submission contains the following problems:
+The submission contains the following problems.
+Please edit the contents of issue above and save.
+Soon you will be notified about the status of the validation.
 
 """
 
