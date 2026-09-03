@@ -1,30 +1,21 @@
 databus-account: knowledge-graph-catalog
 id: dskg
 title: Data Set Knowledge Graph
-
-abstract: >-
-  The Data Set Knowledge Graph (DSKG) is an RDF knowledge graph describing
-  research datasets and linking them to scientific publications in which
-  the datasets are mentioned.
-
-description: >-
-  The Data Set Knowledge Graph (DSKG) provides structured metadata about
-  research datasets from OpenAIRE and Wikidata. It links datasets to
-  scientific publications in the Microsoft Academic Knowledge Graph (MAKG)
-  in which the datasets are mentioned. DSKG uses standard vocabularies such
-  as DCAT and provides Linked Data URI resolution, RDF dumps, and a public
-  SPARQL endpoint. The graph contains 2,208 datasets, 813,551 links to
-  634,803 scientific publications, 1,169 dataset authors, and 208 ORCID IDs.
-
-moss-publish: true
-databus-publish: true
-
+abstract: The Data Set Knowledge Graph (DSKG) is an RDF knowledge graph describing
+  research datasets and linking them to scientific publications in which the datasets
+  are mentioned.
+description: The Data Set Knowledge Graph (DSKG) provides structured metadata about
+  research datasets from OpenAIRE and Wikidata. It links datasets to scientific publications
+  in the Microsoft Academic Knowledge Graph (MAKG) in which the datasets are mentioned.
+  DSKG uses standard vocabularies such as DCAT and provides Linked Data URI resolution,
+  RDF dumps, and a public SPARQL endpoint. The graph contains 2,208 datasets, 813,551
+  links to 634,803 scientific publications, 1,169 dataset authors, and 208 ORCID IDs.
+moss-publish: false
+databus-publish: false
 license: https://creativecommons.org/licenses/by/4.0/
 homepage: http://dskg.org/
-
 domains:
 - Publications, Education & Research
-
 keywords:
 - datasets
 - scholarly knowledge graph
@@ -33,38 +24,34 @@ keywords:
 - linked open data
 - RDF
 - DCAT
-
 sparql:
 - name: main
   url: http://dskg.org/sparql
-
 maintainers:
-- name: Michael Färber
+- name: "Michael F\xE4rber"
   contact: michael.faerber@tu-dresden.de
   github: michaelfaerber
-
 artifacts:
 - artifact: dskg
   title: Data Set Knowledge Graph
-  abstract: >-
-    RDF dump of the Data Set Knowledge Graph describing research datasets
+  abstract: RDF dump of the Data Set Knowledge Graph describing research datasets
     and their links to scholarly publications.
-  description: >-
-    The DSKG RDF dataset contains metadata about research datasets,
-    dataset authors, and links between datasets and scientific
-    publications.
+  description: The DSKG RDF dataset contains metadata about research datasets, dataset
+    authors, and links between datasets and scientific publications.
   versions:
   - version: 1.0
     title: Data Set Knowledge Graph 1.0
-    abstract: >-
-      Version 1.0 of the Data Set Knowledge Graph, published in January 2021.
-    description: >-
-      Version 1.0 provides DSKG in N-Triples and RDF/XML serializations.
+    abstract: Version 1.0 of the Data Set Knowledge Graph, published in January 2021.
+    description: Version 1.0 provides DSKG in N-Triples and RDF/XML serializations.
     license: https://creativecommons.org/licenses/by/4.0/
     distributions:
     - file: https://zenodo.org/records/4478921/files/DSKG.nt?download=1
       format: nt
-      status: pending
+      status: active
+      sha256: 3b5876bc925a7de9bf49bbb9be9a49344a1f306982503c26f488f941dbecf580
+      size: 103580950
     - file: https://zenodo.org/records/4478921/files/DSKG.rdf?download=1
       format: rdf
-      status: pending
+      status: active
+      sha256: f3979683c137e77585f9f9b3a21cedd5ad4fd840facbd21efcab2b3944b396ac
+      size: 1
