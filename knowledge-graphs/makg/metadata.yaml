@@ -16,8 +16,8 @@ description: >-
   provides author name disambiguation, publication classifications,
   links to Wikidata, and other scholarly metadata.
 
-moss-publish: false
-databus-publish: false
+moss-publish: true
+databus-publish: true
 
 license: https://opendatacommons.org/licenses/by/1-0/
 homepage: https://makg.org/
@@ -67,100 +67,100 @@ artifacts:
     - file: https://zenodo.org/records/4617285/files/01.Affiliations.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/02.Authors.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/03.ConferenceInstances.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/04.ConferenceSeries.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/05.Journals.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/06.PaperAuthorAffiliations.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/07.PaperExtendedAttributes.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/08.PaperReferences.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/09.PaperResources.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/10.Papers.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/11.PaperUrls.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/12.EntityRelatedEntities.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/13.FieldOfStudyChildren.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/14.FieldOfStudyExtendedAttributes.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/15.FieldsOfStudy.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/16.PaperFieldsOfStudy.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/17.PaperRecommendations.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/18.RelatedFieldOfStudy.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/19.PaperCitationContexts.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/21.PaperTags.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/22.PaperFieldsOfStudyNew.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/23.Authors_disambiguated.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/24.PaperAuthorAffiliations_disambiguated.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/25.AuthorORCID.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4617285/files/sameAs_makg_wikidata.nt.bz2?download=1
       format: nt
       compression: bz2
-      status: active
+      status: pending
