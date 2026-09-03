@@ -1,32 +1,22 @@
 databus-account: knowledge-graph-catalog
 id: semrepo
 title: SemRepo
-
-abstract: >-
-  SemRepo is a large-scale RDF knowledge graph of GitHub repositories
-  linked to scientific research. It captures fine-grained repository
-  metadata and connects research software with the broader scholarly
-  ecosystem.
-
-description: >-
-  SemRepo is a large-scale RDF knowledge graph for research software and
-  its scholarly ecosystem. It describes GitHub repositories and related
-  entities such as contributors, issues, dependencies, programming
-  languages, organizations, packages, and research topics. SemRepo
-  interlinks repositories with publications in Linked Papers With Code,
-  repository authors with SemOpenAlex, and research artifacts with MLSea.
-  It provides RDF dumps, persistent URI resolution, a public SPARQL
-  endpoint, an OWL ontology, and VoID and DCAT metadata descriptions.
-
-moss-publish: true
-databus-publish: true
-
+abstract: SemRepo is a large-scale RDF knowledge graph of GitHub repositories linked
+  to scientific research. It captures fine-grained repository metadata and connects
+  research software with the broader scholarly ecosystem.
+description: SemRepo is a large-scale RDF knowledge graph for research software and
+  its scholarly ecosystem. It describes GitHub repositories and related entities such
+  as contributors, issues, dependencies, programming languages, organizations, packages,
+  and research topics. SemRepo interlinks repositories with publications in Linked
+  Papers With Code, repository authors with SemOpenAlex, and research artifacts with
+  MLSea. It provides RDF dumps, persistent URI resolution, a public SPARQL endpoint,
+  an OWL ontology, and VoID and DCAT metadata descriptions.
+moss-publish: false
+databus-publish: false
 license: https://creativecommons.org/publicdomain/zero/1.0/
 homepage: https://semrepo.org/
-
 domains:
 - Publications, Education & Research
-
 keywords:
 - research software
 - knowledge graph
@@ -35,41 +25,38 @@ keywords:
 - linked data
 - RDF
 - software repositories
-
 sparql:
 - name: main
   url: https://semrepo.org/sparql
-
 maintainers:
-- name: Michael Färber
+- name: "Michael F\xE4rber"
   contact: michael.faerber@tu-dresden.de
   github: michaelfaerber
-
 artifacts:
 - artifact: semrepo
   title: SemRepo Knowledge Graph
-  abstract: >-
-    RDF dump of the SemRepo knowledge graph describing research software
-    repositories and their connections to the scholarly ecosystem.
-  description: >-
-    The SemRepo RDF dataset contains metadata about research-related
-    GitHub repositories and links to external scholarly knowledge graphs
-    including Linked Papers With Code, SemOpenAlex, and MLSea.
+  abstract: RDF dump of the SemRepo knowledge graph describing research software repositories
+    and their connections to the scholarly ecosystem.
+  description: The SemRepo RDF dataset contains metadata about research-related GitHub
+    repositories and links to external scholarly knowledge graphs including Linked
+    Papers With Code, SemOpenAlex, and MLSea.
   versions:
   - version: 2.0
     title: SemRepo v2
-    abstract: >-
-      Version 2 of the SemRepo knowledge graph, published in April 2026.
-    description: >-
-      Version 2 of SemRepo provides the knowledge graph in Turtle and
-      N-Triples serializations.
+    abstract: Version 2 of the SemRepo knowledge graph, published in April 2026.
+    description: Version 2 of SemRepo provides the knowledge graph in Turtle and N-Triples
+      serializations.
     license: https://creativecommons.org/publicdomain/zero/1.0/
     distributions:
     - file: https://zenodo.org/records/20084784/files/SemRepo_2025-05-11.ttl.gz?download=1
       format: ttl
       compression: gz
-      status: pending
+      status: active
+      sha256: 59bb4201bb90a7e8d11356af2139ae08859d2cf3a4be15df80c0e9e0a712779e
+      size: 805392268
     - file: https://zenodo.org/records/20084784/files/SemRepo_2025-05-11.nt.gz?download=1
       format: nt
       compression: gz
-      status: pending
+      status: active
+      sha256: b96973bb73eebc0bd18663e6eb0d80d450ce77d911d0b28de78166034209256c
+      size: 2334651809
