@@ -56,7 +56,7 @@ artifacts:
     GitHub repositories and links to external scholarly knowledge graphs
     including Linked Papers With Code, SemOpenAlex, and MLSea.
   versions:
-  - version: v2
+  - version: 2.0
     title: SemRepo v2
     abstract: >-
       Version 2 of the SemRepo knowledge graph, published in April 2026.
