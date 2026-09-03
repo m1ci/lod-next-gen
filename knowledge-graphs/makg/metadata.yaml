@@ -1,0 +1,166 @@
+databus-account: knowledge-graph-catalog
+id: makg
+title: Microsoft Academic Knowledge Graph
+
+abstract: >-
+  The Microsoft Academic Knowledge Graph (MAKG) is a large-scale RDF
+  knowledge graph containing scholarly metadata about scientific
+  publications, authors, institutions, venues, and fields of study.
+
+description: >-
+  The Microsoft Academic Knowledge Graph (MAKG) is an RDF representation
+  and extension of the Microsoft Academic Graph. It contains more than
+  eight billion RDF triples describing hundreds of millions of scientific
+  publications and related entities such as authors, affiliations,
+  journals, conferences, and fields of study. The enhanced MAKG additionally
+  provides author name disambiguation, publication classifications,
+  links to Wikidata, and other scholarly metadata.
+
+moss-publish: true
+databus-publish: true
+
+license: https://opendatacommons.org/licenses/by/1-0/
+homepage: https://makg.org/
+
+domains:
+- Publications, Education & Research
+
+keywords:
+- scholarly data
+- scientific publications
+- bibliographic data
+- knowledge graph
+- Microsoft Academic Graph
+- linked open data
+- RDF
+
+sparql:
+- name: main
+  url: https://makg.org/sparql
+
+maintainers:
+- name: Michael Färber
+  contact: michael.faerber@tu-dresden.de
+  github: michaelfaerber
+
+artifacts:
+- artifact: makg
+  title: Microsoft Academic Knowledge Graph
+  abstract: >-
+    RDF dump of the Microsoft Academic Knowledge Graph.
+  description: >-
+    The MAKG RDF dataset contains scholarly metadata derived from the
+    Microsoft Academic Graph snapshot of June 19, 2020, including
+    publications, authors, affiliations, venues, fields of study,
+    citations, and additional enriched information.
+  versions:
+  - version: 2020-06-19
+    title: Microsoft Academic Knowledge Graph 2020-06-19
+    abstract: >-
+      Enhanced MAKG release based on the Microsoft Academic Graph
+      snapshot of June 19, 2020.
+    description: >-
+      This release provides the enhanced Microsoft Academic Knowledge
+      Graph as compressed N-Triples files.
+    license: https://opendatacommons.org/licenses/by/1-0/
+    distributions:
+    - file: https://zenodo.org/records/4617285/files/01.Affiliations.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/02.Authors.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/03.ConferenceInstances.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/04.ConferenceSeries.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/05.Journals.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/06.PaperAuthorAffiliations.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/07.PaperExtendedAttributes.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/08.PaperReferences.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/09.PaperResources.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/10.Papers.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/11.PaperUrls.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/12.EntityRelatedEntities.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/13.FieldOfStudyChildren.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/14.FieldOfStudyExtendedAttributes.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/15.FieldsOfStudy.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/16.PaperFieldsOfStudy.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/17.PaperRecommendations.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/18.RelatedFieldOfStudy.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/19.PaperCitationContexts.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/21.PaperTags.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/22.PaperFieldsOfStudyNew.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/23.Authors_disambiguated.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/24.PaperAuthorAffiliations_disambiguated.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/25.AuthorORCID.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
+    - file: https://zenodo.org/records/4617285/files/sameAs_makg_wikidata.nt.bz2?download=1
+      format: nt
+      compression: bz2
+      status: pending
