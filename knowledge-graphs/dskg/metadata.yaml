@@ -16,8 +16,8 @@ description: >-
   SPARQL endpoint. The graph contains 2,208 datasets, 813,551 links to
   634,803 scientific publications, 1,169 dataset authors, and 208 ORCID IDs.
 
-moss-publish: false
-databus-publish: false
+moss-publish: true
+databus-publish: true
 
 license: https://creativecommons.org/licenses/by/4.0/
 homepage: http://dskg.org/
@@ -64,7 +64,7 @@ artifacts:
     distributions:
     - file: https://zenodo.org/records/4478921/files/DSKG.nt?download=1
       format: nt
-      status: active
+      status: pending
     - file: https://zenodo.org/records/4478921/files/DSKG.rdf?download=1
       format: rdf
-      status: active
+      status: pending
